@@ -1,0 +1,103 @@
+/* Configuraciones iniciales */
+* {
+    box-sizing: border-box;
+}
+ul, ol {
+    padding:0;
+}
+li {
+    list-style-type: none;
+}
+a, a:hover{
+    text-decoration: none;
+    color: black;
+}
+/* Estilos Header */
+
+header div.header-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width:1200px;
+    border: black 2px solid;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+header{
+    background-color: #dedede;
+}
+
+div.titles ul {
+    display:inline-block;
+}
+
+div.titles li {
+    padding: 3px;
+    display: inline-block;
+}
+
+div.titles button {
+    margin-right:3px;
+}
+
+div.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:3px;
+    width:150px;
+}
+
+/* Footer */
+
+footer{
+    background-color: grey;
+}
+
+footer div.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width:1200px;
+    width: 100%;
+    border: black 3px solid;
+    margin: 0 auto;
+    justify-content:space-between;
+}
+
+div.footer-left{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:50%;
+}
+
+div.footer-left ul{
+    padding-left:40px;
+}
+
+div.footer-right{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: flex-start;
+    padding:0 50px;
+    width:50%;
+}
+
+div.footer-right form{
+    display:flex;
+    justify-content: flex-start;
+}
+h3{
+    font-size: 15px;
+    padding: 5px 0;
+    margin:0;
+    color: white;
+}
+footer form, footer div.social-icons{
+    padding:15px 0;
+}
+
+
+
