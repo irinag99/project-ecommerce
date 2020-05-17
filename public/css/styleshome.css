@@ -1,0 +1,21 @@
+/* Configuraciones iniciales */
+* {
+    box-sizing: border-box;
+}
+ul, ol {
+    padding:0;
+}
+li {
+    list-style-type: none;
+}
+a, a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background-color: hsl(0, 0%, 98%);
+    opacity: 0.7;
+}
+/* Footer */
+
