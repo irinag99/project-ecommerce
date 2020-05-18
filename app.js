@@ -16,13 +16,14 @@ app.use(express.json());
 
 // RUTAS !
 const homeRouter= require("./routes/homeRouter")
-app.get ("/", homeRouter);
-const productView = require("./routes/productview");
-app.get("/product", productView);
-
+app.use ("/", homeRouter);
+const productView = require("./routes/productView");
+app.use("/product", productView);
+const loginRouter = require('./routes/loginRouter');
+app.use('/login', loginRouter);
 
 
 
 
 // EMPEZAR SERVER
-app.listen(3030,()=>{console.log("SV running")})
+app.listen(3030,()=>{console.log("Server running port 3030")})

@@ -20,6 +20,6 @@ var storage = multer.diskStorage({
 
   // RUTAS
   
-  router.get("/product", productViewController.vista);
+  router.get("/", productViewController.vista);
 
 module.exports = router;

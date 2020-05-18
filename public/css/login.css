@@ -1,0 +1,50 @@
+div.register-form { 
+background-color: white;
+width:100%;
+max-width: 540px;
+margin:30px 0;
+border:#E5E5E5 solid 1px;
+border-radius: 15px;
+}
+form.register{
+    margin: 0 auto;
+    width:75%;
+}
+form.register input.cien {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+div.register-form h2{ 
+text-align: center;
+font-family: 'Open Sans', sans-serif;
+color: gray;
+opacity: 0.8;
+margin:0;
+padding: 10px;
+padding-bottom: 3px;
+}
+form.register select,form.register button {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+form.register button{
+    border-radius: 6px;
+}
+
+div.register-form p.terminos-condiciones{
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-small;
+    text-align: left;
+    margin-top: 3px;
+}
+div.login-register-container {
+    display: flex;
+    justify-content: space-between;
+    max-width:1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
