@@ -17,7 +17,8 @@ app.use(express.json());
 // RUTAS !
 const homeRouter= require("./routes/homeRouter")
 app.get ("/", homeRouter);
-
+const productView = require("./routes/productview");
+app.get("/product", productView);
 
 
 
