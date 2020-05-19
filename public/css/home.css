@@ -22,7 +22,7 @@
    
 }
 section.imagenes article {
-    width: 30%;
+    width: 13%;
 }
 
 .imagenes img{
@@ -31,5 +31,14 @@ section.imagenes article {
     display: flex;
     flex-wrap: wrap;
     border-radius: 5%;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 65px;
+    color: rgb(138, 255, 80);
+    text-decoration: underline;
+    font-weight: bold;
 }
 
