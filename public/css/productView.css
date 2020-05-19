@@ -1,0 +1,67 @@
+div.principal {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+div.imageProduct {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+
+div.nameProduct {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    align-self: start;
+    flex-direction: column;
+}
+
+div.quantity {
+    padding: 20px 0;
+}
+
+div.quantity input {
+    border: 1px solid black;
+    width: 25px;
+    text-align: center;
+    background-color: hsl(0, 0%, 98%);
+}
+
+div.quantity button {
+    border: 1px solid black;
+    width: 25px;
+    text-align: center;
+    background-color: hsl(0, 0%, 98%);
+    ;
+}
+
+div.action input {
+    padding: 5px;
+}
+
+div.principal img {
+    width: 400px;
+    height: 400px;
+}
+
+div.related {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+div.related img {
+    width: 200px;
+    height: 150px;
+}
