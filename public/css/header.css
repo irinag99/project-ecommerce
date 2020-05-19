@@ -46,3 +46,6 @@ div.titles button {
     width: 30px;
     border: none;
 }
+.header-container div.titles ul li img{
+    width:20px;
+}

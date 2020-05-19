@@ -21,12 +21,15 @@
     font-family: 'Open Sans', sans-serif;
    
 }
+section.imagenes article {
+    width: 30%;
+}
+
 .imagenes img{
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5%;
-    height: 20vh;
 }
 
