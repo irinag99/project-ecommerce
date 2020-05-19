@@ -1,20 +1,22 @@
 /* Configuraciones iniciales */
+
 * {
     box-sizing: border-box;
 }
+
 ul, ol {
-    padding:0;
+    padding: 0;
 }
+
 li {
     list-style-type: none;
 }
-a, a:hover{
+
+a, a:hover {
     text-decoration: none;
     color: black;
 }
 
-body{
+body {
     background-color: hsl(0, 0%, 98%);
 }
-
-

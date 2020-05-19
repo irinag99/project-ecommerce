@@ -4,6 +4,7 @@
 <head>
     <%-include('./partials/head.ejs') %>
     <title>Farmacia - Home</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
@@ -11,31 +12,38 @@
     <!--slider con js -->
     <div class="banner">
         <div id="banner">
+            <img src="/images/banner.jpg" alt="Banner homepage">
         </div>
     </div>
 
     <section class="imagenes">
         <article>
-            <img src="" alt="imagen producto">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+            <a href="/productos/higiene"><img src="/images/higiene.png" alt="Logo Higiene">
+                <p>Ir a higiene</p>
+            </a>
+
         </article>
         <article>
-            <img src="" alt="imagen producto">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+            <a href="/productos/perfumeria"><img src="/images/perfumeria.png" alt="Logo Perfumeria">
+                <p>Ir a perfumeria</p>
+            </a>
+
         </article>
         <article>
-            <img src="" alt="imagen producto">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+            <a href="/productos/medicamentos"><img src="/images/medicamentos.png" alt="Logo Medicamentos">
+                <p>Ir a medicamentos</p>
+            </a>
+
+        </article>
+        <article>
+            <a href="/productos/insumos"><img src="/images/insumos.png" alt="Logo Insumos">
+                <p>Ir a insumos</p>
+            </a>
+
         </article>
     </section>
     <%-include('./partials/footer.ejs') %>
-   
+
 </body>
 
 </html>

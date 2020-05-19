@@ -22,8 +22,6 @@ app.use("/product", productView);
 const loginRouter = require('./routes/loginRouter');
 app.use('/login', loginRouter);
 
-
-
-
 // EMPEZAR SERVER
-app.listen(3030,()=>{console.log("Server running port 3030")})
+
+app.listen(3030,()=>{console.log("Server running port 3030")});
