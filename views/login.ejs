@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs')%>
+    <title>Farmacia - Registrate</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <%- include('./partials/header.ejs')%>
+    <div class='login-register-container'>
+        <div class='register-form'>
+            <h2>Iniciar Sesión</h2><br>
+            <form class='register' action="/register" method="POST">
+                <input type="email" name='email' class='cien' placeholder="Email"><br>
+                <input type="password" name='password' class='cien' placeholder='Contraseña'><br>
+                <button type='submit'>Iniciar Sesión</button>
+            </form>
+        </div>
+        <div class='register-form'>
+            <h2>Registrate con tus datos</h2><br>
+            <form class='register' action="/register" method="POST">
+                <input type="text" name='name' class='cien' placeholder='Nombre'><br>
+                <input type="text" name='surname' class='cien' placeholder="Apellido"><br>
+                <input type="email" name='email' class='cien' placeholder="Email"><br>
+                <input type="password" name='password' class='cien' placeholder='Contraseña'><br>
+                <input type="password" name='passwordR' class='cien' placeholder="Repetir Contraseña"><br>
+                <button type='submit'>Crear Usuario</button>
+                <p class='terminos-condiciones'>*Al hacer click en "Crear Usuario" estas aceptando los terminos y
+                    condiciones de Farmacia. <a href="">Para ver los términos y condiciones haga click acá.</a></p>
+            </form>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs')%>
+</body>
+
+</html>

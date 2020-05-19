@@ -7,7 +7,6 @@ footer div.footer-container{
     flex-wrap: wrap;
     max-width:1200px;
     width: 100%;
-    border: black 3px solid;
     margin: 0 auto;
     justify-content:space-between;
 }
