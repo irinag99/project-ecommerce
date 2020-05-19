@@ -21,6 +21,8 @@ const productView = require("./routes/productView");
 app.use("/product", productView);
 const loginRouter = require('./routes/loginRouter');
 app.use('/login', loginRouter);
+const carritoRouter = require('./routes/carritoRouter')
+app.use("/carrito",carritoRouter)
 
 // EMPEZAR SERVER
 
