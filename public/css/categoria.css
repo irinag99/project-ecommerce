@@ -1,0 +1,44 @@
+div.principal{
+    max-width:1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1.title{
+    padding: 10px 30px;
+}
+
+h2{
+    margin: 0 auto;
+    padding: 10px 30px;
+}
+
+div.container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width:1200px;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+div.filters{
+    max-width: 300px;
+    
+}
+div.imagenesProductos{
+    max-width: 900px;
+}
+
+
+div.imagenesProductos img{
+    width: 200px;
+    height: 150px;
+
+}
+
+ nav h3{
+    color: black;
+}
