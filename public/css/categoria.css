@@ -10,7 +10,7 @@ h1.title{
 
 h2{
     margin: 0 auto;
-    padding: 10px 30px;
+    padding: 10px 0;
 }
 
 div.container{
@@ -25,11 +25,20 @@ div.container{
 }
 
 div.filters{
-    max-width: 300px;
+    max-width: 30%;
     
 }
 div.imagenesProductos{
-    max-width: 900px;
+    max-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: flex-start;
+    padding-top: 60px;
+}
+
+div.item{
+    margin: 30px;
 }
 
 
