@@ -51,6 +51,7 @@ div.principal img {
     height: 400px;
 }
 
+
 div.related {
     display: flex;
     flex-wrap: wrap;
@@ -64,4 +65,27 @@ div.related {
 div.related img {
     width: 200px;
     height: 150px;
+}
+
+@media(max-width:1000px){
+    div.imageProduct{
+        width: 100%;
+    }
+    div.nameProduct{
+        width: 100%;
+    }
+}
+@media(max-width:767px){
+    div.related {
+        display: block; 
+        margin: auto;
+        text-align: center;
+    }
+
+    
+    div.principal img {
+        width: 200px;
+        height: 200px;
+    }
+
 }
