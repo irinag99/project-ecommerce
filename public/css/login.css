@@ -48,3 +48,14 @@ div.login-register-container {
     flex-wrap: wrap;
     margin: 0 auto;
 }
+
+/* MediaQuery tablet */
+@media (max-width:1150px){
+    div.register-form { 
+        width:47%;
+        margin:30px 0;
+    }
+    div.register-form h2{ 
+        font-size: 20px;
+    }
+}
