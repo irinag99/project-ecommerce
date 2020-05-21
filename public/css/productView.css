@@ -43,7 +43,21 @@ div.quantity button {
 }
 
 div.action input {
-    padding: 5px;
+    display: block;
+    color: white;
+    height: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 10px;
+    background: #55C24B;
+    border-width: 0px;
+    border-style: none;
+    padding: 0px 15px;
+    border-radius: 0px;
+}
+div.action input:hover{
+    background-color:#55A24B;
 }
 
 div.principal img {
@@ -58,13 +72,18 @@ div.related {
     max-width: 1200px;
     width: 100%;
     margin: 10px auto;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
 }
-
+div.related h2{
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    font-weight: normal;
+}
 div.related img {
-    width: 200px;
-    height: 150px;
+    width: 290px;
+    height: 200px;
 }
 
 @media(max-width:1000px){
