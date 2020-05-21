@@ -9,8 +9,8 @@ header div.header-container{
 }
 
 header{
-    background-color:rgb(83,104,241);
-    opacity:0.7;
+    background-color:#004586;
+    opacity: 0.7;
 }
 
 div.titles ul {
@@ -32,7 +32,7 @@ div.titles li {
 .boton-menu {
     display: flex;
     flex-wrap: wrap;
-    background-color:rgb(83, 104, 241);
+    background-color:#004586;
     padding: 2px 4px;
     text-align: center;
     display: inline-block;

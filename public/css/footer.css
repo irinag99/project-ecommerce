@@ -85,7 +85,7 @@ div.footer-right form button{
     transition-duration: 0.5s;
 }
 div.footer-right form button:hover{
-    border: 2px solid rgba(83,104,241,0.7);
+    border: 2px solid rgba(0,69,134,0.7);
 }
 div.suscribite{
     width:60%;
