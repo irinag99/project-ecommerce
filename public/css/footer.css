@@ -1,6 +1,7 @@
 footer{
     background-color: white;
     border-top:#E5E5E5 solid 1px;
+    bottom:1px;
 }
 
 footer div.footer-container{
@@ -11,6 +12,7 @@ footer div.footer-container{
     margin: 0 auto;
     justify-content:space-between;
     align-items: center;
+    padding:15px 0;
 
 }
 
@@ -21,16 +23,20 @@ div.footer-left{
     width:50%;
 }
 
-div.footer-left ul{
+/* div.footer-left ul{
     padding-left:40px;
-}
+} */
+
+/* div.footer-left ul li{
+    display: inline-block;
+
+} */
 
 div.footer-right{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
     align-items: flex-start;
-    padding:0 50px;
     width:50%;
 }
 
@@ -45,17 +51,19 @@ div.suscribite h3{
     color: black;
     display: block;
 }
-/* footer form, footer div.social-icons{
-    padding:15px 0;
-} */
+
 footer div.social-icons{
     width:30%;
-    margin: auto 0;
+    padding-top:32px;
+    display: flex;
+    flex-direction: row-reverse;
 }
-
+footer div.social-icons img{
+    padding-left:10px;
+}
 div.footer-left ul li{
     font-family: 'Open Sans', sans-serif;
-    font-size: small;
+    font-size: 15px;
 }
 div.copyrights p{
     font-size: small;
@@ -89,5 +97,17 @@ div.footer-right form button:hover{
 }
 div.suscribite{
     width:60%;
+}
+div.footer-left div.lista{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+div.footer-left ul.segundo-ul{
+    padding-right:30%
+}
+/* MediaQuery */
+@media(max-width:1200px){
+
 }
 

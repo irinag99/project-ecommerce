@@ -14,7 +14,6 @@ header{
 }
 
 div.titles ul {
-    display:inline-block;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -73,4 +72,19 @@ div.titles button {
 div.header-container div.logo a{
     display: flex;
     align-items: center;
+}
+header div.titles{
+    display: flex;
+}
+header div.titles li.boton-desplegable{
+    display: none;
+}
+/* MediaQuery Mobile */
+@media(max-width:425px){
+    div.titles ul{
+        flex-direction: column-reverse;
+    }
+    header div.header-container{
+    flex-direction: column;
+    }
 }

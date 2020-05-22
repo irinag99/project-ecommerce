@@ -58,4 +58,22 @@ div.login-register-container {
     div.register-form h2{ 
         font-size: 20px;
     }
+    div.login-register-container{
+        padding: 0 25px;
+    }
+}
+
+/* MediaQuery Mobile */
+@media(max-width:425px){
+    div.login-register-container{
+        flex-direction: column;
+        padding:0px;
+    }
+     div.register-form { 
+        width:80%;
+        margin:15px auto;
+    }
+    div.register-form h2{ 
+        font-size: 20px;
+    }
 }
