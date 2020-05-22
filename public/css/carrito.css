@@ -96,15 +96,25 @@ img.producto-elegido-img{
     background-color: white;
 }
 
-@media(max-width:580px){
+@media(max-width:1200px){
     .vistas-de-productos{
-        width: 90%;
+        width: 100%;
     }   
     .informacion-de-productos-precios{
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         flex-direction: column;
+    }
+   
+}
+@media(max-width:600px){
+    .vista-de-producto{
+        flex-direction: column;
+        
+    }
+    .producto-elegido , .contenedor-contador-de-producto, .precio-producto{
+        align-self:center ;
     }
 }
