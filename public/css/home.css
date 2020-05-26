@@ -16,14 +16,17 @@
     align-items: center;
     margin:30px auto;
     font-family: 'Open Sans', sans-serif;
-   
+   font-weight: 500;
 }
 section.imagenes article {
-    width: 30%;
+    width: 33%;
     background-color:white;
     border: solid 1px #dedede;
     border-radius: 15px;
-
+    transition-duration: 0,5s;
+}
+section.imagenes article:hover{
+    border: 1px solid rgba(0,69,134,0.7);
 }
 
 section.imagenes article a{
