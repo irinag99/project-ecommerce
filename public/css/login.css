@@ -46,7 +46,12 @@ div.login-register-container {
     max-width:1200px;
     width: 100%;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin:auto;
+}
+footer{
+    position:fixed;
+    bottom:0px;
+    width:100%;
 }
 
 /* MediaQuery tablet */

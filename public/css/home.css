@@ -9,25 +9,34 @@
 .imagenes {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width:100%;
     max-width:1200px;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
-    margin-left:100px;
-    margin-right:100px;
-    margin-bottom: 100px;
+    margin:30px auto;
     font-family: 'Open Sans', sans-serif;
    
 }
 section.imagenes article {
-    width: 13%;
+    width: 30%;
+    background-color:white;
+    border: solid 1px #dedede;
+    border-radius: 15px;
+
+}
+
+section.imagenes article a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagenes img{
     justify-content: space-between;
-    width: 100%;
+    width: 100px;
+    padding:30px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5%;
