@@ -84,6 +84,9 @@ img.producto-elegido-img{
 .boton{
     border-radius: 5px;
 }
+.p-envio{
+    border-bottom: solid 1px #959595 ;
+}
 .contador{
     width: 1vw;
 }

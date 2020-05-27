@@ -39,6 +39,15 @@ div.imagenesProductos{
 
 div.item{
     margin: 30px;
+    background-color:white;
+    border: solid 1px #dedede;
+    border-radius: 15px;
+    padding-top: 9px;
+    padding-right: 9px;
+    padding-left:9px;
+}
+div.item:hover{
+    border: 1px solid rgba(0,69,134,0.7);
 }
 
 
