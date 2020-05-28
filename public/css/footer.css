@@ -18,7 +18,8 @@ footer div.footer-container{
 div.footer-left{
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-between;
+    /*justify-content:space-between;*/
+    justify-content:space-around;
     width:50%;
 }
 
@@ -53,7 +54,7 @@ div.suscribite h3{
 
 footer div.social-icons{
     width:30%;
-    padding-top:32px;
+    padding-top:36px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -107,12 +108,50 @@ div.footer-left div.lista{
     justify-content: space-around;
 }
 div.footer-left ul.segundo-ul{
-    padding-right:30%
+    /* padding-right:30%*/
 }
 
 
 /* MediaQuery */
-@media(max-width:1200px){
+@media(max-width:768px){
+.footer-container{
+    display: flex;
+    flex-direction: column;
+}
+div.footer-left{
+    width: 100%;
+    justify-content: space-around;
+    
+}
+div.footer-left ul.segundo-ul{
+    padding: 0;
+}
+div.footer-right{
+    width: 80%;
+}
+.suscribite{
+    width: 100%;
+    margin: 0;
+}
+form{
+    height: 3vh;
+}
 
+div.footer-right form button{
+    width: 100px;  
+}
+footer div.social-icons{
+    padding-top: 27px;
+}
+}
+@media(max-width:425px){
+    div.footer-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+div.suscribite{
+    width: 100%;
+} 
 }
 
