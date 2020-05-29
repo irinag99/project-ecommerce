@@ -1,3 +1,5 @@
+
+
 div.principal {
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +7,9 @@ div.principal {
     width: 100%;
     margin: 0 auto;
     padding: 60px 30px;
+    border: #E5E5E5 solid;
+    border-radius: 5px;
+    border-width: 1px 1px 1px 0.5px;
 }
 
 div.imageProduct {
@@ -39,7 +44,6 @@ div.quantity button {
     width: 25px;
     text-align: center;
     background-color: hsl(0, 0%, 98%);
-    ;
 }
 
 div.action input {
@@ -74,6 +78,9 @@ div.related {
     margin: 10px auto;
     justify-content: space-between;
     padding: 20px;
+    border: #E5E5E5 solid;
+    border-radius: 5px;
+    border-width: 1px 1px 1px 0.5px;
 }
 div.related h2{
     width: 100%;
