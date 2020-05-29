@@ -1,8 +1,8 @@
 .banner img {
     width: 100%;
     margin-top: 10px;
-    height: 350px;
     display: flex;
+    height: 350px;
 }
 
 
@@ -33,7 +33,9 @@ section.imagenes article a{
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+.texto{
+    margin-top: 30px;
 }
 
 .imagenes img{
@@ -51,5 +53,25 @@ h1{
     margin-top: 65px;
     color: #55C24B;
     font-weight: bold;
+    width: 100%;
+}
+@media(max-width:950px){
+    .banner img{
+        width: 100%;
+    }
 }
 
+@media(max-width:768px){
+    section.imagenes article{
+        width: 47%;
+        margin-bottom: 10px;
+        margin-top: 2px;
+        margin-left: 2px;
+        margin-right: 10px;
+    }
+}
+@media(max-width:425px){
+    section.imagenes article{
+        width: 100%;
+    }
+}
