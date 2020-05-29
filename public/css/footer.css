@@ -92,12 +92,15 @@ div.footer-right form button{
     flex-wrap: wrap;
     text-align: center;
     display: inline-block;
-    width:100%;
+    width:32%; /* 100%;*/ 
     border-radius: 5px;
     transition-duration: 0.5s;
 }
 div.footer-right form button:hover{
     border: 2px solid rgba(0,69,134,0.7);
+}
+div.footer-right form button p{
+    margin: 0;
 }
 div.suscribite{
     width:60%;
