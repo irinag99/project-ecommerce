@@ -5,8 +5,8 @@ div.principal {
     flex-wrap: wrap;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
-    padding: 60px 30px;
+    margin: 30px auto 0 auto;
+    padding: 30px 30px 60px 30px;
     border: #E5E5E5 solid;
     border-radius: 5px;
     border-width: 1px 1px 1px 0.5px;
