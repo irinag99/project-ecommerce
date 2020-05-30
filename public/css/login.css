@@ -66,6 +66,9 @@ footer{
     div.login-register-container{
         padding: 0 25px;
     }
+    footer{
+        position: relative;
+    }
 }
 
 /* MediaQuery Mobile */

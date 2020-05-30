@@ -4,8 +4,11 @@ header div.header-container{
     width: 100%;
     max-width:1200px;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+}
+header div.logo:first-child{
+    margin-right: auto;
 }
 
 header{
@@ -13,21 +16,20 @@ header{
     opacity: 0.7;
 }
 
-div.titles ul {
+div.header-container ul {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: 4px 2px;
 }
 
-div.titles li {
+div.header-container li {
     padding: 3px;
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     
 }
-
 .boton-menu {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +42,7 @@ div.titles li {
     border-radius: 4px;
     color: white;
 }
+
 .boton-menu:hover{
     background-color: white;
     color: black;
@@ -58,14 +61,14 @@ div.logo img {
     width: 100%;
 }
 
-div.titles button img {
+div.header-container button img {
     width: 100%;
 }
-div.titles button {
+div.header-container button {
     width: 30px;
     border: none;
 }
-.header-container div.titles ul li img{
+.header-container ul li img{
     width:20px;
 }
 
@@ -73,19 +76,36 @@ div.header-container div.logo a{
     display: flex;
     align-items: center;
 }
-header div.titles{
-    display: flex;
-}
-header div.titles li.boton-desplegable{
+
+header div.header-container li.boton-desplegable{
     display: none;
+    color: #004586;
+}
+header div.header-container li.boton-desplegable img{
+    padding: 4px 0;
+    margin: auto;
 }
 /* MediaQuery Mobile */
-@media(max-width:425px){
-    div.titles ul{
-        flex-direction: column-reverse;
+@media(max-width:435px){
+    header div.logo{
+        order:-1;
     }
-    header div.header-container{
-    flex-direction: column;
+    header div.titles-2{
+        order:1; 
+        width:100%;
     }
-    header div.header-container 
+    header div.titles-2 ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display:none;
+  
+    }
+    header div.imagenes{
+        order:0;
+    }
+    header div.header-container li.boton-desplegable{
+        display: block;
+    }
+
 }

@@ -1,11 +1,18 @@
-div.principal{
+div.category-container{
     max-width:1200px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 h1.title{
-    padding: 10px 30px;
+    margin:0;
+    padding: 30px 0;
+    width:100%
 }
 
 h2{
@@ -13,38 +20,47 @@ h2{
     padding: 10px 0;
 }
 
-div.container{
+/* div.container{
     display: flex;
     flex-wrap: wrap;
-    max-width:1200px;
     width: 100%;
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
 
-}
+} */
 
 div.filters{
-    max-width: 30%;
+    width: 280px;
+    background-color: white;
+    border:#E5E5E5 solid 1px;
+    border-radius: 15px;
+    padding:15px 30px;
     
 }
 div.imagenesProductos{
-    max-width: 70%;
+    width: 880px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-self: flex-start;
-    padding-top: 60px;
+    background-color: white;
+    border:#E5E5E5 solid 1px;
+    border-radius: 15px;
+    padding-bottom:30px;
 }
 
 div.item{
-    margin: 30px;
+    margin-top: 30px;
     background-color:white;
     border: solid 1px #dedede;
     border-radius: 15px;
     padding-top: 9px;
     padding-right: 9px;
     padding-left:9px;
+}
+div.item img{
+    border-radius: 10px;
 }
 div.item:hover{
     border: 1px solid rgba(0,69,134,0.7);
