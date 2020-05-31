@@ -1,5 +1,5 @@
-div.category-container{
-    max-width:1200px;
+div.category-container {
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     margin-top: 30px;
@@ -9,13 +9,13 @@ div.category-container{
     justify-content: space-between;
 }
 
-h1.title{
-    margin:0;
+h1.title {
+    margin: 0;
     padding: 30px 0;
-    width:100%
+    width: 100%
 }
 
-h2{
+h2 {
     margin: 0 auto;
     padding: 10px 0;
 }
@@ -30,49 +30,71 @@ h2{
 
 } */
 
-div.filters{
+div.filters {
     width: 280px;
     background-color: white;
-    border:#E5E5E5 solid 1px;
+    border: #E5E5E5 solid 1px;
     border-radius: 15px;
-    padding:15px 30px;
-    
+    padding: 15px 30px;
 }
-div.imagenesProductos{
+
+div.imagenesProductos {
     width: 880px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-self: flex-start;
     background-color: white;
-    border:#E5E5E5 solid 1px;
+    border: #E5E5E5 solid 1px;
     border-radius: 15px;
-    padding-bottom:30px;
+    padding-bottom: 30px;
 }
 
-div.item{
+div.item {
     margin-top: 30px;
-    background-color:white;
+    background-color: white;
     border: solid 1px #dedede;
     border-radius: 15px;
     padding-top: 9px;
     padding-right: 9px;
-    padding-left:9px;
+    padding-left: 9px;
 }
-div.item img{
+
+div.item img {
     border-radius: 10px;
 }
-div.item:hover{
-    border: 1px solid rgba(0,69,134,0.7);
+
+div.item:hover {
+    border: 1px solid rgba(0, 69, 134, 0.7);
 }
 
-
-div.imagenesProductos img{
+div.imagenesProductos img {
     width: 200px;
     height: 150px;
-
 }
 
- nav h3{
+nav h3 {
     color: black;
+}
+
+@media(max-width:1165px) {
+    h1.title {
+        padding: 30px;
+    }
+    div.filters {
+        width: 30%;
+    }
+    div.imagenesProductos {
+        width: 69%;
+    }
+}
+
+@media(max-width:885px) {
+    div.filters {
+        width: 70%;
+        margin: 0 auto;
+    }
+    div.imagenesProductos {
+        width: 100%;
+    }
 }
