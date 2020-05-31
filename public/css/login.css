@@ -48,10 +48,19 @@ div.login-register-container {
     flex-wrap: wrap;
     margin:auto;
 }
-footer{
-    position:fixed;
-    bottom:0px;
-    width:100%;
+div.login-register-container button{
+    color: white;
+    border-color: #959595;
+    border-radius: 5px;
+    background-color: #004586;
+   
+    padding: 8px 15px;
+    font-size: 18px;
+}
+div.login-register-container button:hover{ 
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: #004586
+        
 }
 
 /* MediaQuery tablet */
@@ -65,9 +74,6 @@ footer{
     }
     div.login-register-container{
         padding: 0 25px;
-    }
-    footer{
-        position: relative;
     }
 }
 

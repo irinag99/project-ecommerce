@@ -111,9 +111,6 @@ div.footer-left div.lista{
     align-items: center;
     justify-content: space-around;
 }
-div.footer-left ul.segundo-ul{
-    /* padding-right:30%*/
-}
 
 
 /* MediaQuery */
@@ -138,7 +135,7 @@ div.footer-right{
     margin: 0;
 }
 footer form{
-    height: 3vh;
+    height: 5vh;
 }
 
 div.footer-right form button{
