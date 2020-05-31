@@ -25,6 +25,8 @@ const carritoRouter = require('./routes/carritoRouter')
 app.use("/carrito",carritoRouter)
 const categoriaRouter = require('./routes/categoriaRouter');
 app.use('/categoria', categoriaRouter);
+const registerRouter = require('./routes/registerRouter');
+app.use('/register', registerRouter);
 
 // EMPEZAR SERVER
 
