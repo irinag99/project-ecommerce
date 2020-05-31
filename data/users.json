@@ -1,3 +1,16 @@
 [
-
+ {
+  "id": 1,
+  "name": "Gaston Rodrigo Berretta",
+  "surname": "asd",
+  "email": "gastonrb98@gmail.com",
+  "password": "$2a$10$Pu.XkZoBipwaYfULr9TQLeq.fjWC6rwl2ltBXASkHcF8yHGi76J9m"
+ },
+ {
+  "id": 2,
+  "name": "Gaston Rodrigo Berretta",
+  "surname": "asda",
+  "email": "123@gmail.com",
+  "password": "$2a$10$LlFxIgiYbymAf0/q2QJTuu7KSX22SV1SQxcxaRMRqrTNyD7N7.vvW"
+ }
 ]
