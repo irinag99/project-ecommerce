@@ -13,7 +13,7 @@
         <div class='register-form'>
             <h2>Iniciar Sesión</h2><br>
             <form class='register' action="/login" method="POST">
-                <input type="email" name='emaillogin' class='cien' placeholder="Email"><br>
+                <input type="email" name='emaillogin' class='cien' placeholder="Email" value=' <%=typeof(oldS)!='undefined'? oldS.email: ''%> '><br>
                 <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.emaillogin){ %>
                         <p class="errores" style="color: red; font-size: 13px"><%= errors.emaillogin.msg %></p>
@@ -27,8 +27,22 @@
         <div class='register-form'>
             <h2>Registrate con tus datos</h2><br>
             <form class='register' action="/register" method="POST">
-                <input type="text" name='name' class='cien' placeholder='Nombre'><br>
-                <input type="text" name='surname' class='cien' placeholder="Apellido"><br>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.name){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.name.msg %>
+                </p>
+                <%	} %>
+                <% } %>
+                <input type="text" name='name' class='cien' placeholder='Nombre' value='<%=typeof(old)!='undefined'? old.name : ""%>'><br>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.surname){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.surname.msg %>
+                </p>
+                <%	} %>
+                <% } %>
+                <input type="text" name='surname' class='cien' placeholder="Apellido" value='<%=typeof(old)!='undefined'? old.surname:"" %>'><br>
                 <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.email){ %>
                         <p class="errores" style="color: red; font-size: 13px">
@@ -37,7 +51,7 @@
                     <%	} %>
                 <% } %>
                
-                <input type="email" name='email' class='cien' placeholder="Email"><br>
+                <input type="email" name='email' class='cien' placeholder="Email" value=' <%=typeof(old)!='undefined'? old.email: ''%> '><br>
                  <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.password){ %>
                         <p class="errores" style="color: red; font-size: 13px"><%= errors.password.msg %></p>
