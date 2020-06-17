@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
    register: [
+      body('name').notEmpty().withMessage('Este campo es obligatorio'),
+      body('surname').notEmpty().withMessage('Este campo es obligatorio'),      
       body('email')
          .notEmpty().withMessage('Este campo es obligatorio').bail()
          .isEmail().withMessage('Debes colocar un email vaildo').bail()
@@ -20,13 +22,13 @@ module.exports = {
             return true
             
          }).withMessage('Email ya registrado'),     
-         //password
-         body('password')
-            .notEmpty().withMessage('Este es campo obligatorio').bail()
-            .isLength({min: 8}).withMessage('La contraseña debe tener por lo menos 8 caracteres').bail()
-            .custom((value, { req }) => req.body.password == req.body.passwordR).withMessage('Las passwords no coinciden'),
-         body('passwordR')
-            .notEmpty().withMessage('Este campo obligatorio')
+      
+      body('password')
+         .notEmpty().withMessage('Este campo es obligatorio').bail()
+         .isLength({min: 8}).withMessage('La contraseña debe tener por lo menos 8 caracteres').bail()
+         .custom((value, { req }) => req.body.password == req.body.passwordR).withMessage('Las passwords no coinciden'),
+      body('passwordR')
+         .notEmpty().withMessage('Este campo es obligatorio')
    ],
    login: [
       body('emaillogin')

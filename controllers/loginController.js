@@ -17,7 +17,7 @@ const controller = {
            return res.redirect('/');
         }
   
-        return res.render('login', { errors: errors.mapped(), old: req.body })
+        return res.render('login', { errors: errors.mapped(), oldS: req.body })
         /* const user= userModel.find(function(elemento){
             return elemento.email== req.body.emaillogin
         })

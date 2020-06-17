@@ -66,5 +66,6 @@ h1{
 @media(max-width:425px){
     .imagenes-home article{
         width: 100%;
+        margin: 0 auto;
     }
 }
