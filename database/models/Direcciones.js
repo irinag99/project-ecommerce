@@ -17,7 +17,8 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        timestamps: false
+        timestamps: false,
+        tableName: 'Direcciones'
     }
 
     const Direccion = sequelize.define(alias, cols, config);
@@ -25,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
 
 
     Direccion.associate = function (models) {
-            Direccion.belongsTo(models.Usuarios, {
+            Direccion.belongsTo(models.Usuario, {
                 as: 'usuario',
                 foreignKey: 'idUsuario',
             });

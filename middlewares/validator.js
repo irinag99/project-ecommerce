@@ -3,25 +3,32 @@ const jsonModel = require('../models/jsonModel');
 const userModel = jsonModel('users')
 const path = require('path');
 const bcrypt = require('bcryptjs');
+const db = require('../database/models/index.js')
+const sequelize = db.sequelize;
+const Usuario = db.Usuario;
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 
 module.exports = {
    register: [
-      body('name').notEmpty().withMessage('Este campo es obligatorio'),
-      body('surname').notEmpty().withMessage('Este campo es obligatorio'),      
+      body('nombre').notEmpty().withMessage('Este campo es obligatorio'),
+      body('apellido').notEmpty().withMessage('Este campo es obligatorio'),      
       body('email')
-         .notEmpty().withMessage('Este campo es obligatorio').bail()
-         .isEmail().withMessage('Debes colocar un email vaildo').bail()
-         .custom((value, { req }) => {
-
-            const user = userModel.find( e => e.email == req.body.email)
-
-            if(user){
-               return false
-            }
-
-            return true
-            
-         }).withMessage('Email ya registrado'),     
+            .notEmpty().withMessage('este campo es obligatorio').bail()
+            .isEmail().withMessage('debes colocar un email valido').bail()
+            .custom(value => {
+                return Usuario.findOne({
+                    where:{
+                        email: value
+                    }
+                })
+                .then(function(resultado){
+                    if(resultado){
+                        return Promise.reject('email en uso')
+                    }
+                })
+            }),   
       
       body('password')
          .notEmpty().withMessage('Este campo es obligatorio').bail()
@@ -32,20 +39,47 @@ module.exports = {
    ],
    login: [
       body('emaillogin')
-         .notEmpty().withMessage('Este campo es obligatorio').bail()
-         .isEmail().withMessage('Debes colocar un email vaildo').bail()
-         .custom((value, { req }) => {
+            .notEmpty().withMessage('este campo es obligatorio').bail()
+            .isEmail().withMessage('debes colocar un email valido').bail()
+            .custom(value => {
+                return Usuario.findOne({
+                    where:{
+                        email : value
+                    }
+                })
+                .then(function(resultado){
+                    if(resultado){
+                        return Promise.reject('el email no coincide')
+                    }
+                })
+            }),   
+            body('passwordlogin')
+            .notEmpty().withMessage('este campo es obligatorio').bail()
+            .isEmail().withMessage('debes colocar una contraseña valida').bail()
+            .custom(value => {
+                return Usuario.findOne({
+                  
+                  where:{
+                       password: value
+                    }
+                })
+                .then(function(resultado){
+                    if(resultado){
+                        return Promise.reject('la contraseña es incorrecta')
+                    }
+                })
+            }),  
 
-            const user = userModel.find(e => e.email == req.body.emaillogin)
+            //const user = userModel.find(e => e.email == req.body.emaillogin)
 
-            if(user){
-               if (bcrypt.compareSync(req.body.passwordlogin, user.password)) {
-                  return true
-               }
-            }
+            //if(user){
+              // if (bcrypt.compareSync(req.body.passwordlogin, user.password)) {
+                //  return true
+               //}
+           // }
 
-            return false;
+            //return false;
 
-         }).withMessage('La contraseña y el email no coinciden'),
+         //}).withMessage('La contraseña y el email no coinciden'),
    ]
 }

@@ -1,6 +1,11 @@
 const bcrypt = require("bcryptjs")
-const jsonModel = require("../models/jsonModel")
-const userModel = jsonModel('users')
+const db = require('../database/models/index.js')
+const sequelize = db.sequelize;
+const Usuario = db.Usuario;
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+//const jsonModel = require("../models/jsonModel")
+//const userModel = jsonModel('users')
 const { validationResult } = require('express-validator');
 
 const registerController = {
@@ -14,33 +19,20 @@ const registerController = {
       //return res.send(errors)
 
       if(errors.isEmpty()){
-         req.body.password = bcrypt.hashSync(req.body.password, 10);
-   
-         delete req.body.passwordR;
-   
-   
-         const newUser = {
-            id: userModel.nextID(),
-            ...req.body
-          
-         }
-   
-         userModel.save(newUser);
-   
-         return res.redirect('/');
-      }
+        
+         let usuario = req.body;
+         delete usuario.passwordR
+         usuario.password = bcrypt.hashSync(usuario.password, 10);
+         usuario.rol = 0;
 
-      return res.render('login', { errors: errors.mapped(), old: req.body})
-       /*  req.body.password = bcrypt.hashSync(req.body.password, 10);
-        delete req.body.passwordR
-         
-        const newUser ={
-            id:userModel.nextID(),
-            ...req.body,
+         //return res.send(usuario);
+
+         Usuario.create(usuario)
+            .then(function(){
+                res.redirect('/');
+            })  
         }
-        userModel.save(newUser);
-        res.redirect("/")
-    } */
+        return res.render('login', { errors: errors.mapped(), old: req.body})
     }
 }
 module.exports = registerController

@@ -28,21 +28,24 @@
             <h2>Registrate con tus datos</h2><br>
             <form class='register' action="/register" method="POST">
                 <% if(typeof errors != 'undefined'){ %>
-                <%	if(errors.name){ %>
+                <%	if(errors.nombre){ %>
                 <p class="errores" style="color: red; font-size: 13px">
-                    <%= errors.name.msg %>
+                    <%= errors.nombre.msg %>
                 </p>
                 <%	} %>
                 <% } %>
-                <input type="text" name='name' class='cien' placeholder='Nombre' value='<%=typeof(old)!='undefined'? old.name : ""%>'><br>
+                <input type="text" name='nombre' class='cien' placeholder='Nombre' 
+                value='<%=typeof(old)!='undefined'? old.name : ""%>'><br>
+                
                 <% if(typeof errors != 'undefined'){ %>
-                <%	if(errors.surname){ %>
+                <%	if(errors.apellido){ %>
                 <p class="errores" style="color: red; font-size: 13px">
-                    <%= errors.surname.msg %>
+                    <%= errors.apellido.msg %>
                 </p>
                 <%	} %>
                 <% } %>
-                <input type="text" name='surname' class='cien' placeholder="Apellido" value='<%=typeof(old)!='undefined'? old.surname:"" %>'><br>
+                <input type="text" name='apellido' class='cien' placeholder="Apellido" value='<%=typeof(old)!='undefined'? old.surname:"" %>'><br>
+                
                 <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.email){ %>
                         <p class="errores" style="color: red; font-size: 13px">
@@ -50,16 +53,18 @@
                         </p> 
                     <%	} %>
                 <% } %>
-               
-                <input type="email" name='email' class='cien' placeholder="Email" value=' <%=typeof(old)!='undefined'? old.email: ''%> '><br>
-                 <% if(typeof errors != 'undefined'){ %>
+                <input type="email" name='email' class='cien' placeholder="Email" value=' 
+                <%=typeof(old)!='undefined'? old.email: ''%> '><br>
+                
+                <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.password){ %>
                         <p class="errores" style="color: red; font-size: 13px"><%= errors.password.msg %></p>
                     
                     <%	} %>
                     <% } %>
                 <input type="password" name='password' class='cien' placeholder='Contraseña'><br>
-               <% if(typeof errors != 'undefined'){ %>
+               
+                <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.passwordR){ %>
                         <p class="errores" style="color: red; font-size: 13px">
                          <%= errors.passwordR.msg %>
@@ -69,6 +74,7 @@
                 <input type="password" name='passwordR' class='cien' placeholder="Repetir Contraseña"><br>
          
                 <button type='submit'>Crear Usuario</button>
+                
                 <p class='terminos-condiciones'>*Al hacer click en "Crear Usuario" estas aceptando los terminos y
                 condiciones de Farmacia. <a href="">Para ver los términos y condiciones haga click acá.</a></p>
             </form>

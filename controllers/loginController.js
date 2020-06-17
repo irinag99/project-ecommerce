@@ -1,7 +1,12 @@
+//const jsonModel = require("../models/jsonModel")
+//const userModel = jsonModel('users')
 const bcrypt = require("bcryptjs")
-const jsonModel = require("../models/jsonModel")
-const userModel = jsonModel('users')
 const { validationResult } = require('express-validator');
+const db = require('../database/models/index.js')
+const sequelize = db.sequelize;
+const Usuario = db.Usuario;
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const controller = {
     index: function(req, res){
@@ -12,7 +17,7 @@ const controller = {
 
         if(errors.isEmpty()){
   
-           const user = userModel.find( e => e.email == req.body.emaillogin);
+           //const user = userModel.find( e => e.email == req.body.emaillogin);
      
            return res.redirect('/');
         }

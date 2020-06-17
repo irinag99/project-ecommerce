@@ -27,17 +27,17 @@ module.exports = (sequelize, dataTypes) => {
         const Carrito = sequelize.define(alias, cols, config);
 
         Carrito.associate = function (models) {
-            Carrito.belongsTo(models.Usuarios, {
+            Carrito.belongsTo(models.Usuario, {
                 as: 'usuario',
                 foreignKey: 'idUsuario',
             });
 
-            Carrito.belongsTo(models.Pedidos, {
+            Carrito.belongsTo(models.Pedido, {
                 as: 'pedido',
                 foreignKey: 'idPedido',
             });
 
-            Carrito.belongsTo(models.Productos, {
+            Carrito.belongsTo(models.Producto, {
                 as: 'producto',
                 foreignKey: 'idProducto',
             });
