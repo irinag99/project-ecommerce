@@ -41,7 +41,7 @@ module.exports = {
       body('emaillogin')
             .notEmpty().withMessage('este campo es obligatorio').bail()
             .isEmail().withMessage('debes colocar un email valido').bail()
-            .custom(value => {
+            .custom((value, {req}) => {
                 return Usuario.findOne({
                     where:{
                         email : value
@@ -49,37 +49,13 @@ module.exports = {
                 })
                 .then(function(resultado){
                     if(resultado){
-                        return Promise.reject('el email no coincide')
+                        if(!bcrypt.compareSync(req.body.passwordlogin, resultado.password)){
+                            return Promise.reject('la contraseña o el email no coinciden')
+                        }
+                    }else{
+                        return Promise.reject('la contraseña o el email no coinciden')
                     }
                 })
             }),   
-            body('passwordlogin')
-            .notEmpty().withMessage('este campo es obligatorio').bail()
-            .isEmail().withMessage('debes colocar una contraseña valida').bail()
-            .custom(value => {
-                return Usuario.findOne({
-                  
-                  where:{
-                       password: value
-                    }
-                })
-                .then(function(resultado){
-                    if(resultado){
-                        return Promise.reject('la contraseña es incorrecta')
-                    }
-                })
-            }),  
-
-            //const user = userModel.find(e => e.email == req.body.emaillogin)
-
-            //if(user){
-              // if (bcrypt.compareSync(req.body.passwordlogin, user.password)) {
-                //  return true
-               //}
-           // }
-
-            //return false;
-
-         //}).withMessage('La contraseña y el email no coinciden'),
    ]
 }

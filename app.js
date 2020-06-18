@@ -1,6 +1,8 @@
 const express = require ("express");
 const app = express();
 const path = require("path");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 
 //SETEAR ARCHIVOS ESTÁTICOS , CSS , IMAGENES , ETC. 
@@ -13,6 +15,12 @@ app.set("view engine","ejs");
 //CAPTURAR DATOS QUE RECIBAMOS POR POST, ALMACENARNOS EN FORMA DE OBJETO LITERAL Y PODER GUARDARLOS EN FORMATO JSON
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(session({
+    secret: 'proyecto',
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(cookieParser());
 
 // RUTAS !
 const homeRouter= require("./routes/homeRouter")

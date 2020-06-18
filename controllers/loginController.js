@@ -14,27 +14,28 @@ const controller = {
     },
     process: function(req,res){
         const errors = validationResult(req);
-
         if(errors.isEmpty()){
-  
-           //const user = userModel.find( e => e.email == req.body.emaillogin);
-     
-           return res.redirect('/');
+            
+            Usuario.findOne({
+                where: {
+                    email: req.body.emaillogin
+                }
+            })
+                .then(function(usuario){
+                    let u = usuario;
+                    delete u.password;
+                    req.session.user = u;
+                    if(req.body.remember){
+                        res.cookie('usuario', u.email, {maxAge: 1000*60*60});
+                    }
+                    return res.redirect('/');
+                })
+        }else{
+            return res.render('login', { errors: errors.mapped(), oldS: req.body })
         }
   
-        return res.render('login', { errors: errors.mapped(), oldS: req.body })
-        /* const user= userModel.find(function(elemento){
-            return elemento.email== req.body.emaillogin
-        })
-        if(user){
-            if(bcrypt.compareSync(req.body.passwordlogin, user.password)){
-                res.redirect("/")
-            }else{
-               return res.send("password incorrecta")
-            }
-        }else{
-            return res.send("mail no encontrado")
-        } */
+        
+        
     }
     }
 
