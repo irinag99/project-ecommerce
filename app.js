@@ -3,8 +3,8 @@ const app = express();
 const path = require("path");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-
-
+const authMiddleware = require('./middlewares/authMiddleware')
+const guestMiddleware = require('./middlewares/guestMiddleware')
 //SETEAR ARCHIVOS ESTÁTICOS , CSS , IMAGENES , ETC. 
 app.use(express.static(__dirname + '/public'));
 
@@ -28,14 +28,15 @@ app.use ("/", homeRouter);
 const productView = require("./routes/productView");
 app.use("/product", productView);
 const loginRouter = require('./routes/loginRouter');
-app.use('/login', loginRouter);
+app.use('/login',guestMiddleware, loginRouter);
 const carritoRouter = require('./routes/carritoRouter')
-app.use("/carrito",carritoRouter)
+app.use("/carrito",authMiddleware,carritoRouter)
 const categoriaRouter = require('./routes/categoriaRouter');
 app.use('/categoria', categoriaRouter);
 const registerRouter = require('./routes/registerRouter');
-app.use('/register', registerRouter);
-
+app.use('/register',guestMiddleware ,registerRouter);
+const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware')
+app.use(cookieAuthMiddleware)
 // EMPEZAR SERVER
 
 app.listen(3030,()=>{console.log("Server running port 3030")});
