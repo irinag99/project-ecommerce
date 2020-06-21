@@ -31,8 +31,10 @@ const registerController = {
             .then(function(){
                 res.redirect('/');
             })  
+        }else{
+           return res.render('login', { errors: errors.mapped(), old: req.body}) 
         }
-        return res.render('login', { errors: errors.mapped(), old: req.body})
+        
     }
 }
 module.exports = registerController

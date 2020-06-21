@@ -4,18 +4,25 @@ const Usuario = db.Usuario;
 const Sequelize = require('sequelize');
 
 function cookieAuthMiddleware (req,res,next){
-    if(req.cookies.usuario  && req.session.user == undefined){
+    if(req.session.user){
+        res.locals.user = req.session.user
+        return next()
+    }else if(req.cookies.user){
         Usuario.findOne({
             where: {
-                email: req.cookies.usuario
+                email: req.cookies.user
             }
         })
             .then(function(usuario){
                 let u = usuario;
                 delete u.password;
                 req.session.user = u;
+                res.locals.user = u;
+                return next();
             })
-    }next();
+    }else{
+        return next();
+    }
 }
 
 module.exports = cookieAuthMiddleware

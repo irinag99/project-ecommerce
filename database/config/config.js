@@ -4,11 +4,12 @@ module.exports = {
     "password": null,
     "database": "proyectoint",
     "host": "127.0.0.1",
+    "port":3306,
     "dialect": "mysql",
     "operatorsAliases": 0,
     "define": {
-      "paranoid": true,
-      underscored: 1
+      "paranoid": 1,
+      "underscored": 1
     }
   },
   "test": {

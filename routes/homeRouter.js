@@ -28,4 +28,10 @@ router.get("/prueba",function(req,res){
     res.send("estas logeado "+ req.session.user.email)
   }
 })
+
+router.post('/logout', function(req,res){
+  req.session.destroy();
+  res.clearCookie('user')
+  res.redirect('/')
+})
 module.exports = router;
