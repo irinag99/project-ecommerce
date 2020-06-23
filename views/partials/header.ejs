@@ -13,10 +13,11 @@
         <% }else{ %>
         <div class='titles-2' id='menu'>
             <ul>
-                <form action="/logout" method="POST">
-                    <button type="submit">Hola, <%= user.nombre %></button>
+                <li><a class="boton-menu user" href="/user/profile"> <%= user.nombre %> </a></li>
+                <li> <form action="/logout" method="POST">
+                    <button type="submit" class="boton-menu">Cerrar sesion</button>
 
-                </form>
+                </form></li>
 
             </ul>
         </div>

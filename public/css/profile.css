@@ -1,0 +1,22 @@
+div.contenedor-total-profile{
+    border-radius: 21px;
+    display: flex;
+    border: #E5E5E5 solid 1px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50vh;
+    background-color: white;
+    margin-top: 10vh;
+
+}
+h2{
+    align-self: center;
+}
+div.contenedor-parcial-profile{
+    
+    border-bottom: white 1px outset;
+
+}

@@ -4,27 +4,37 @@
 
 <head>
     <%-include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/styleshome.css">
+   
+    <link rel="stylesheet" href="/css/profile.css">
     <title>Farmacia / Usuario</title>
 </head>
 
 <body>
     <%-include('../partials/header.ejs') %>
-<div>
+<div class="contenedor-total-profile">
 
-
-    <div>
-        <h2> <%= user.nombre + user.apellido %>  </h2>
+    <h2> Datos personales </h2>
+    <div class="contenedor-parcial-profile">
+        
+        <h3>Nombre</h3>
+        <p><%=user.nombre %> <%=user.apellido%>  </p>
+        <h3>Email  </h3>
+        <p><%=user.email %></p>
+        <h3>Avatar </h3>
+        <p><%=user.avatar %></p>
+        <h3>Descripcion</h3>
+        <p><%=user.description %></p>
 
     </div>
-
-    <div>
-
+    <h2>Direcciones</h2>
+    <div class="contenedor-parcial-profile">
+        
+        <h3></h3>
     
     </div>
-    
-    <div>
-
+    <h2>Compras</h2>
+    <div class="contenedor-parcial-profile">
+           
 
     </div>
 
