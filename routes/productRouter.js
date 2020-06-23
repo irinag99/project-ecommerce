@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const productViewController = require("../controllers/productViewController"); 
+const productController = require("../controllers/productController"); 
 
 
 // GUARDAR ARCHIVOS CON MULTER 
@@ -20,6 +20,8 @@ var storage = multer.diskStorage({
 
   // RUTAS
   
-  router.get("/", productViewController.vista);
+  router.get("/", productController.vista);
+  router.get('/create', productController.create);
+  router.post('/create', upload.single('imagen') ,productController.processCreate);
 
 module.exports = router;

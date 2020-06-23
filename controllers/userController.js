@@ -1,5 +1,3 @@
-//const jsonModel = require("../models/jsonModel")
-//const userModel = jsonModel('users')
 const bcrypt = require("bcryptjs")
 const { validationResult } = require('express-validator');
 const db = require('../database/models/index.js')
@@ -8,11 +6,11 @@ const Usuario = db.Usuario;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-const controller = {
-    index: function(req, res){
-        res.render('login')
+const userController = {
+    login: function(req, res){
+        res.render('user/login')
     },
-    process: function(req,res){
+    processLogin: function(req,res){
         const errors = validationResult(req);
         if(errors.isEmpty()){
             
@@ -31,12 +29,40 @@ const controller = {
                     return res.redirect('/');
                 })
         }else{
-            return res.render('login', { errors: errors.mapped(), oldS: req.body })
+            return res.render('user/login', { errors: errors.mapped(), oldS: req.body })
         }
   
+    },
+
+    processRegister: function(req,res) {
         
+      const errors = validationResult(req);
+      
+      //return res.send(errors)
+
+      if(errors.isEmpty()){
         
-    }
+         let usuario = req.body;
+         delete usuario.passwordR
+         usuario.password = bcrypt.hashSync(usuario.password, 10);
+         usuario.rol = 0;
+
+         //return res.send(usuario);
+
+         Usuario.create(usuario)
+            .then(function(){
+                res.redirect('/');
+            })  
+        }else{
+           return res.render('user/login', { errors: errors.mapped(), old: req.body}) 
+        }
+        
+    },
+    profile: function(req, res){
+        return res.render('user/profile');
     }
 
-module.exports = controller;
+}
+
+
+module.exports = userController;

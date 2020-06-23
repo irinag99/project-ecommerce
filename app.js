@@ -3,9 +3,9 @@ const app = express();
 const path = require("path");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const authMiddleware = require('./middlewares/authMiddleware')
-const guestMiddleware = require('./middlewares/guestMiddleware')
-const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware')
+const authMiddleware = require('./middlewares/authMiddleware');
+const guestMiddleware = require('./middlewares/guestMiddleware');
+const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
 
 //SETEAR ARCHIVOS ESTÁTICOS , CSS , IMAGENES , ETC. 
 app.use(express.static(__dirname + '/public'));
@@ -23,21 +23,27 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(cookieParser());
-app.use(cookieAuthMiddleware)
+app.use(cookieAuthMiddleware);
 
 // RUTAS !
-const homeRouter= require("./routes/homeRouter")
+const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);
-const productView = require("./routes/productView");
-app.use("/product", productView);
-const loginRouter = require('./routes/loginRouter');
-app.use('/login',guestMiddleware, loginRouter);
-const carritoRouter = require('./routes/carritoRouter')
-app.use("/carrito",authMiddleware,carritoRouter)
+
+const productRouter = require("./routes/productRouter");
+app.use("/product", productRouter);
+
+const userRouter = require('./routes/userRouter');
+app.use('/user', userRouter);
+
+const carritoRouter = require('./routes/carritoRouter');
+app.use("/carrito",authMiddleware,carritoRouter);
+
 const categoriaRouter = require('./routes/categoriaRouter');
 app.use('/categoria', categoriaRouter);
-const registerRouter = require('./routes/registerRouter');
-app.use('/register',guestMiddleware ,registerRouter);
+
+
+
+
 
 // EMPEZAR SERVER
 
