@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="/css/productView.css">
+
 
 <head>
     <%-include('../partials/head.ejs') %>
    
     <link rel="stylesheet" href="/css/profile.css">
+    <script src="/js/editUser.js"></script>
     <title>Farmacia / Usuario</title>
 </head>
 
@@ -16,15 +17,36 @@
     <h2> Datos personales </h2>
     <div class="contenedor-parcial-profile">
         
+        <div class="informacion">
+            
+
         <h3>Nombre</h3>
         <p><%=user.nombre %> <%=user.apellido%>  </p>
         <h3>Email  </h3>
         <p><%=user.email %></p>
         <h3>Avatar </h3>
-        <p><%=user.avatar %></p>
+        <img src="<%= user.avatar %> " alt="">
         <h3>Descripcion</h3>
-        <p><%=user.description %></p>
+        <p><%=user.descripcion %></p>
+        <button type="submit" class="edicionUsuario">Editá tu usuario</button>
 
+        </div>
+
+        <div class="showEdit">
+
+            <form method="POST" action="/user/profile/edit">
+                <input type="text" name="nombre" placeholder="Editá tu nombre" value="<%= user.nombre %>"> <br>
+                <input type="text" name="apellido" placeholder="Apellido" value="<%= user.apellido %>"> <br>
+                <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
+                <textarea name="descripcion" id="" cols="30" rows="10"
+                    placeholder="Agregá una descripción !"></textarea> <br>
+                <input type="file" name="avatar"> <br>
+                <button type="submit">Enviar</button>
+                <button type="button" class="cancelar">Cancelar</button>
+            </form>
+
+        </div>
+        
     </div>
     <h2>Direcciones</h2>
     <div class="contenedor-parcial-profile">

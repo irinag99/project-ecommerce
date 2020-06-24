@@ -80,30 +80,28 @@ div.header-container div.logo a{
     align-items: center;
 }
 
-header div.header-container li.boton-desplegable{
-    display: none;
-    color: #004586;
+#botonMenu{
+    display:none;
 }
-header div.header-container li.boton-desplegable img{
-    padding: 4px 0;
-    margin: auto;
+.desaparecer{
+    display:none;
 }
-header div.titles-2 .user{
-    font-size: 16px;
-    margin: auto;
+header label{
+    flex-wrap: wrap;
 }
-header div.titles-2 li form{
-    margin: auto;
-    padding-bottom: 7px;
+header label:hover{ 
+    cursor: pointer;
+    background-color: white;
+    color: black;
 }
-header div.titles-2 li form button{
-        width: 100%;
-        height: 100%;
-        font-size: 15px;
+.menu ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
+.menu, header label{ display: none}
 
 /* MediaQuery Mobile */
 @media(max-width:435px){
@@ -124,8 +122,36 @@ header div.titles-2 li form button{
     header div.imagenes{
         order:0;
     }
-    header div.header-container li.boton-desplegable{
+
+    header label{
+      border-radius: 4px;
+      display: inline-block;
+      margin: 1px 5px;
+      padding: 2px 4px;
+
+    }
+    
+    .desaparecer{
+        display:block;
+        
+    }
+    #botonMenu{
+        display: none;
+    }
+    header label img{
+        width: 25px;
+    }
+    .menu{
+        position: absolute;
+       
+        top: 65px;
+        background-color:#004586;
+    }
+    
+    #botonMenu:checked ~.menu{
+        margin: 0;
         display: block;
     }
+#ulImage{align-items: center;}
 
 }

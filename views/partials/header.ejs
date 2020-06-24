@@ -24,9 +24,19 @@
         <% } %>
 
         <div class='imagenes'>
-            <ul>
-                <li class='boton-desplegable'><a class="boton-menu" href="#"><img src="/images/boton-desplegable.png"
-                            alt=""></a></li>
+            <ul id="ulImage">
+                
+                <input type="checkbox" id="botonMenu">
+                <label for="botonMenu"><img src="/images/boton-desplegable.png" alt=""></label>
+                <nav class="menu">
+                 <ul>
+                     <li><a class="boton-menu" href="/"> Home </a></li>
+                     <li><a class="boton-menu" href="/user/login"> Ingresar </a></li>
+                 </ul>
+
+                </nav>
+                
+
                 <li><a class="boton-menu" href="/carrito"><img src="/images/carrito.png" alt=""></a></li>
                 <li><a class="boton-menu"><img src="/images/lupa.png" alt=""> </a></li>
             </ul>

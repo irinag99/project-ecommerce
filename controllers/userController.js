@@ -60,6 +60,26 @@ const userController = {
     },
     profile: function(req, res){
         return res.render('user/profile');
+    },
+    processProfile: (req,res)=>{
+        Usuario.update(req.body, {
+            where:{
+                email: req.body.email
+            }
+        })
+        .then(function(resultado){
+            Usuario.findOne({
+                where:{
+                    email: req.body.email
+                }
+            })
+            
+        })
+        .then((e)=>{
+            console.log(e)
+            req.session.user = e
+            return res.redirect("/user/profile")
+        })
     }
 
 }

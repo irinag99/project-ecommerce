@@ -20,3 +20,6 @@ div.contenedor-parcial-profile{
     border-bottom: white 1px outset;
 
 }
+.showEdit {
+    display: none;
+}
