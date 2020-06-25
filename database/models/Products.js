@@ -39,7 +39,11 @@ module.exports = (sequelize, dataTypes) => {
             as: 'category',
             foreignKey: 'idCategory',
         });
+
+        
     }
+
+
      
 
     return Product

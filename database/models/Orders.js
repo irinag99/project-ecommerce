@@ -21,8 +21,15 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Order = sequelize.define(alias, cols, config);
-
-
+    
+    
+    Order.associate = function(models){
+        Order.hasMany(models.Cart, {
+            as: 'cart',
+            foreignKey: 'idOrder',
+        });
+    }
+   
 
 
     return Order
