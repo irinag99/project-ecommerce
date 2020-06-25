@@ -23,3 +23,7 @@ div.contenedor-parcial-profile{
 .showEdit {
     display: none;
 }
+
+div.img {
+    width:40px;
+}

@@ -62,13 +62,19 @@ const userController = {
         return res.render('user/profile');
     },
     processProfile: (req,res)=>{
-        Usuario.update(req.body, {
+        let update = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            description: req.body.description,
+            avatar: req.files[0].filename
+        }
+         Usuario.update(update, {
             where:{
                 email: req.body.email
             }
         })
         .then(function(resultado){
-            Usuario.findOne({
+            return Usuario.findOne({
                 where:{
                     email: req.body.email
                 }
@@ -76,7 +82,6 @@ const userController = {
             
         })
         .then((e)=>{
-            console.log(e)
             req.session.user = e
             return res.redirect("/user/profile")
         })

@@ -31,11 +31,10 @@ div.header-container li {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     display: flex;
+    font-size: 15px;
     
 }
 .boton-menu {
-    display: flex;
-    flex-wrap: wrap;
     background-color:#004586;
     padding: 2px 4px;
     text-align: center;
@@ -101,7 +100,30 @@ header label:hover{
     flex-direction: column;
 }
 
+
 .menu, header label{ display: none}
+
+
+
+form button.cerrar-sesion{
+    width:100%;
+    background-color:#004586;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    display:inline-block;
+    font-size: 15px;
+    padding: 0 0 5px 0;
+}
+
+form.boton-menu:hover ~ button.cerrar-sesion{
+    color: black;
+    background-color: white;
+
+}
+header form {
+    width: 100%;
+}
+
 
 /* MediaQuery Mobile */
 @media(max-width:435px){

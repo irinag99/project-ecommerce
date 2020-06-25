@@ -13,11 +13,17 @@
         <% }else{ %>
         <div class='titles-2' id='menu'>
             <ul>
-                <li><a class="boton-menu user" href="/user/profile"> <%= user.nombre %> </a></li>
-                <li> <form action="/logout" method="POST">
-                    <button type="submit" class="boton-menu">Cerrar sesion</button>
+                <li><a class="boton-menu" href="/"> Home </a></li>
+                <li>
+                    <a class="boton-menu user" href="/user/profile">Bienvenido, <%= user.nombre %>! </a>
+                </li>
 
-                </form></li>
+                <li>
+                    <form action="/logout" method="POST" >
+                        <button type="submit" class="boton-menu cerrar-sesion">Cerrar sesion</button>
+
+                    </form>
+                </li>
 
             </ul>
         </div>
@@ -25,17 +31,17 @@
 
         <div class='imagenes'>
             <ul id="ulImage">
-                
+
                 <input type="checkbox" id="botonMenu">
                 <label for="botonMenu"><img src="/images/boton-desplegable.png" alt=""></label>
                 <nav class="menu">
-                 <ul>
-                     <li><a class="boton-menu" href="/"> Home </a></li>
-                     <li><a class="boton-menu" href="/user/login"> Ingresar </a></li>
-                 </ul>
+                    <ul>
+                        <li><a class="boton-menu" href="/"> Home </a></li>
+                        <li><a class="boton-menu" href="/user/login"> Ingresar </a></li>
+                    </ul>
 
                 </nav>
-                
+
 
                 <li><a class="boton-menu" href="/carrito"><img src="/images/carrito.png" alt=""></a></li>
                 <li><a class="boton-menu"><img src="/images/lupa.png" alt=""> </a></li>

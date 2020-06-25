@@ -12,7 +12,7 @@ const userController = require("../controllers/userController");
 const multer = require("multer")
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/images/imagenesUsuarios')
+    cb(null, __dirname +'/../public/images/avatars')
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -29,7 +29,7 @@ router.get("/login", guestMiddleware ,userController.login);
 router.post("/login", validator.login, userController.processLogin);
 router.post("/register", validator.register, userController.processRegister);
 router.get('/profile', authMiddleware, userController.profile);
-router.post('/profile/edit', authMiddleware, userController.processProfile);
+router.post('/profile/edit', upload.any(), authMiddleware, userController.processProfile);
 
 module.exports = router;
 
