@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs")
 const { validationResult } = require('express-validator');
 const db = require('../database/models/index.js')
 const sequelize = db.sequelize;
-const Usuario = db.Usuario;
+const User = db.User;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -14,7 +14,7 @@ const userController = {
         const errors = validationResult(req);
         if(errors.isEmpty()){
             
-            Usuario.findOne({
+            User.findOne({
                 where: {
                     email: req.body.emaillogin
                 }
@@ -49,7 +49,7 @@ const userController = {
 
          //return res.send(usuario);
 
-         Usuario.create(usuario)
+         User.create(usuario)
             .then(function(){
                 res.redirect('/');
             })  
@@ -63,18 +63,18 @@ const userController = {
     },
     processProfile: (req,res)=>{
         let update = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            name: req.body.name,
+            surname: req.body.surname,
             description: req.body.description,
             avatar: req.files[0].filename
         }
-         Usuario.update(update, {
+         User.update(update, {
             where:{
                 email: req.body.email
             }
         })
         .then(function(resultado){
-            return Usuario.findOne({
+            return User.findOne({
                 where:{
                     email: req.body.email
                 }

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Producto';
+    const alias = 'User';
     const cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,24 +9,42 @@ module.exports = (sequelize, dataTypes) => {
             unsigned: true,
             notNull: true,
         },
-        nombre: {
+        name: {
             type: dataTypes.STRING,
             notNull: true
         },
 
-        descripcion: {
-            type: dataTypes.STRING,
-        },
-
-        imagen: {
+        surname: {
             type: dataTypes.STRING,
             notNull: true
         },
 
-        cantidad: {
+        email: {
+            type: dataTypes.STRING,
+            notNull: true,
+            unique: true
+        },
+
+        password: {
+            type: dataTypes.STRING,
+            notNull: true
+        },
+
+        role: {
             type: dataTypes.INTEGER,
-            notNull: true
+            default: 0,
         },
+
+        avatar: {
+            type: dataTypes.STRING,
+        },
+
+        description: {
+            type: dataTypes.STRING,
+        },
+
+
+
 
 
     }
@@ -35,16 +53,9 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    const Producto = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
-     
-    Producto.associate = function (models) {
-        Producto.belongsTo(models.Categoria, {
-            as: 'categoria',
-            foreignKey: 'idCategoria',
-        });
-    }
-     
 
-    return Producto
+
+    return User
 }

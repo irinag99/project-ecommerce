@@ -3,20 +3,20 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models/index.js')
 const sequelize = db.sequelize;
-const Usuario = db.Usuario;
+const User = db.User;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 
 module.exports = {
    register: [
-      body('nombre').notEmpty().withMessage('Este campo es obligatorio'),
-      body('apellido').notEmpty().withMessage('Este campo es obligatorio'),      
+      body('name').notEmpty().withMessage('Este campo es obligatorio'),
+      body('surname').notEmpty().withMessage('Este campo es obligatorio'),      
       body('email')
             .notEmpty().withMessage('este campo es obligatorio').bail()
             .isEmail().withMessage('debes colocar un email valido').bail()
             .custom(value => {
-                return Usuario.findOne({
+                return User.findOne({
                     where:{
                         email: value
                     }
@@ -40,7 +40,7 @@ module.exports = {
             .notEmpty().withMessage('este campo es obligatorio').bail()
             .isEmail().withMessage('debes colocar un email valido').bail()
             .custom((value, {req}) => {
-                return Usuario.findOne({
+                return User.findOne({
                     where:{
                         email : value
                     }

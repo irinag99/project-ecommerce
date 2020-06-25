@@ -35,7 +35,7 @@
                 </p>
                 <%	} %>
                 <% } %>
-                <input type="text" name='nombre' class='cien' placeholder='Nombre' 
+                <input type="text" name='name' class='cien' placeholder='Nombre' 
                 value='<%=typeof(old)!='undefined'? old.name : ""%>'><br>
                 
                 <% if(typeof errors != 'undefined'){ %>
@@ -45,7 +45,7 @@
                 </p>
                 <%	} %>
                 <% } %>
-                <input type="text" name='apellido' class='cien' placeholder="Apellido" value='<%=typeof(old)!='undefined'? old.surname:"" %>'><br>
+                <input type="text" name='surname' class='cien' placeholder="Apellido" value='<%=typeof(old)!='undefined'? old.surname:"" %>'><br>
                 
                 <% if(typeof errors != 'undefined'){ %>
                     <%	if(errors.email){ %>

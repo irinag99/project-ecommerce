@@ -1,6 +1,6 @@
 const db = require('../database/models/index.js')
 const sequelize = db.sequelize;
-const Usuario = db.Usuario;
+const User = db.User;
 const Sequelize = require('sequelize');
 
 function cookieAuthMiddleware (req,res,next){
@@ -14,7 +14,7 @@ function cookieAuthMiddleware (req,res,next){
             }
         })
             .then(function(usuario){
-                let u = usuario;
+                let u = user;
                 delete u.password;
                 req.session.user = u;
                 res.locals.user = u;

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Categoria';
+    const alias = 'Order';
     const cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,24 +9,21 @@ module.exports = (sequelize, dataTypes) => {
             unsigned: true,
             notNull: true,
         },
-        nombre: {
-            type: dataTypes.STRING,
+        total: {
+            type: dataTypes.INTEGER,
             notNull: true
         },
 
-        descripcion: {
-            type: dataTypes.INTEGER
-        },
     }
 
     const config = {
         timestamps: false
     }
 
-    const Categoria = sequelize.define(alias, cols, config);
+    const Order = sequelize.define(alias, cols, config);
 
 
 
 
-    return Categoria
+    return Order
 }
