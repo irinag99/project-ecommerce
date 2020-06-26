@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Adress';
+    const alias = 'Address';
     const cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             unsigned: true,
             notNull: true,
         },
-        direccion: {
+        address: {
             type: dataTypes.STRING,
             notNull: true
         },
@@ -18,15 +18,15 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         timestamps: false,
-        tableName: 'Adresses'
+        tableName: 'Addresses'
     }
 
-    const Adress = sequelize.define(alias, cols, config);
+    const Address = sequelize.define(alias, cols, config);
      
 
 
-    Adress.associate = function (models) {
-            Adress.belongsTo(models.User, {
+    Address.associate = function (models) {
+            Address.belongsTo(models.User, {
                 as: 'user',
                 foreignKey: 'idUser',
             });
@@ -34,5 +34,5 @@ module.exports = (sequelize, dataTypes) => {
 
 
 
-    return Adress
+    return Address
 }
