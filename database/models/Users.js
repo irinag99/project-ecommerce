@@ -64,8 +64,8 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         });
 
-        User.hasMany(models.Adress, {
-             as: 'adress',
+        User.hasMany(models.Address, {
+             as: 'address',
              foreignKey: 'idUser',
         });
     }
