@@ -9,7 +9,7 @@ module.exports = {
     "operatorsAliases": 0,
     "define": {
       "paranoid": 1,
-      "underscored": 1
+      //"underscored": 1
     }
   },
   "test": {

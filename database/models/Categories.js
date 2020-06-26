@@ -17,6 +17,10 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.INTEGER
         },
+        
+        icon: {
+            type: dataTypes.STRING
+        }
     }
 
     const config = {

@@ -38,8 +38,8 @@ app.use('/user', userRouter);
 const carritoRouter = require('./routes/carritoRouter');
 app.use("/carrito",authMiddleware,carritoRouter);
 
-const categoriaRouter = require('./routes/categoriaRouter');
-app.use('/categoria', categoriaRouter);
+const categoryRouter = require('./routes/categoryRouter');
+app.use('/category', categoryRouter);
 
 
 

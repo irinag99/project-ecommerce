@@ -23,6 +23,13 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
 
+        idCategory: {
+            type: dataTypes.INTEGER
+        },
+
+        price: {
+            type: dataTypes.DECIMAL
+        }
 
 
     }
@@ -40,7 +47,13 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'idCategory',
         });
 
-        
+        Product.belongsToMany(models.Cart, {
+            as: 'cart',
+            through: 'productCart',
+            foreignKey: 'idcart',
+            otherKey: 'idProduct',
+            timestamps: false
+        });  
     }
 
 

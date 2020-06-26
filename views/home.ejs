@@ -12,56 +12,23 @@
     <!--slider con js -->
     <div class="banner">
         
-            <img src="/images/banner.jpg" alt="Banner homepage">
+            <!--<img src="/images/banner.jpg" alt="Banner homepage"> -->
         
     </div>
 
       <h1>Visitá nuestros productos</h1>
 
     <section class="imagenes-home">
-        <article>
-            <a class="texto" href='/categoria'> Higiene </a>
-            <a href='/categoria'><img src="/images/higiene.png" alt="Logo Higiene">
-                
-            </a>
+<% categories.forEach(category => { %>
+    <a href='/category/<%= category.id %> '>
+    <article>
 
-        </article>
-        <article>
-            <a class="texto" href='/categoria'> Perfumería </a>
-            <a href='/categoria'><img src="/images/perfumeria.png" alt="Logo Perfumeria">
-                
-            </a>
+    <h3> <%= category.name %>  </h3>
+   <img src="/images/<%= category.icon %>" alt="Logo Higiene">
+    </article>
+</a>
+<% }) %>
 
-        </article>
-        <article>
-            <a class="texto" href='/categoria'> Medicamentos </a>
-            <a href='/categoria'><img src="/images/medicamentos.png" alt="Logo Medicamentos">
-                
-            </a>
-
-        </article>
-    
-        <article>
-            <a class="texto" href='/categoria'> Insumos </a>
-            <a href='/categoria'><img src="/images/insumos.png" alt="Logo Insumos">
-               
-            </a>
-
-        </article>
-        <article>
-            <a class="texto" href='/categoria'> COVID-19 </a>
-            <a href='/categoria'><img src="/images/coronavirus.png" alt="Logo Coronavirus">
-                
-            </a>
-        
-        </article>
-        <article>
-            <a class="texto" href='/categoria'> Maternidad </a>
-            <a href='/categoria'><img src="/images/maternidad.png" alt="Logo Maternidad">
-                
-            </a>
-        
-        </article>
     </section>
     <%-include('./partials/footer.ejs') %>
 

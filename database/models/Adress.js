@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             unsigned: true,
             notNull: true,
         },
-        direccion: {
+        adress: {
             type: dataTypes.STRING,
             notNull: true
         },

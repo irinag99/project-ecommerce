@@ -8,12 +8,12 @@ function cookieAuthMiddleware (req,res,next){
         res.locals.user = req.session.user
         return next()
     }else if(req.cookies.user){
-        Usuario.findOne({
+        User.findOne({
             where: {
                 email: req.cookies.user
             }
         })
-            .then(function(usuario){
+            .then(function(user){
                 let u = user;
                 delete u.password;
                 req.session.user = u;
