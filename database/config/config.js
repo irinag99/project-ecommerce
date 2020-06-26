@@ -1,15 +1,14 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": '',
+    "password": 'root',
     "database": "proyectoint",
     "host": "127.0.0.1",
-    "port":3306,
+    "port":8889,
     "dialect": "mysql",
     "operatorsAliases": 0,
     "define": {
       "paranoid": 1,
-      //"underscored": 1
     }
   },
   "test": {

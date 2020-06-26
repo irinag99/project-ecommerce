@@ -14,7 +14,7 @@ const productController = {
         
     },
     create: (req, res) => {
-        res.render('cargarProducto');
+        return res.render('addProduct');
     },
     processCreate: (req, res) => {
 

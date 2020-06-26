@@ -35,8 +35,8 @@ app.use("/product", productRouter);
 const userRouter = require('./routes/userRouter');
 app.use('/user', userRouter);
 
-const carritoRouter = require('./routes/carritoRouter');
-app.use("/carrito",authMiddleware,carritoRouter);
+const cartRouter = require('./routes/cartRouter');
+app.use("/cart",authMiddleware,cartRouter);
 
 const categoryRouter = require('./routes/categoryRouter');
 app.use('/category', categoryRouter);

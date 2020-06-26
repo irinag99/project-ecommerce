@@ -20,8 +20,9 @@ var storage = multer.diskStorage({
 
   // RUTAS
   
-  router.get("/:id", productController.vista);
+ 
   router.get('/create', productController.create);
   router.post('/create', upload.single('imagen') ,productController.processCreate);
-
+  
+ router.get("/:id", productController.vista);
 module.exports = router;
