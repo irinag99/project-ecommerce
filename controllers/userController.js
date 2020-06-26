@@ -42,14 +42,15 @@ const userController = {
 
       if(errors.isEmpty()){
         
-         let usuario = req.body;
-         delete usuario.passwordR
-         usuario.password = bcrypt.hashSync(usuario.password, 10);
-         usuario.rol = 0;
+         let user = req.body;
+         delete user.passwordR
+         user.password = bcrypt.hashSync(user.password, 10);
+         user.rol = 0;
+         user.avatar = 'avatarDefault.jpg';
 
          //return res.send(usuario);
 
-         User.create(usuario)
+         User.create(user)
             .then(function(){
                 res.redirect('/');
             })  
@@ -62,12 +63,17 @@ const userController = {
         return res.render('user/profile');
     },
     processProfile: (req,res)=>{
+        
         let update = {
             name: req.body.name,
             surname: req.body.surname,
-            description: req.body.description,
-            avatar: req.files[0].filename
+            description: req.body.description
         }
+
+        if(req.files[0] != undefined){
+            update.avatar = req.files[0].filename
+        }
+        
          User.update(update, {
             where:{
                 email: req.body.email

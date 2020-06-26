@@ -35,8 +35,8 @@
         <div class="showEdit">
 
             <form method="POST" action="/user/profile/edit" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.nombre %>"> <br>
-                <input type="text" name="surname" placeholder="Apellido" value="<%= user.apellido %>"> <br>
+                <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.name %>"> <br>
+                <input type="text" name="surname" placeholder="Apellido" value="<%= user.surname %>"> <br>
                 <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
                 <textarea name="description" id="" cols="30" rows="10"
                     placeholder="Agregá una descripción !"><%= typeof(user.description) == undefined ? null: user.description%></textarea> <br>

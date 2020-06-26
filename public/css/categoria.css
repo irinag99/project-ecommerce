@@ -12,7 +12,7 @@ div.category-container {
 h1.title {
     margin: 0;
     padding: 30px 0;
-    width: 100%
+    width: 100%;
 }
 
 h2 {
@@ -58,10 +58,35 @@ div.item {
     padding-top: 9px;
     padding-right: 9px;
     padding-left: 9px;
+    width: 100%;
+    display: flex;
+
 }
+
+.imagenesProductos a{
+    width: 90%;
+}
+
+.imagenesProductos {
+    max-width: 100%;
+}
+
+.imagenesProductos .item p.name{
+    width: 60%; 
+    justify-content: right;
+    padding-left: 50px;
+}
+
+.imagenesProductos .item p.price{
+    width: 60%; 
+    justify-content: right;
+    padding-left: 200px;
+}
+
 
 div.item img {
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 div.item:hover {
@@ -86,6 +111,14 @@ nav h3 {
     }
     div.imagenesProductos {
         width: 69%;
+    }
+    .imagenesProductos .item p.price{
+        padding-left: 150px;
+    }
+    .imagenesProductos .item p.name{
+        overflow: hidden;
+        text-overflow: Ellipsis;
+        white-space: nowrap; 
     }
 }
 

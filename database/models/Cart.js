@@ -27,9 +27,12 @@ module.exports = (sequelize, dataTypes) => {
         const Cart = sequelize.define(alias, cols, config);
 
         Cart.associate = function (models) {
-            Cart.belongsTo(models.User, {
+            Cart.belongsToMany(models.User, {
                 as: 'user',
+                through: 'userCart',
                 foreignKey: 'idUser',
+                otherKey: 'idCart',
+                timestamps: false
             });
 
             Cart.belongsTo(models.Order, {
@@ -37,9 +40,12 @@ module.exports = (sequelize, dataTypes) => {
                 foreignKey: 'idOrder',
             });
 
-            Cart.belongsTo(models.Product, {
+            Cart.belongsToMany(models.Product, {
                 as: 'product',
+                through: 'productCart',
                 foreignKey: 'idProduct',
+                otherKey: 'idCart',
+                timestamps: false
             });
         }
         

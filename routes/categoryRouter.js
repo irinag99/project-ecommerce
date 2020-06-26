@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const categoriaController = require("../controllers/categoriaController"); 
+const categoryController = require("../controllers/categoryController"); 
 
 
 // GUARDAR ARCHIVOS CON MULTER 
@@ -20,6 +20,6 @@ var storage = multer.diskStorage({
 
   // RUTAS
   
-  router.get("/", categoriaController.vista);
+  router.get("/:id", categoryController.vista);
 
 module.exports = router;
