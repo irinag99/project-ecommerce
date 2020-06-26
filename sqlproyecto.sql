@@ -16,7 +16,7 @@ deletedAt DATETIME
 );
 
 
-CREATE TABLE adresses (
+CREATE TABLE addresses (
 id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 address VARCHAR (250) NOT NULL,
 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -86,7 +86,7 @@ ADD idCategory INT UNSIGNED NOT NULL;
 ALTER TABLE imgproducts
 ADD idProduct INT UNSIGNED NOT NULL;
 
-alter table adresses
+alter table addresses
 add foreign key(idUSer) references users(id);
 
 
