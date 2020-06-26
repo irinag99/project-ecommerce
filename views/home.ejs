@@ -17,13 +17,12 @@
     </div>
 
       <h1>Visitá nuestros productos</h1>
-
     <section class="imagenes-home">
 <% categories.forEach(category => { %>
     <a href='/category/<%= category.id %> '>
     <article>
 
-    <h3> <%= category.name %>  </h3>
+    <p style="text-transform: capitalize;"> <%= category.name %>  </p>
    <img src="/images/<%= category.icon %>" alt="Logo Higiene">
     </article>
 </a>
