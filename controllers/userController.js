@@ -51,7 +51,13 @@ const userController = {
          //return res.send(usuario);
 
          User.create(user)
-            .then(function(){
+            .then(function(usuario){
+                let u = usuario;
+                    delete u.name;
+                    delete u.surname;
+                    delete u.password;
+                    delete u.passwordR;
+                    req.session.user = u;
                 res.redirect('/');
             })  
         }else{
