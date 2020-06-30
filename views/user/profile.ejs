@@ -33,18 +33,18 @@
         </div>
 
         <div class="showEdit">
-
+            <div class="contenido">
             <form method="POST" action="/user/profile/edit" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.name %>"> <br>
                 <input type="text" name="surname" placeholder="Apellido" value="<%= user.surname %>"> <br>
                 <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
                 <textarea name="description" id="" cols="30" rows="10"
                     placeholder="Agregá una descripción !"><%= typeof(user.description) == undefined ? null: user.description%></textarea> <br>
-                <input type="file" name="avatar"> <br>
-                <button type="submit">Enviar</button>
-                <button type="button" class="cancelar">Cancelar</button>
+                <input type="file" class="image" name="avatar"> <br>
+                <button type="submit" class="boton">Enviar</button>
+                <button type="button" class="boton" class="cancelar">Cancelar</button>
             </form>
-
+        </div>
         </div>
         
     </div>

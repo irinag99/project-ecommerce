@@ -22,8 +22,45 @@ div.contenedor-parcial-profile{
 }
 .showEdit {
     display: none;
+    
 }
 
 div.img {
     width:40px;
+}
+div.contenido{
+    width: 100%; 
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div.contenido form {
+width: 80%;
+
+}
+div.contenido form input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+div.contenido button.boton{
+    color: white;
+    border-color: #959595;
+    border-radius: 5px;
+    background-color: #004586;
+    padding: 8px 15px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+div.contenido textarea{
+    border: black solid 2px;
+}
+div.contenido input.image{
+    margin: 0 0 15px -8px;
 }
