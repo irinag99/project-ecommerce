@@ -50,7 +50,7 @@ const productController = {
             db.Category.findAll()
                 .then((categories) => {
                     return res.render('addProduct', {
-                        categories:categories,errors:errors.errors
+                        categories:categories,errors:errors.mapped(),oldS: req.body
                      })
                      });
         }}

@@ -14,27 +14,47 @@
         Ingresá tu Producto
     </h1>
     <form enctype="multipart/form-data" action="/product/create" method="post">
-        <% if (typeof(errors)!= "undefined") { %>
 
-            <ul>
-                <% errors.forEach(error => { %>
+        <% if(typeof errors != 'undefined'){ %>
+            <%	if(errors.name){ %>
+            <p class="errores" style="color: red; font-size: 13px">
+                <%= errors.name.msg %>
+            </p>
+            <%	} %>
+            <% } %>
 
-                <li><%= error.msg %> </li>
-
-                <% }) %>
-            </ul>
-         
-        <% } %>
-        
-
-        <input type="text" name="name" placeholder="nombre producto"> <br>
-
-        <textarea name="description" id="" cols="30" rows="10"></textarea> <br>
-
+        <input type="text" name="name" placeholder="nombre producto" value='<%=typeof(oldS)!='undefined'? oldS.name: ''%>'> <br>
+        <% if(typeof errors != 'undefined'){ %>
+            <%	if(errors.description){ %>
+            <p class="errores" style="color: red; font-size: 13px">
+                <%= errors.description.msg %>
+            </p>
+            <%	} %>
+            <% } %>
+        <textarea name="description" id="" cols="30" rows="10" value='<%=typeof(oldS)!='undefined'? oldS.description: ''%>'></textarea> <br>
+        <% if(typeof errors != 'undefined'){ %>
+            <%	if(errors.image){ %>
+            <p class="errores" style="color: red; font-size: 13px">
+                <%= errors.image.msg %>
+            </p>
+            <%	} %>
+            <% } %>
         <input type="file" name="image"> <br>
-
-        <input type="text" name="price" placeholder="Precio del preoducto"><br>
-
+        <% if(typeof errors != 'undefined'){ %>
+            <%	if(errors.price){ %>
+            <p class="errores" style="color: red; font-size: 13px">
+                <%= errors.price.msg %>
+            </p>
+            <%	} %>
+            <% } %>
+        <input type="text" name="price" placeholder="Precio del preoducto" value='<%=typeof(oldS)!='undefined'? oldS.price: ''%>'><br>
+        <% if(typeof errors != 'undefined'){ %>
+            <%	if(errors.idCategory){ %>
+            <p class="errores" style="color: red; font-size: 13px">
+                <%= errors.idCategory.msg %>
+            </p>
+            <%	} %>
+            <% } %>
         <select name="idCategory" id="">
             <% for( let i = 0; i < categories.length; i++ ) { %>
             <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>
