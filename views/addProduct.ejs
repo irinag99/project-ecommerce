@@ -14,11 +14,34 @@
         Ingresá tu Producto
     </h1>
     <form enctype="multipart/form-data" action="/product/create" method="post">
-        <input type="text" name="nombre" placeholder="nombre producto"> <br>
+        <% if (typeof(errors)!= "undefined") { %>
 
-        <input type="text" name="descripcion" placeholder="descripcion del producto"> <br>
+            <ul>
+                <% errors.forEach(error => { %>
 
-        <input type="file" name="imagen"> <br>
+                <li><%= error.msg %> </li>
+
+                <% }) %>
+            </ul>
+         
+        <% } %>
+        
+
+        <input type="text" name="name" placeholder="nombre producto"> <br>
+
+        <textarea name="description" id="" cols="30" rows="10"></textarea> <br>
+
+        <input type="file" name="image"> <br>
+
+        <input type="text" name="price" placeholder="Precio del preoducto"><br>
+
+        <select name="idCategory" id="">
+            <% for( let i = 0; i < categories.length; i++ ) { %>
+            <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>
+            <% } %>
+        </select>
+
+        
         <button type="submit">Enviar producto </button>
 
 
