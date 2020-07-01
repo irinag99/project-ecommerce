@@ -12,11 +12,11 @@
 
 <body>
     <%-include('../partials/header.ejs') %>
-    <div class="contenedor-total-profile">
+    <div class="total">
 
-        <h2> Datos personales </h2>
+        
         <div class="contenedor-parcial-profile">
-
+            <h2> Datos personales </h2>
             <div class="informacion">
 
                 <img id='avatar' src="/images/avatars/<%= user.avatar %>" alt="">
@@ -46,21 +46,21 @@
                         <br>
                         <input type="file" class="image" name="avatar"> <br>
                         <button type="submit" class="boton">Enviar</button>
-                        <button type="button" class="boton" class="cancelar">Cancelar</button>
+                        <button type="button" class="cancelar boton">Cancelar</button>
                     </form>
                 </div>
             </div>
 
         </div>
-        <h2>Direcciones</h2>
+        
         <div class="contenedor-parcial-profile">
-
+            <h2>Direcciones</h2>
             <h3></h3>
 
         </div>
+        
+        <div class="contenedor-parcial-profile compras">
         <h2>Compras</h2>
-        <div class="contenedor-parcial-profile">
-
 
         </div>
 

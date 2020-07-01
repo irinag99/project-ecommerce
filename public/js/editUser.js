@@ -1,21 +1,21 @@
-window.addEventListener("load", (e)=>{
-
- 
-let editButton = document.querySelector(".edicionUsuario")
-editButton.addEventListener("click",(resultado)=>{
+window.addEventListener("load", (e) => {
     let form = document.querySelector(".showEdit");
-    form.style.display = "block";
-    let info= document.querySelector(".informacion");
-    info.style.display = "none";
-})
-let cancelacion = document.querySelector(".cancelar");
-cancelacion.addEventListener("click", (e)=>{
-    let form = document.querySelector(".showEdit");
-    form.style.display = "none";
     let info = document.querySelector(".informacion");
-    info.style.display = "block";
-    
-})
+    let editButton = document.querySelector(".edicionUsuario")
+    editButton.addEventListener("click", (resultado) => {
+        // console.log('clickeaste editar')
+
+        form.style.display = "block";
+        info.style.display = "none";
+    })
+    let cancelacion = document.querySelector(".cancelar");
+
+    cancelacion.addEventListener("click", (e) => {
+        // console.log('clickeaste cancelar')
+        form.style.display = "none";
+        info.style.display = "flex";
+
+    })
 
 
 

@@ -1,4 +1,10 @@
-div.contenedor-total-profile{
+div.total{
+    max-width: 1200px;
+    width:100%;
+    margin: 0 auto;
+
+}
+div.contenedor-parcial-profile{
     border-radius: 21px;
     /* display: flex; */
     border: #E5E5E5 solid 1px;
@@ -7,20 +13,23 @@ div.contenedor-total-profile{
     /* justify-content: space-between; */
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 50vh;
+    /* margin-bottom: 50vh; */
     background-color: white;
-    margin-top: 10vh;
+    margin-top: 20px;
 
+}
+div.compras{
+    margin-bottom:20px;
 }
 h2{
     text-align: center;
     display:block;
 }
-div.contenedor-parcial-profile{
+/* div.contenedor-parcial-profile{
     
     border-bottom: white 1px outset;
 
-}
+} */
 .showEdit {
     display: none;
     
@@ -49,7 +58,7 @@ div.contenido form input, textarea {
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
 }
-div.contenido button.boton{
+div.contenido button.boton,button.edicionUsuario{
     color: white;
     border-color: #959595;
     border-radius: 5px;
@@ -68,10 +77,12 @@ div.contenido input.image{
 div.informacion{
     display:flex;
     justify-content: space-between;
+    padding: 0 50px;
+    margin-bottom:50px;
 }
 img#avatar{
-    width:40%;
+    max-width:370px;
 }
 div.informacion div{
-    width:40%;
+    width:65%;
 }
