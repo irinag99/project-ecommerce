@@ -53,7 +53,18 @@ const productController = {
                         categories:categories,errors:errors.mapped(),oldS: req.body
                      })
                      });
-        }}
+        }},
+        search : function(req,res){
+            Product.findAll({
+               where:{
+                  name: {[db.Sequelize.Op.like]:req.body.search+"%"} 
+               } 
+                
+           })
+           .then(function(buscado){
+               return res.render('productSearch',{buscado})
+           })
+            },
 
 
 

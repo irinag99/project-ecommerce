@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/categoria.css">
+
+<head>
+    <%-include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/styleshome.css">
+    <title>Farmacia / Categoria</title>
+</head>
+
+<body>
+    <%-include('./partials/header.ejs') %>
+    <div class="category-container">
+        <h1> Resultado de busqueda </h1>
+            
+    
+            <div class="imagenesProductos">
+                <% for( let i = 0; i < buscado.length; i++ ) { %>
+                    <a href="/product/<%= buscado[i].id %> ">
+                        <div class="item">
+                            <img src="/images/medicamento1.jpg " alt="foto producto">
+                            <p class="name"><%= buscado[i].name %> </p> <br>
+                            <p class="price"> $ <%= buscado[i].price %>  </p>
+                        </div>                    
+                    </a>
+                <% } %>
+            
+
+        </div>
+    </div>
+
+   
+
+
+    <%-include('./partials/footer.ejs') %>
+
+</body>
+
+</html>
