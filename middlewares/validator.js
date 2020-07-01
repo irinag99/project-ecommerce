@@ -80,7 +80,7 @@ module.exports = {
                 }
             }).then((resultado) => {
                 if (resultado) {
-                    return Promise.reject("Este producto está creado.")
+                    return Promise.reject("Producto ya existente")
                 }
 
             })
@@ -116,5 +116,6 @@ module.exports = {
 
         body("price")
         .notEmpty().withMessage("Cual es el total a pagar?")
+        .isInt().withMessage('El precio debe ser un numero')
     ]
 }

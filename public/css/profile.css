@@ -1,10 +1,10 @@
 div.contenedor-total-profile{
     border-radius: 21px;
-    display: flex;
+    /* display: flex; */
     border: #E5E5E5 solid 1px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 50vh;
@@ -13,7 +13,8 @@ div.contenedor-total-profile{
 
 }
 h2{
-    align-self: center;
+    text-align: center;
+    display:block;
 }
 div.contenedor-parcial-profile{
     
@@ -25,9 +26,9 @@ div.contenedor-parcial-profile{
     
 }
 
-div.img {
+/* div.img {
     width:40px;
-}
+} */
 div.contenido{
     width: 100%; 
     margin: 30px 0;
@@ -63,4 +64,14 @@ div.contenido textarea{
 }
 div.contenido input.image{
     margin: 0 0 15px -8px;
+}
+div.informacion{
+    display:flex;
+    justify-content: space-between;
+}
+img#avatar{
+    width:40%;
+}
+div.informacion div{
+    width:40%;
 }

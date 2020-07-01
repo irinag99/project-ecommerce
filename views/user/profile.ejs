@@ -4,63 +4,67 @@
 
 <head>
     <%-include('../partials/head.ejs') %>
-   
+
     <link rel="stylesheet" href="/css/profile.css">
     <script src="/js/editUser.js"></script>
-    <title>Farmacia / Usuario</title>
+    <title>Farmacia - <%= user.name%> <%= user.surname %></title>
 </head>
 
 <body>
     <%-include('../partials/header.ejs') %>
-<div class="contenedor-total-profile">
+    <div class="contenedor-total-profile">
 
-    <h2> Datos personales </h2>
-    <div class="contenedor-parcial-profile">
-        
-        <div class="informacion">
-            
+        <h2> Datos personales </h2>
+        <div class="contenedor-parcial-profile">
 
-        <h3>Nombre</h3>
-        <p><%=user.name %> <%=user.surname%>  </p>
-        <h3>Email  </h3>
-        <p><%=user.email %></p>
-        <h3>Avatar </h3>
-        <img src="/images/avatars/<%= user.avatar %>" alt="">
-        <h3>Descripcion</h3>
-        <p><%=user.description %></p>
-        <button type="submit" class="edicionUsuario">Editá tu usuario</button>
+            <div class="informacion">
+
+                <img id='avatar' src="/images/avatars/<%= user.avatar %>" alt="">
+                <div>
+                    <h3>Nombre</h3>
+                    <p><%=user.name %> <%=user.surname%> </p>
+                    <h3>Email </h3>
+                    <p><%=user.email %></p>
+
+
+                    <h3>Descripcion</h3>
+                    <p><%=user.description %></p>
+                    <button type="submit" class="edicionUsuario">Editá tu usuario</button>
+                </div>
+
+
+            </div>
+
+            <div class="showEdit">
+                <div class="contenido">
+                    <form method="POST" action="/user/profile/edit" enctype="multipart/form-data">
+                        <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.name %>"> <br>
+                        <input type="text" name="surname" placeholder="Apellido" value="<%= user.surname %>"> <br>
+                        <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
+                        <textarea name="description" id="" cols="30" rows="10"
+                            placeholder="Agregá una descripción !"><%= typeof(user.description) == undefined ? null: user.description%></textarea>
+                        <br>
+                        <input type="file" class="image" name="avatar"> <br>
+                        <button type="submit" class="boton">Enviar</button>
+                        <button type="button" class="boton" class="cancelar">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <h2>Direcciones</h2>
+        <div class="contenedor-parcial-profile">
+
+            <h3></h3>
+
+        </div>
+        <h2>Compras</h2>
+        <div class="contenedor-parcial-profile">
+
 
         </div>
 
-        <div class="showEdit">
-            <div class="contenido">
-            <form method="POST" action="/user/profile/edit" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.name %>"> <br>
-                <input type="text" name="surname" placeholder="Apellido" value="<%= user.surname %>"> <br>
-                <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
-                <textarea name="description" id="" cols="30" rows="10"
-                    placeholder="Agregá una descripción !"><%= typeof(user.description) == undefined ? null: user.description%></textarea> <br>
-                <input type="file" class="image" name="avatar"> <br>
-                <button type="submit" class="boton">Enviar</button>
-                <button type="button" class="boton" class="cancelar">Cancelar</button>
-            </form>
-        </div>
-        </div>
-        
     </div>
-    <h2>Direcciones</h2>
-    <div class="contenedor-parcial-profile">
-        
-        <h3></h3>
-    
-    </div>
-    <h2>Compras</h2>
-    <div class="contenedor-parcial-profile">
-           
-
-    </div>
-
-</div>
 
 
     <%-include('../partials/footer.ejs') %>

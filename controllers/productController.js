@@ -34,12 +34,17 @@ const productController = {
     },
     processCreate: (req, res) => {
 
-        // return res.send(req.body)
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-
-            Product.create(req.body)
-                .then((producto) => {
+            let product = {
+                name: req.body.name,
+                description: req.body.description,
+                price:req.body.price,
+                idCategory: req.body.idCategory,
+                image: req.file.filename
+            }
+            Product.create(product)
+                .then(p => {
 
 
                     return res.send("Producto creado");

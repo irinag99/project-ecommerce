@@ -12,64 +12,67 @@
     <%-include('./partials/header.ejs') %>
     <div class="contenedor-total">
         <div class="contenedor-parcial">
-                <h1>
-                    Ingresá tu Producto
-                </h1>
-                <form enctype="multipart/form-data" action="/product/create" method="post">
+            <h1>
+                Ingresá tu Producto
+            </h1>
+            <form enctype="multipart/form-data" action="/product/create" method="post">
 
-                    <% if(typeof errors != 'undefined'){ %>
-                        <%	if(errors.name){ %>
-                        <p class="errores" style="color: red; font-size: 13px">
-                            <%= errors.name.msg %>
-                        </p>
-                        <%	} %>
-                        <% } %>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.name){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.name.msg %>
+                </p>
+                <%	} %>
+                <% } %>
 
-                    <input type="text" name="name" placeholder="nombre producto" value='<%=typeof(oldS)!='undefined'? oldS.name: ''%>'> <br>
-                    <% if(typeof errors != 'undefined'){ %>
-                        <%	if(errors.description){ %>
-                        <p class="errores" style="color: red; font-size: 13px">
-                            <%= errors.description.msg %>
-                        </p>
-                        <%	} %>
-                        <% } %>
-                    <textarea name="description"  placeholder="Descpcion del producto" value='<%=typeof(oldS)!='undefined'? oldS.description: ''%>'></textarea> <br>
-                    <% if(typeof errors != 'undefined'){ %>
-                        <%	if(errors.image){ %>
-                        <p class="errores" style="color: red; font-size: 13px">
-                            <%= errors.image.msg %>
-                        </p>
-                        <%	} %>
-                        <% } %>
-                    <input type="file" name="image" class="image"> <br>
-                    <% if(typeof errors != 'undefined'){ %>
-                        <%	if(errors.price){ %>
-                        <p class="errores" style="color: red; font-size: 13px">
-                            <%= errors.price.msg %>
-                        </p>
-                        <%	} %>
-                        <% } %>
-                    <input type="text" class="description" name="price" placeholder="Precio del preoducto" value='<%=typeof(oldS)!='undefined'? oldS.price: ''%>'><br>
-                    <% if(typeof errors != 'undefined'){ %>
-                        <%	if(errors.idCategory){ %>
-                        <p class="errores" style="color: red; font-size: 13px">
-                            <%= errors.idCategory.msg %>
-                        </p>
-                        <%	} %>
-                        <% } %>
-                    <select name="idCategory" id="">
-                        <option value="select" selected disabled>Seleciona una categoria
-                        </option>
-                        <% for( let i = 0; i < categories.length; i++ ) { %>                          
-                        <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>
-                        <% } %>
-                    </select><br>
+                <input type="text" name="name" placeholder="Nombre del producto"
+                    value='<%=typeof(oldS)!='undefined'? oldS.name: ''%>'> <br>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.description){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.description.msg %>
+                </p>
+                <%	} %>
+                <% } %>
+                <textarea name="description" placeholder="Descripcion del producto"
+                    value='<%=typeof(oldS)!='undefined'? oldS.description: ''%>'></textarea> <br>
 
-                    
-                    <button type="submit" class="enviar">Enviar producto </button>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.price){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.price.msg %>
+                </p>
+                <%	} %>
+                <% } %>
+                <input type="text" class="description" name="price" placeholder="Precio del producto"
+                    value='<%=typeof(oldS)!='undefined'? oldS.price: ''%>'><br>
+                <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.idCategory){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.idCategory.msg %>
+                </p>
+                <%	} %>
+                <% } %> <% if(typeof errors != 'undefined'){ %>
+                <%	if(errors.image){ %>
+                <p class="errores" style="color: red; font-size: 13px">
+                    <%= errors.image.msg %>
+                </p>
+                <%	} %>
+                <% } %>
+                <input type="file" name="image" class="image"> <br>
+                <select name="idCategory" id="">
+                    <option value="select" selected disabled>Seleciona una categoria
+                    </option>
+                    <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>
+                    <% } %>
+                </select><br>
 
 
-                </form>
+                <button type="submit" class="enviar">Enviar producto </button>
+
+
+            </form>
 
         </div>
     </div>
