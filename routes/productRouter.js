@@ -43,6 +43,6 @@ const multer = require("multer")
  
   router.get('/create',adminMiddleware, productController.create);
   router.post('/create', upload.single('image'),validate.createProduct,productController.processCreate);
-  
- router.get("/:id", productController.vista);
+  router.get("/:id", productController.vista);
+  router.post("/search",productController.search)
 module.exports = router;
