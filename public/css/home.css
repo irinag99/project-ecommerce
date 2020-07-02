@@ -1,11 +1,40 @@
 .banner {
     width: 100%;
     height: 350px;
-    background-image: url('/images/banner.jpg');
-    background-size: cover;
-    background-position-y: bottom;
+    overflow: hidden;
+    background-size:cover ;
+    background-position-y: bottom ;
 }
+.banner ul{
+    padding: 0;
+    display: flex;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+    animation-timing-function: ease-out;
+    height: 100%;
+}
+.banner li{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+@keyframes cambio{
+    0% {margin-left:0;}
+    20% {margin-left:0;}
 
+    25% {margin-left:-100%;}
+    45% {margin-left:-100%;}
+
+    50% {margin-left:-200%;}
+    70% {margin-left:-200%;}
+
+    75% {margin-left:-300%;}
+    100% {margin-left:-300%;}
+}
 
 .imagenes-home {
     display: flex;
