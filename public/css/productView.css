@@ -18,11 +18,6 @@ div.imageProduct {
     justify-content: space-between;
     width: 50%;
 }
-div.edit{
-    display: none;
-    width: 100px;
-
-}
 
 div.nameProduct {
     display: flex;
@@ -97,7 +92,60 @@ div.related img {
     width: 290px;
     height: 200px;
 }
+div.edit{
+    display: none;
+    width: 100%; 
+    margin: 30px 0;
+ 
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+div.edit form {
+width: 80%;
+margin: auto;
+
+}
+div.edit h2{
+    text-align: center;
+}
+div.edit form input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+div.edit button{
+    color: white;
+    border-color: #959595;
+    border-radius: 5px;
+    background-color: #004586;
+    padding: 8px 15px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+div.edit textarea{
+    border: black solid 2px;
+}
+div.botonesAdmin{
+    display: flex;
+
+}
+div.botonesAdmin button{
+
+        color: white;
+        border-color: #959595;
+        border-radius: 5px;
+        background-color: #004586;
+       
+        font-size: 15px;
+        margin-top: 20px;
+        height: 30px;
+    
+}
 @media(max-width:1000px){
     div.imageProduct{
         width: 100%;
