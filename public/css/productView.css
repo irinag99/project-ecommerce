@@ -18,6 +18,11 @@ div.imageProduct {
     justify-content: space-between;
     width: 50%;
 }
+div.edit{
+    display: none;
+    width: 100px;
+
+}
 
 div.nameProduct {
     display: flex;

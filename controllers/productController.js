@@ -11,6 +11,7 @@ const {
 
 
 
+
 const productController = {
     vista: (req, res) => {
         Product.findByPk(req.params.id)
@@ -70,6 +71,34 @@ const productController = {
                return res.render('productSearch',{buscado})
            })
             },
+        edit: (req,res)=>{
+            
+
+            let update = {
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description
+            }
+            if (req.files[0] != undefined) {
+                update.image = req.files[0].filename
+            }
+
+            Product.update(update,{
+                where:{id:req.params.id}
+            })
+            .then((resultado)=>{
+                let url = "/product/"+req.params.id;
+                return res.redirect(url)
+            })
+        },
+        delete:(req,res)=>{
+            Product.destroy({
+                where:{id:req.params.id}})
+                .then((resultado)=>{
+                   return res.redirect("/category/1")
+                })
+        }
+
 
 
 

@@ -18,7 +18,7 @@
                 <% for( let i = 0; i < buscado.length; i++ ) { %>
                     <a href="/product/<%= buscado[i].id %> ">
                         <div class="item">
-                            <img src="/images/medicamento1.jpg " alt="foto producto">
+                            <img src="/images/products/<%= buscado[i].image %>" alt="foto producto">
                             <p class="name"><%= buscado[i].name %> </p> <br>
                             <p class="price"> $ <%= buscado[i].price %>  </p>
                         </div>                    

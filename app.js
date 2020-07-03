@@ -6,6 +6,10 @@ const cookieParser = require('cookie-parser');
 const authMiddleware = require('./middlewares/authMiddleware');
 const guestMiddleware = require('./middlewares/guestMiddleware');
 const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
+const methodOverride = require("method-override");
+
+//SETEAR METODO OVERRIDE
+app.use(methodOverride("_method"));
 
 //SETEAR ARCHIVOS ESTÁTICOS , CSS , IMAGENES , ETC. 
 app.use(express.static(__dirname + '/public'));

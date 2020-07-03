@@ -5,6 +5,7 @@
 <head>
     <%-include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/styleshome.css">
+    <script src="/js/productEdit.js"></script>
     <title>Farmacia / Producto</title>
 </head>
 
@@ -12,7 +13,7 @@
     <%-include('./partials/header.ejs') %>
     <div class="principal">
         <div class="imageProduct">
-            <img src="/images/ibu.jpg" alt="foto producto"> <!-- agregar slider con js -->
+            <img src="/images/products/<%= product.image %>" alt="foto producto"> <!-- agregar slider con js -->
         </div>
         <div class="nameProduct">
 
@@ -25,32 +26,65 @@
                     <button id="plus">+</button>
                     <input id="quantity" name="quantity" type="text" value="1">
                     <button id="minus">-</button>
+
                 </div>
+                </form>
                 <div class="action">
-                    <input type="submit" value="Agregar al carrito">
+
+                    <!-- AGREGAR AL CARRITO  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+                    <form action="/agregarCarrito" method="POST">
+                        <input type="hidden" name="producto" value="<%= product.id %>">
+                        <input type="submit" value="Agregar al carrito">
+                    </form>
+                    
                 </div>
+                <button class="showEdit"type="button">Editar</button>
+                
+
+                <div class="delete">
+                        <form action="/product/<%= product.id %>/delete?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            
+        </div>
+
+        <div class="edit">
+
+            <form action="/product/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" value="<%= product.name %> ">
+                <input type="text" name="price" value="<%= product.price %> ">
+                <textarea name="description" value="<%= product.description %> " cols="30" rows="10"></textarea>
+                <input type="file" name="image" placeholder="Elegí una imagen">
+
+                <button type="submit">Editar</button>
+
             </form>
         </div>
+
     </div>
     <div class="related">
         <h2>
             Productos Relacionados
         </h2>
         <div>
-            <img src="/images/ibu.jpg" alt="">
+            <img src="/images/products/<%= product.image %>" alt="">
         </div>
         <div>
-            <img src="/images/ibu.jpg" alt="">
+            <img src="/images/products/<%= product.image %>" alt="">
         </div>
         <div>
-            <img src="/images/ibu.jpg" alt="">
+           <img src="/images/products/<%= product.image %>" alt="">
         </div>
     </div>
 
+    
 
 
 
     <%-include('./partials/footer.ejs') %>
+
 
 </body>
 

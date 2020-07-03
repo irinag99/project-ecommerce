@@ -44,5 +44,7 @@ const multer = require("multer")
   router.get('/create',adminMiddleware, productController.create);
   router.post('/create', upload.single('image'),validate.createProduct,productController.processCreate);
   router.get("/:id", productController.vista);
-  router.post("/search",productController.search)
+  router.post("/search",productController.search);
+  router.put("/:id/edit",upload.any(),productController.edit);
+  router.delete("/:id/delete",productController.delete);
 module.exports = router;
