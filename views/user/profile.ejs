@@ -55,7 +55,7 @@
 
         <div class="contenedor-parcial-profile">
             <h2>Direcciones</h2>
-            <% if (user.addresses == undefined) { %>
+            <% if (user.addresses.length == 0) { %>
             <p>No tiene direcciones registradas...</p>
             <% }else{ %>
             <% user.addresses.forEach(address => { %>
