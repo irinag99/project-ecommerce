@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         total: {
             type: dataTypes.INTEGER,
             notNull: true
-        },
+        }
 
     }
 
@@ -28,6 +28,11 @@ module.exports = (sequelize, dataTypes) => {
             as: 'cart',
             foreignKey: 'idOrder',
         });
+
+        Order.belongsTo(models.User, {
+            as: 'user',
+            foreignKey:'idUser'
+        })
     }
    
 

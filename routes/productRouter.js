@@ -4,6 +4,7 @@ const path = require("path");
 const productController = require("../controllers/productController"); 
 const validate = require ("../middlewares/validator");
 const adminMiddleware = require('../middlewares/adminMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 
 // GUARDAR ARCHIVOS CON MULTER 
@@ -41,7 +42,7 @@ const multer = require("multer")
   // RUTAS
   
  
-  router.get('/create',adminMiddleware, productController.create);
+  router.get('/create',authMiddleware ,adminMiddleware, productController.create);
   router.post('/create', upload.single('image'),validate.createProduct,productController.processCreate);
   router.get("/:id", productController.vista);
   router.post("/search",productController.search);

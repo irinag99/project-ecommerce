@@ -6,7 +6,7 @@
     <%-include('../partials/head.ejs') %>
 
     <link rel="stylesheet" href="/css/profile.css">
-    <script src="/js/editUser.js"></script>
+    <script src="/js/profile.js"></script>
     <title>Farmacia - <%= user.name%> <%= user.surname %></title>
 </head>
 
@@ -14,7 +14,7 @@
     <%-include('../partials/header.ejs') %>
     <div class="total">
 
-        
+
         <div class="contenedor-parcial-profile">
             <h2> Datos personales </h2>
             <div class="informacion">
@@ -40,7 +40,7 @@
                     <form method="POST" action="/user/profile/edit" enctype="multipart/form-data">
                         <input type="text" name="name" placeholder="Editá tu nombre" value="<%= user.name %>"> <br>
                         <input type="text" name="surname" placeholder="Apellido" value="<%= user.surname %>"> <br>
-                        <input type="email" name="email" placeholder="Email" value="<%= user.email %>"> <br>
+                        <input type="email" name="email" placeholder="Email" value="<%= user.email %>" disabled> <br>
                         <textarea name="description" id="" cols="30" rows="10"
                             placeholder="Agregá una descripción !"><%= typeof(user.description) == undefined ? null: user.description%></textarea>
                         <br>
@@ -52,17 +52,37 @@
             </div>
 
         </div>
-        
+
         <div class="contenedor-parcial-profile">
             <h2>Direcciones</h2>
-            <h3></h3>
+            <% if (user.addresses == undefined) { %>
+            <p>No tiene direcciones registradas...</p>
+            <% }else{ %>
+            <% user.addresses.forEach(address => { %>
+            <li><%= address.address %> <button>Editar</button>
+                <button>Eliminar</button>
+            </li>
 
+            <% }) %>
+            <%}%>
+            <br>
+            <button class='add-address-button'type='button'>Agregar direccion</button>
+            <div class='address-form' style='display:none'>
+                <form action="/user/create/address" method='POST'>
+                    <input type="text" name='address' placeholder="Direccion">
+                    <input type="integer" value='<%= user.id %> ' name='id' hidden>
+            <button type="submit">Agregar</button>
+            <button class='cancel-address-form' type='button'>Cancelar</button>
+            </form>
         </div>
-        
-        <div class="contenedor-parcial-profile compras">
+
+
+    </div>
+
+    <div class="contenedor-parcial-profile compras">
         <h2>Compras</h2>
 
-        </div>
+    </div>
 
     </div>
 

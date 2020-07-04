@@ -10,6 +10,7 @@ div.principal {
     border: #E5E5E5 solid;
     border-radius: 15px;
     border-width: 1px 1px 1px 0.5px;
+    background-color: white;
 }
 
 div.imageProduct {
@@ -81,6 +82,7 @@ div.related {
     border: #E5E5E5 solid;
     border-radius: 15px;
     border-width: 1px 1px 1px 0.5px;
+    background-color: white;
 }
 div.related h2{
     width: 100%;

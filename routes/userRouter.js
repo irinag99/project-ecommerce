@@ -30,7 +30,7 @@ router.post("/login", validator.login, userController.processLogin);
 router.post("/register", validator.register, userController.processRegister);
 router.get('/profile', authMiddleware, userController.profile);
 router.post('/profile/edit', upload.any(), authMiddleware, userController.processProfile);
-
+router.post('/create/address', authMiddleware, userController.storeAddress)
 module.exports = router;
 
 
