@@ -106,7 +106,7 @@ const userController = {
             .then(function (resultado) {
                 return User.findOne({
                     where: {
-                        email: req.body.email
+                        email: req.session.user.email
                     }
                 })
 

@@ -20,12 +20,8 @@ body {
     background-color: hsl(0, 0%, 98%);
     margin:0;
 }
-p,h1,h2,h3,h4,h5,h6,li,a,label{
+p,h1,h2,h3,h4,h5,h6,li,a,label,input,textarea{
     font-family: 'Opens Sans', sans-serif;
 }
 
 
-/* form p .errores{
-    font-size: 10px;
-    color: red;
-} */

@@ -29,7 +29,7 @@
 
                     <h3>Descripcion</h3>
                     <p><%=user.description %></p>
-                    <button type="submit" class="edicionUsuario">Editá tu usuario</button>
+                    <button type="button" class="edicionUsuario">Editá tu usuario</button>
                 </div>
 
 
@@ -67,27 +67,57 @@
             <%}%>
             <br>
             <button class='add-address-button'type='button'>Agregar direccion</button>
-            <div class='address-form' style='display:none'>
-                <form action="/user/create/address" method='POST'>
-                    <input type="text" name='address' placeholder="Direccion">
-                    <input type="integer" value='<%= user.id %> ' name='id' hidden>
-            <button type="submit">Agregar</button>
-            <button class='cancel-address-form' type='button'>Cancelar</button>
-            </form>
         </div>
 
 
+
+
+        <div class="contenedor-parcial-profile compras">
+            <h2>Compras</h2>
+
+        </div>
+
     </div>
 
-    <div class="contenedor-parcial-profile compras">
-        <h2>Compras</h2>
+    <div class='address-form'>
+        <div class='form-header'>
+            <div class="form-title"><h2>Nueva Direccion</h2></div>
+            <button class='cancel-address-form'>&times;</button>
+        </div>
+        <form id="addAddress" action="" method='POST'>
+            <div class='uno'>
+                <input type="text" name='street' placeholder="Calle">
+            </div>
+            <div class='tres'>
+                <input type="number" name='number' placeholder="Numero">
+                <input type="number" name='PC' placeholder="CP">
+                <input type="text" name='apartment' placeholder="Departamento">
+            </div>
 
-    </div>
+            <div class='uno'>
+                <input type="text" name='province' placeholder="Provincia"><br> 
+            </div>
+            <div class='uno'>
+                <input type="text" name='municipality' placeholder="Localidad"><br>
+            </div>
+            <div class='uno'>
+                <textarea name="description"  cols="30" rows="2" placeholder="Descripcion adicional"></textarea>
+            </div>
 
-    </div>
 
 
-    <%-include('../partials/footer.ejs') %>
+            <input type="integer" value='<%= user.id %> ' name='id' hidden>
+            <div class="buttons">
+                <button type="submit">Agregar</button>
+            </div>
+
+            </form>
+        </div>
+        <div id='overlay' >
+
+        </div>
+
+        <%-include('../partials/footer.ejs') %>
 
 </body>
 
