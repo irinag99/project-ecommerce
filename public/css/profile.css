@@ -59,8 +59,7 @@ div.contenido button.boton,button.edicionUsuario{
     font-size: 18px;
     margin-top: 15px;
 }
-
-div.contenido textarea{
+textarea{
     border: black solid 2px;
 }
 div.contenido input.image{
@@ -121,10 +120,13 @@ form#addAddress {
 form#addAddress div {
 width:100%;
 }
-
+form div.uno{
+    position:relative;
+}
 form div.tres{
     display: flex;
     justify-content: space-between;
+    position:relative;
 }
 form div.tres input{
     width: 30%;
@@ -165,4 +167,25 @@ div#overlay{
     /* pointer-events: none; */
     transition: 200ms ease-in-out
 
+}
+i.derecha{
+    position: absolute;
+    top: 12px;
+    right:10px;
+    color:green;
+    display:none;
+}
+i.medio{
+    position: absolute;
+    top: 12px;
+    right:144px;
+    color:green;
+    display:none;
+}
+i.izquierda{
+    position: absolute;
+    top: 12px;
+    left:88px;
+    color:green;
+    display: none;
 }

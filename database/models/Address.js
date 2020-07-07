@@ -9,11 +9,17 @@ module.exports = (sequelize, dataTypes) => {
             unsigned: true,
             notNull: true,
         },
-        address: {
+        idUser: dataTypes.INTEGER,
+        street: {
             type: dataTypes.STRING,
             notNull: true
         },
-        idUser: dataTypes.INTEGER
+        number: dataTypes.INTEGER,
+        PC: dataTypes.INTEGER,
+        apartment: dataTypes.STRING,
+        province: dataTypes.STRING,
+        municipality: dataTypes.STRING,
+        description: dataTypes.STRING
 
     }
 
@@ -23,15 +29,15 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Address = sequelize.define(alias, cols, config);
-     
+
 
 
     Address.associate = function (models) {
-            Address.belongsTo(models.User, {
-                as: 'user',
-                foreignKey: 'idUser',
-            });
-        }
+        Address.belongsTo(models.User, {
+            as: 'user',
+            foreignKey: 'idUser',
+        });
+    }
 
 
 

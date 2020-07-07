@@ -23,30 +23,39 @@ window.addEventListener("load", (e) => {
     let addAddressForm = document.querySelector('.address-form');
     let addAddressButton=document.querySelector('.add-address-button');
     let cancelForm = document.querySelector('.cancel-address-form');
-    let overlay = document.getElementById('overlay')
-
+    let overlay = document.getElementById('overlay');
+    let inputs = document.querySelectorAll('form#addAddress input');
+    let textarea = document.querySelector('form#addAddress textarea')
+    let check;
     addAddressButton.addEventListener('click', (e)=>{
  
         addAddressForm.style.display='block'
-
-
-        // addAddressButton.style.display = 'none';
-
         overlay.style.display='block'
+
+        // inputs.forEach(input=>{
+        //     input.addEventListener('focusout',e=>{
+        //         if (input.value.length > 0){
+        //             check = document.getElementById(input.name)
+        //             check.style.display = 'inline'
+        //         }
+        //     })
+        // })
 
         cancelForm.addEventListener('click',e=>{
             addAddressForm.style.display = 'none'
-
-            // addAddressButton.style.display = 'block';
-
             overlay.style.display = 'none'
+            inputs.forEach(input=>{
+                input.value =''
+            })
+            textarea.value =''
 
         })
         overlay.addEventListener('click', e => {
             addAddressForm.style.display = 'none'
-
-
-            // addAddressButton.style.display = 'block';
+            inputs.forEach(input => {
+                input.value = ''
+            })
+            textarea.value = ''
 
             overlay.style.display = 'none'
 

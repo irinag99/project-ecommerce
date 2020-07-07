@@ -117,10 +117,18 @@ const userController = {
             })
     },
     storeAddress: (req,res)=>{
-        db.Address.create({
-            address: req.body.address,
+        let newAddress = {
+            street: req.body.street,
+            number: req.body.number,
+            PC: req.body.PC,
+            apartment: req.body.apartment == '' ? null : req.body.apartment,
+            province: req.body.province,
+            municipality: req.body.municipality,
+            description: req.body.description == '' ? null : req.body.description,
             idUser: req.body.id
-        }).then(address=>{
+        }
+        db.Address.create(newAddress)
+        .then(address=>{
             return res.redirect('/user/profile')
         })
     }
