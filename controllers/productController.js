@@ -14,14 +14,17 @@ const {
 
 const productController = {
     vista: (req, res) => {
-        Product.findByPk(req.params.id)
-            .then(function (product) {
+        let product = Product.findByPk(req.params.id);
+                
+        let productRelated = Product.findAll({
+            limit:3
 
-                return res.render("productView", {
-                    product
-                });
-            });
-
+        });
+        Promise.all([product, productRelated])
+        .then(function([product,productRelated]){
+            return res.render("productView",{product:product, productRelated:productRelated})
+        })
+         
     },
     create: (req, res) => {
         db.Category.findAll()

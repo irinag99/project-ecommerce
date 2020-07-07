@@ -13,43 +13,21 @@
     <div class="category-container">
         <h1 class="title"> <%= category.name.toUpperCase() %>  </h1>
             <div class="filters">
-                <h2>Filtrar por:</h2>
-                <nav>
-                    <h3>Overview</h3>
-                    <div class="filterContent">
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
+                <h2>Categorias:</h2>
+                <% categorys.forEach(ca => { %>
+                    <nav>
+                        <a href='/category/<%= ca.id %> '>
+                            <h3><%=ca.name.toUpperCase() %></h3>
+                        </a>
+                        <% if (ca.id ==category.id) { %>
+                            <p>ordenar</p>
+                            <p>ordenar</p>
+                            <p>ordenar</p>                           
+                        <% } %>
+                        <div class="filterContent">    
                     </div>
                 </nav>
-                <nav>
-                    <h3>Design</h3>
-                    <div class="filterContent">
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                    </div>
-                </nav>
-                <nav>
-                    <h3>Components </h3>
-                    <div class="filterContent">
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                    </div>
-                </nav>
-                <nav>
-                    <h3> Utility </h3>
-                    <div class="filterContent">
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                        <p>lalal</p>
-                    </div>
-                </nav>
+                <% }) %>
             </div>
             <div class="imagenesProductos">
                 <% for( let i = 0; i < category.products.length; i++ ) { %>

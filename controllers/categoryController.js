@@ -9,20 +9,24 @@ const Op = Sequelize.Op;
 const categoryController = { 
     "vista": (req,res)=>{
 
-        Category.findByPk(req.params.id,{
+        let category = Category.findByPk(req.params.id,{
             include: [ 
                 {association: 'products',
                  limit: 9}
             ],
-    
-
-        })
-
-        .then(function(category){
-            return res.render("categoria", {category});
-        })
-
-
+            });
+                
+        let categorys = Category.findAll({
+            order:[
+                ['name','ASC']
+                ]
+        });
+        
+        Promise.all([category, categorys])
+         .then(function ([category, categorys]){
+             return res.render("categoria", {category:category, categorys:categorys})
+             })
+        
 
 
     }

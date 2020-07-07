@@ -67,16 +67,14 @@
     </div>
     <div class="related">
         <h2>
-            Productos Relacionados
+            Otros Productos
         </h2>
-        <div>
-            <img src="/images/products/<%= product.image %>" alt="">
-        </div>
-        <div>
-            <img src="/images/products/<%= product.image %>" alt="">
-        </div>
-        <div>
-           <img src="/images/products/<%= product.image %>" alt="">
+        <% productRelated.forEach(related => { %>
+            <div>
+                <a href="/product/<%= related.id %> "><img href="/movies/details/<%= related.image %>" alt="Foto del producto relacionado"></a>
+            </div>
+        <% }) %>
+      
         </div>
     </div>
 
