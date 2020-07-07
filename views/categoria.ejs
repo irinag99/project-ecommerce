@@ -14,20 +14,27 @@
         <h1 class="title"> <%= category.name.toUpperCase() %>  </h1>
             <div class="filters">
                 <h2>Categorias:</h2>
-                <% categorys.forEach(ca => { %>
-                    <nav>
-                        <a href='/category/<%= ca.id %> '>
-                            <h3><%=ca.name.toUpperCase() %></h3>
-                        </a>
-                        <% if (ca.id ==category.id) { %>
-                            <p>ordenar</p>
-                            <p>ordenar</p>
-                            <p>ordenar</p>                           
-                        <% } %>
-                        <div class="filterContent">    
-                    </div>
-                </nav>
-                <% }) %>
+                    <% categorys.forEach(ca => { %>
+                     <% if (ca.id ==category.id) { %>
+                        <div class="filterContent" >
+                            <nav >
+                                <a href='/category/<%= ca.id %> '>
+                                    <h4><%=ca.name.toUpperCase() %></h4>
+                                </a> 
+                                    <p>ordenar</p>
+                                    <p>ordenar</p>
+                                    <p>ordenar</p>  
+                            </nav>  
+                        </div>                       
+                            <% }else{ %>
+                            <div class="filterContent">
+                                <nav>
+                                    <a href='/category/<%= ca.id %> '>
+                                        <h4><%=ca.name.toUpperCase() %></h4>
+                                    </a>  
+                                </nav>     
+                            </div>
+                <% }}) %>
             </div>
             <div class="imagenesProductos">
                 <% for( let i = 0; i < category.products.length; i++ ) { %>
