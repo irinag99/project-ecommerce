@@ -12,7 +12,7 @@ const categoryController = {
         let category = Category.findByPk(req.params.id,{
             include: [ 
                 {association: 'products',
-                 limit: 9}
+                 limit: 14}
             ],
             });
                 
