@@ -21,5 +21,6 @@ var storage = multer.diskStorage({
   // RUTAS
   
   router.get("/:id", categoryController.vista);
-
+  router.get("/:id/ordermax", categoryController.vistaMax);
+  router.get("/:id/ordermin", categoryController.vistaMin); 
 module.exports = router;

@@ -29,7 +29,60 @@ const categoryController = {
         
 
 
+    },
+    "vistaMax": (req,res)=>{
+
+        let category = Category.findByPk(req.params.id,{
+            include: [ 
+                {association: 'products',
+                 limit: 14,
+                order:[
+                    ['price','DESC']
+                ]}
+            ],
+            });
+                
+        let categorys = Category.findAll({
+            order:[
+                ['name','ASC']
+                ]
+        });
+        
+        Promise.all([category, categorys])
+         .then(function ([category, categorys]){
+             return res.render("categoria", {category:category, categorys:categorys})
+             })
+        
+
+
+    },
+    "vistaMin": (req,res)=>{
+
+        let category = Category.findByPk(req.params.id,{
+            include: [ 
+                {association: 'products',
+                 limit: 14,
+                order:[
+                    ['price','ASC']
+                ]}
+            ],
+            });
+                
+        let categorys = Category.findAll({
+            order:[
+                ['name','ASC']
+                ]
+        });
+        
+        Promise.all([category, categorys])
+         .then(function ([category, categorys]){
+             return res.render("categoria", {category:category, categorys:categorys})
+             })
+        
+
+
     }
+
 }
 
 

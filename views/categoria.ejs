@@ -22,9 +22,9 @@
                                 <a href='/category/<%= ca.id %> '>
                                     <h4><%=ca.name.toUpperCase() %></h4>
                                 </a> 
-                                    <p>ordenar</p>
-                                    <p>ordenar</p>
-                                    <p>ordenar</p>  
+                                    <p><a href="/category/<%= ca.id %>/ordermax">ordenar mayor</a></p>
+                                    <p><a href="/category/<%= ca.id %>/ordermin">ordenar menor</a></p>
+                                  
                             </nav>  
                         </div>                       
                             <% }else{ %>
