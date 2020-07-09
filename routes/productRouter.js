@@ -48,4 +48,7 @@ const multer = require("multer")
   router.post("/search",productController.search);
   router.put("/:id/edit",upload.any(),productController.edit);
   router.delete("/:id/delete",productController.delete);
+
+  router.post('/add', productController.addCart);
+  
 module.exports = router;

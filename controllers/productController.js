@@ -100,6 +100,25 @@ const productController = {
                 .then((resultado)=>{
                    return res.redirect("/category/1")
                 })
+        },
+        addCart:(req,res)=>{
+            db.Product.findByPk(req.body.id)
+            .then(product=>{
+                let store = {
+                    quantity: req.body.quantity,
+                    price: product.price,
+                    state: 0,
+                    idProduct: product.id,
+                    idUser: req.session.user.id,
+                    productName: product.name,
+                    totalPrice: product.price * req.body.quantity
+                }
+                db.Cart.create(store)
+            })
+            .then(()=>{
+                return res.redirect('/cart')
+            })
+
         }
 
 

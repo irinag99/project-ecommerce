@@ -230,3 +230,9 @@ insert into products (name, description, price, idCategory, image) values ('Pyri
 insert into products (name, description, price, idCategory, image) values ('Octinoxate and Oxybenzone', 'Adrenal operation NEC', 932.97, 1, 'http://dummyimage.com/214x239.bmp/cc0000/ffffff');
 insert into products (name, description, price, idCategory, image) values ('Lidocaine Hydrochloride and epinephrine', 'Platelet transfusion', 892.15, 1, 'http://dummyimage.com/131x198.jpg/5fa2dd/ffffff');
 insert into products (name, description, price, idCategory, image) values ('Hyoscyamine Sulfate', 'Laser destruc rectal les', 601.6, 5, 'http://dummyimage.com/150x233.png/cc0000/ffffff');
+
+alter table cart
+add totalPrice integer not null;
+
+alter table cart
+add productName varchar(250) not null;

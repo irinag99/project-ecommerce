@@ -56,7 +56,6 @@ window.addEventListener("load", (e) => {
                 input.value = ''
             })
             textarea.value = ''
-
             overlay.style.display = 'none'
 
         })

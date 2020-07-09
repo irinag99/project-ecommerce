@@ -12,84 +12,50 @@
     <div class="carrito-total">
         <h2 class="shopping-title"> SHOPPING BAG</h2>
         <div class="vistas-de-productos">
-       <div class="vista-de-producto">
-            <div class="producto-elegido">
-                <div class="foto-producto" >
-                    <img  class="producto-elegido-img " src="/images/barbii.jpg" alt="Foto del producto"></div>
+            <% let subtotal=0 %>
+            <% if (typeof(cartProducts) !='undefined'){%>
+                
+            <% cartProducts.forEach(cartProduct => { %>
+            <div class="vista-de-producto">
+                <div class="producto-elegido">
+                    <div class="foto-producto">
+                        <img class="producto-elegido-img " src="/images/products/<%= cartProduct.product.image %>"
+                            alt="Foto del producto">
+                    </div>
                 </div>
                 <div class="info-producto">
-                    <p><b> Nombre producto</b></p>
-                    <p>Descripcion</p>
+                    <p><b> <%= cartProduct.productName %> </b></p>
+                    <p><%= cartProduct.product.description %> </p>
+                    <p><%= cartProduct.quantity %> </p>
                 </div>
                 <div class="precio-producto">
-                    <p>$120</p>
+                    <p>$<%= cartProduct.price %> </p>
                 </div>
                 <div class="contenedor-contador-de-producto">
-                    
-                    <div class="contador-total">
-                        <button class="boton" >-</button>
-                        <input type="tel" value="1" class="contador">
-                        <button class="boton" >+</button>
-                        </div>
-                        <button class="boton">Eliminar</button>
 
-                </div>
-        </div>
-        <div class="vista-de-producto">
-            <div class="producto-elegido">
-                <div class="foto-producto" >
-                    <img  class="producto-elegido-img " src="/images/barbii.jpg" alt="Foto del producto"></div>
-                </div>
-                <div class="info-producto">
-                    <p><b> Nombre producto</b></p>
-                    <p>Descripcion</p>
-                </div>
-                <div class="precio-producto">
-                    <p>$120</p>
-                </div>
-                <div class="contenedor-contador-de-producto">
-                    
-                    <div class="contador-total">
-                        <button class="boton" >-</button>
+                    <!-- <div class="contador-total">
+                        <button class="boton">-</button>
                         <input type="tel" value="1" class="contador">
-                        <button class="boton" >+</button>
-                        </div>
-                        <button class="boton">Eliminar</button>
-
+                        <button class="boton">+</button>
+                    </div> -->
+                    <button class="boton">Eliminar</button>
+                    <% subtotal+= cartProduct.totalPrice %> 
                 </div>
-        </div>
-        
-        <div class="vista-de-producto">
-            <div class="producto-elegido">
-                <div class="foto-producto" >
-                    <img  class="producto-elegido-img " src="/images/barbii.jpg" alt="Foto del producto"></div>
-                </div>
-                <div class="info-producto">
-                    <p><b> Nombre producto</b></p>
-                    <p>Descripcion</p>
-                </div>
-                <div class="precio-producto">
-                    <p>$120</p>
-                </div>
-                <div class="contenedor-contador-de-producto">
-                    
-                    <div class="contador-total">
-                        <button class="boton" >-</button>
-                        <input type="tel" value="1" class="contador">
-                        <button class="boton" >+</button>
-                        </div>
-                        <button class="boton">Eliminar</button>
-
-                </div>
-        </div>
+            </div>
+            <% }) %>
+            <%}%>
+ 
         </div>
             <div class="informacion-de-productos-precios">
                 <div class="partesuperior">
                 <article>      
-                    <p>Subtotal : $120 </p>
+                    <p>Subtotal : $<%= subtotal %> </p>
                     
-                    <p>Envio : $200</p><br><br>
-                    <p>Total : $120</p>
+                    <p>Envio : $200
+                    </p><br><br>
+                    <p>Total : $<%= subtotal + 200 %>
+                        
+                    </p>
                     <br>
                
             </div>

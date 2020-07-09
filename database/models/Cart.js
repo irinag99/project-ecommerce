@@ -18,6 +18,14 @@ module.exports = (sequelize, dataTypes) => {
             state:{type: dataTypes.INTEGER,
             notNull: true },
 
+            idProduct: dataTypes.INTEGER,
+
+            idUser: dataTypes.INTEGER,
+
+            productName: dataTypes.STRING,
+            
+            totalPrice: dataTypes.INTEGER
+
             }
 
         const config = {
@@ -28,26 +36,36 @@ module.exports = (sequelize, dataTypes) => {
         const Cart = sequelize.define(alias, cols, config);
 
         Cart.associate = function (models) {
-            Cart.belongsToMany(models.User, {
+            // Cart.belongsToMany(models.User, {
+            //     as: 'user',
+            //     through: 'userCart',
+            //     foreignKey: 'idUser',
+            //     otherKey: 'idCart',
+            //     timestamps: false
+            // });
+            Cart.belongsTo(models.User, {
                 as: 'user',
-                through: 'userCart',
                 foreignKey: 'idUser',
-                otherKey: 'idCart',
-                timestamps: false
             });
 
-            Cart.belongsTo(models.Order, {
-                as: 'order',
-                foreignKey: 'idOrder',
-            });
 
-            Cart.belongsToMany(models.Product, {
+            // Cart.belongsTo(models.Order, {
+            //     as: 'order',
+            //     foreignKey: 'idOrder',
+            // });
+
+            // Cart.belongsToMany(models.Product, {
+            //     as: 'product',
+            //     through: 'productCart',
+            //     foreignKey: 'idProduct',
+            //     otherKey: 'idCart',
+            //     timestamps: false
+            // });
+
+            Cart.belongsTo(models.Product, {
                 as: 'product',
-                through: 'productCart',
-                foreignKey: 'idProduct',
-                otherKey: 'idCart',
-                timestamps: false
-            });
+                foreignKey: 'idProduct'
+            })
         }
         
         

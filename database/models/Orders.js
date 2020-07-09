@@ -24,10 +24,10 @@ module.exports = (sequelize, dataTypes) => {
     
     
     Order.associate = function(models){
-        Order.hasMany(models.Cart, {
-            as: 'cart',
-            foreignKey: 'idOrder',
-        });
+        // Order.hasMany(models.Cart, {
+        //     as: 'cart',
+        //     foreignKey: 'idOrder',
+        // });
 
         Order.belongsTo(models.User, {
             as: 'user',
