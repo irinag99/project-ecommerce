@@ -17,8 +17,8 @@
                 <h2>Categorias:</h2>
                     <% categorys.forEach(ca => { %>
                      <% if (ca.id ==category.id) { %>
-                        <div class="filterContent" >
-                            <nav >
+                        <div class="filterContent Selected" >
+                            <nav class="category ">
                                 <a href='/category/<%= ca.id %> '>
                                     <h4><%=ca.name.toUpperCase() %></h4>
                                 </a> 
@@ -29,7 +29,7 @@
                         </div>                       
                             <% }else{ %>
                             <div class="filterContent">
-                                <nav>
+                                <nav class="category">
                                     <a href='/category/<%= ca.id %> '>
                                         <h4><%=ca.name.toUpperCase() %></h4>
                                     </a>  

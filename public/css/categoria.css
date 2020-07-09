@@ -10,14 +10,18 @@ div.category-container {
 }
 
 h1.title {
-    margin: 0;
-    padding: 30px 0;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #55C24B;
+    font-weight: bold;
     width: 100%;
+   
 }
 
 h2 {
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 15px 30px;
+    border-bottom: #E5E5E5 solid 1px;
 }
 
 /* div.container{
@@ -35,8 +39,22 @@ div.filters {
     background-color: white;
     border: #E5E5E5 solid 1px;
     border-radius: 15px;
+   /*  padding: 15px 30px; */
+}
+nav.category:hover{
+    background-color: #e7def1ab;
+}
+div.filterContent nav.category{
     padding: 15px 30px;
 }
+div.Selected{
+    background-color: #e7def1ab;
+}
+
+div.filterContent{
+    border-bottom: #E5E5E5 solid 1px;
+}
+
 
 div.imagenesProductos {
     width: 880px;
