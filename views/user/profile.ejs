@@ -59,23 +59,23 @@
             <p>No tiene direcciones registradas...</p>
             <% }else{ %>
             <% user.addresses.forEach(address => { %>
-            <div>
-                    <p><%= address.street %> <%= address.number %>, <%= address.municipality %>, <%= address.province %> <%= address.PC %>
-                    <%= address.apartment==undefined? '':address.apartment %> <%= address.description==undefined? '':address.description %></p>
+            <div class="datosDirecciones">
+                    <p><%= address.street %> <%= address.number %> <%= address.apartment==undefined? '':address.apartment %>.<br> <%= address.municipality %>. <br>  <%= address.province %> <%= address.PC %> <br>
+                     <%= address.description==undefined? '':address.description %></p>
                 <div>
-                    <button>Editar</button>
-                    <button>Eliminar</button>
+                    <button id="profileButtons">Editar</button>
+                    <button id="profileButtons">Eliminar</button>
                 </div>
 
             </div>
-            <li><%= address.street %> <button>Editar</button>
-                <button>Eliminar</button>
-            </li>
+            
 
             <% }) %>
             <%}%>
             <br>
-            <button class='add-address-button'type='button'>Agregar direccion</button>
+            <div style="margin-left: 20px; margin-bottom: 20px;">
+            <button id="profileButtons" class='add-address-button' type='button'>Agregar direccion</button>
+            </div>
         </div>
 
 

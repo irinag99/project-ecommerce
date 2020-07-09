@@ -13,12 +13,17 @@ div.principal {
     background-color: white;
 }
 
+.nameProduct p{
+    margin-top: 10px;
+}
+
 div.imageProduct {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 50%;
 }
+
 
 div.nameProduct {
     display: flex;
@@ -29,25 +34,15 @@ div.nameProduct {
     flex-direction: column;
 }
 
-div.quantity {
-    padding: 20px 0;
+
+#quantity{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    -moz-appearance: textfield;
+    border-radius: 10px;
 }
 
-div.quantity input {
-    border: 1px solid black;
-    width: 25px;
-    text-align: center;
-    background-color: hsl(0, 0%, 98%);
-}
-
-div.quantity button {
-    border: 1px solid black;
-    width: 25px;
-    text-align: center;
-    background-color: hsl(0, 0%, 98%);
-}
-
-div.action input {
+#agregarCarrito {
     display: block;
     color: white;
     height: 35px;
@@ -61,7 +56,7 @@ div.action input {
     padding: 0px 15px;
     border-radius: 0px;
 }
-div.action input:hover{
+#agregarCarrito:hover{
     background-color:#55A24B;
 }
 

@@ -11,6 +11,7 @@ div.contenedor-parcial-profile{
 
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 
     background-color: white;
     margin-top: 20px;
@@ -78,6 +79,21 @@ div.informacion div{
     width:65%;
 }
 
+#profileButtons{
+    background-color:#004586;
+    padding: 2px 4px;
+    text-align: center;
+    display: inline-block;
+    margin: 1px 5px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+}
+#profileButtons:hover{
+    background-color: white;
+    color: black;
+}
 div.address-form {
     background-color: white;
     border: 1px solid #E5E5E5;
@@ -112,6 +128,17 @@ div.form-title{
     color:#959595;
     font-size: 1rem;
 
+}
+.datosDirecciones{
+    border-top: 1px solid #E5E5E5;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.add-address-button{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
 }
 form#addAddress {
     width:80%;

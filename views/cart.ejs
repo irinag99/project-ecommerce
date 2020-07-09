@@ -26,7 +26,7 @@
                 <div class="info-producto">
                     <p><b> <%= cartProduct.productName %> </b></p>
                     <p><%= cartProduct.product.description %> </p>
-                    <p><%= cartProduct.quantity %> </p>
+                    <p id="cantidadProducto">Cantidad : <%= cartProduct.quantity %> </p>
                 </div>
                 <div class="precio-producto">
                     <p>$<%= cartProduct.price %> </p>
@@ -50,9 +50,10 @@
                 <div class="partesuperior">
                 <article>      
                     <p>Subtotal : $<%= subtotal %> </p>
+                    <br>
                     
                     <p>Envio : $200
-                    </p><br><br>
+                    </p><br>
                     <p>Total : $<%= subtotal + 200 %>
                         
                     </p>
