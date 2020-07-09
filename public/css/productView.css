@@ -63,8 +63,14 @@ div.nameProduct {
 div.principal img {
     width: 400px;
     height: 400px;
+    padding: 1px;
+    border: #E5E5E5 solid;
 }
-
+div.otherProduct{
+    border: solid 1px #dedede;
+    border-radius: 7px;
+    padding: 7px;
+}
 
 div.related {
     display: flex;
@@ -82,8 +88,10 @@ div.related {
 div.related h2{
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 50px;
-    font-weight: normal;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #55C24B;
+    font-weight: bold;
 }
 div.related img {
     width: 290px;

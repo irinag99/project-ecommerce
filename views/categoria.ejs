@@ -38,7 +38,7 @@
                 <% }}) %>
             </div>
             <div class="imagenesProductos primera-tanda">
-                <% for( let i = 0; i < 7; i++ ) { %>
+                <% for( let i = 0; i < 5; i++ ) { %>
                     <a href="/product/<%= category.products[i].id %> ">
                         <div class="item">
                             <img src="/images/products/<%= category.products[i].image %>" alt="foto producto">
@@ -51,7 +51,7 @@
 
         </div>
         <div class="imagenesProductos segunda-tanda" style="display: none;">
-            <% for( let i = 7; i < 14; i++ ) { %>
+            <% for( let i = 5; i < 11; i++ ) { %>
                 <a href="/product/<%= category.products[i].id %> ">
                     <div class="item">
                         <img src="/images/products/<%= category.products[i].image %>  " alt="foto producto">

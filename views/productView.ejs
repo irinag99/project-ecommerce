@@ -66,13 +66,14 @@
 
     </div>
     <div class="related">
-        <h2>
+        <h2 class="othersProducts">
             Otros Productos
         </h2>
         <% productRelated.forEach(related => { %>
-        <div>
+        <div class="otherProduct">
             <a href="/product/<%= related.id %> "><img src="/images/products/<%= related.image %>"
                     alt="Foto del producto relacionado"></a>
+            <p><%=related.name  %> </p>
         </div>
         <% }) %>
 
