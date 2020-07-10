@@ -27,10 +27,16 @@ var upload = multer({ storage: storage });
 
 router.get("/login", guestMiddleware ,userController.login);
 router.post("/login", validator.login, userController.processLogin);
+
 router.post("/register", validator.register, userController.processRegister);
+
 router.get('/profile', authMiddleware, userController.profile);
 router.post('/profile/edit', upload.any(), authMiddleware, userController.processProfile);
-router.post('/create/address', authMiddleware, userController.storeAddress)
+
+router.post('/address', authMiddleware, userController.storeAddress)
+router.delete('/address', authMiddleware, userController.destroyAddress);
+
+
 module.exports = router;
 
 

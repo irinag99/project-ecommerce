@@ -131,6 +131,16 @@ const userController = {
         .then(address=>{
             return res.redirect('/user/profile')
         })
+    },
+    destroyAddress: (req,res)=>{
+        db.Address.destroy({
+            where: {
+                id: req.body.idAddress
+            }
+        })
+        .then(address=>{
+            return res.redirect('/user/profile')
+        })
     }
 
 }
