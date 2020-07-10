@@ -6,79 +6,85 @@ const Op = Sequelize.Op;
 
 
 
-const categoryController = { 
-    "vista": (req,res)=>{
+const categoryController = {
+    "vista": (req, res) => {
 
-        let category = Category.findByPk(req.params.id,{
-            include: [ 
-                {association: 'products',
-                 limit: 14}
+        let category = Category.findByPk(req.params.id, {
+            include: [
+                {
+                    association: 'products',
+                    limit: 14
+                }
             ],
-            });
-                
-        let categorys = Category.findAll({
-            order:[
-                ['name','ASC']
-                ]
         });
-        
+
+        let categorys = Category.findAll({
+            order: [
+                ['name', 'ASC']
+            ]
+        });
+
         Promise.all([category, categorys])
-         .then(function ([category, categorys]){
-             return res.render("categoria", {category:category, categorys:categorys})
-             })
-        
+            .then(function ([category, categorys]) {
+                return res.render("categoria", { category: category, categorys: categorys })
+            })
+
 
 
     },
-    "vistaMax": (req,res)=>{
+    "vistaMax": (req, res) => {
 
-        let category = Category.findByPk(req.params.id,{
-            include: [ 
-                {association: 'products',
-                 limit: 14,
-                order:[
-                    ['price','DESC']
-                ]}
+        let category = Category.findByPk(req.params.id, {
+            include: [
+                {
+                    association: 'products',
+                    limit: 14,
+                    order: [
+                        ['price', 'DESC']
+                    ]
+                }
             ],
-            });
-                
-        let categorys = Category.findAll({
-            order:[
-                ['name','ASC']
-                ]
         });
-        
+
+        let categorys = Category.findAll({
+            order: [
+                ['name', 'ASC']
+            ]
+        });
+
         Promise.all([category, categorys])
-         .then(function ([category, categorys]){
-             return res.render("categoria", {category:category, categorys:categorys})
-             })
-        
+            .then(function ([category, categorys]) {
+                return res.render("categoria", { category: category, categorys: categorys })
+            })
+
 
 
     },
-    "vistaMin": (req,res)=>{
+    "vistaMin": (req, res) => {
 
-        let category = Category.findByPk(req.params.id,{
-            include: [ 
-                {association: 'products',
-                 limit: 14,
-                order:[
-                    ['price','ASC']
-                ]}
+        let category = Category.findByPk(req.params.id, {
+            include: [
+                {
+                    association: 'products',
+                    limit: 14,
+                    order: [
+                        ['price', 'ASC']
+                    ]
+                }
             ],
-            });
-                
-        let categorys = Category.findAll({
-            order:[
-                ['name','ASC']
-                ]
         });
-        
+
+        let categorys = Category.findAll({
+            order: [
+                ['name', 'ASC']
+            ]
+        });
+
         Promise.all([category, categorys])
-         .then(function ([category, categorys]){
-             return res.render("categoria", {category:category, categorys:categorys})
-             })
-        
+            .then(function ([category, categorys]) {
+                return res.render("categoria", { category: category, categorys: categorys })
+            })
+
 
 
     }
