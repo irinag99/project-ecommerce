@@ -38,7 +38,11 @@
                         <input type="tel" value="1" class="contador">
                         <button class="boton">+</button>
                     </div> -->
+                    
+                <form action="/cart/product?_method=DELETE" method="POST">
+                    <input type="hidden" name="cartProductId" value="<%=cartProduct.id %>">
                     <button class="boton">Eliminar</button>
+                </form>
                     <% subtotal+= cartProduct.totalPrice %> 
                 </div>
             </div>

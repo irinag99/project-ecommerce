@@ -15,6 +15,9 @@
             
     
             <div class="imagenesProductos">
+                <% if (buscado.length == 0) { %>
+                 <h3>Ese producto no se encuentra</h3>
+                <% }else{ %>
                 <% for( let i = 0; i < buscado.length; i++ ) { %>
                     <a href="/product/<%= buscado[i].id %> ">
                         <div class="item">
@@ -24,7 +27,7 @@
                         </div>                    
                     </a>
                 <% } %>
-            
+            <% } %>
 
         </div>
     </div>

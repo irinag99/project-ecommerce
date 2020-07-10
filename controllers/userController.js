@@ -141,6 +141,32 @@ const userController = {
         .then(address=>{
             return res.redirect('/user/profile')
         })
+    },
+    formAddress: (req, res) =>{
+        db.Address.findByPk(req.params.id)
+        .then(function(address){
+            return res.render('user/editAddress', {address})
+        })
+        
+    },
+    editAddress: (req, res) => {
+        let update = {
+            street: req.body.street,
+            number: req.body.number,
+            PC: req.body.PC,
+            apartment: req.body.apartment,
+            province: req.body.province,
+            municipality: req.body.municipality,
+            description: req.body.description
+        }
+        db.Address.update(update, {
+            where: {
+                id: req.body.idAddress
+            }
+        })
+        .then(function(newAddress){
+            return res.redirect('/user/profile');
+        })
     }
 
 }

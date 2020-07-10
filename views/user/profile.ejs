@@ -63,9 +63,9 @@
                     <p><%= address.street %> <%= address.number %> <%= address.apartment==undefined? '':address.apartment %>.<br> <%= address.municipality %>. <br>  <%= address.province %> <%= address.PC %> <br>
                      <%= address.description==undefined? '':address.description %></p>
                 <div>
-                    <!-- <form action="/address"> -->
-                        <button class='edit-button' id="profileButtons">Editar</button>
-                    <!-- </form> -->
+                    <form action="/user/address/edit/<%= address.id %> ">
+                        <button class='edit-button' id="profileButtons" type="submit">Editar</button>
+                    </form> 
                     <form action="/user/address?_method=DELETE" method="POST">
                         <input name='idAddress' type="hidden" value='<%= address.id %>' >
                         <button id="profileButtons">Eliminar</button>
@@ -133,49 +133,7 @@
 
             </form>
         </div>
-            <div class='edit-address-form'>
-                <div class='form-header'>
-                    <div class="form-title">
-                        <h2>Editar Direccion</h2>
-                    </div>
-                    <button class='cancel-address-form'>&times;</button>
-                </div>
-                <form id="addAddress" action="/user/address" method='POST'>
-                    <div class='uno'>
-                        <input type="text" name='street' placeholder="Calle">
-                        <i class="fas fa-check-circle derecha" id='street'></i>
-                    </div>
-                    <div class='tres'>
-                        <input type="number" name='number' placeholder="Numero">
-                        <input type="number" name='PC' placeholder="CP">
-                        <input type="text" name='apartment' placeholder="Departamento">
-                        <i id='apartment' class="fas fa-check-circle derecha"></i>
-                        <i id='PC' class="fas fa-check-circle medio"></i>
-                        <i id='number' class="fas fa-check-circle izquierda"></i>
-                    </div>
-            
-                    <div class='uno'>
-                        <input type="text" name='province' placeholder="Provincia"><i id='province'
-                            class="fas fa-check-circle derecha"></i>
-                    </div>
-                    <div class='uno'>
-                        <input type="text" name='municipality' placeholder="Localidad"><i id='municipality'
-                            class="fas fa-check-circle derecha"></i>
-                    </div>
-                    <div class='uno'>
-                        <textarea name="description" cols="30" rows="2" placeholder="Descripcion adicional"></textarea>
-                        <i id='description' class="fas fa-check-circle derecha"></i>
-                    </div>
-            
-            
-            
-                    <input type="integer" value='<%= user.id %> ' name='id' hidden>
-                    <div class="buttons">
-                        <button type="submit">Agregar</button>
-                    </div>
-            
-                </form>
-            </div>
+
         <div id='overlay'>
 
         </div>

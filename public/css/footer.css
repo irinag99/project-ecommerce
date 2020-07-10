@@ -2,7 +2,6 @@ footer{
     background-color: white;
     border-top:#E5E5E5 solid 1px;
 }
-
 footer div.footer-container{
     display: flex;
     flex-wrap: wrap;
@@ -139,9 +138,10 @@ div.copyrights p{
     margin: 8px;
 }
 div.copyrights {
-    width:100%;
+    width:50%;
     border-top:#E5E5E5 solid 1px;
     border-bottom:#E5E5E5 solid 1px;
+    margin: 0 auto;
 }
 
 div.footer-right form{

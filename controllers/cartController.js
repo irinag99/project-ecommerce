@@ -26,6 +26,16 @@ const controller = {
             return res.render("cart", {cartProducts: products})
         }) 
         
+    },
+    deleteProduct: (req, res) => {
+        db.Cart.destroy({
+            where: {
+                id: req.body.cartProductId
+            }
+        })
+        .then(products =>{
+            return res.redirect('/cart')
+        })
     }
 }
 

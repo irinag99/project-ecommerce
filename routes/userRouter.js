@@ -36,6 +36,9 @@ router.post('/profile/edit', upload.any(), authMiddleware, userController.proces
 router.post('/address', authMiddleware, userController.storeAddress)
 router.delete('/address', authMiddleware, userController.destroyAddress);
 
+router.get('/address/edit/:id', userController.formAddress);
+router.put('/address/edit', userController.editAddress);
+
 
 module.exports = router;
 

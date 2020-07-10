@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('../partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="/js/profile.js"></script>
+    <title>Farmacia - <%= user.name%> <%= user.surname %></title>
+</head>
+
+<body>
+    <%-include('../partials/header.ejs') %>
+
+    <div class='edit-address-form'>
+        <div class='form-header'>
+            <div class="form-title">
+                <h2>Editar Direccion</h2>
+            </div>
+            <button class='cancel-address-form'>&times;</button>
+        </div>
+        <form id="addAddress" action="/user/address/edit?_method=PUT" method='POST'>
+            <div class='uno'>
+                <input type="text" name='street' placeholder="Calle" value="<%= address.street %>">
+                <i class="fas fa-check-circle derecha" id='street'></i>
+            </div>
+            <div class='tres'>
+                <input type="number" name='number' placeholder="Numero" value="<%= address.number %>">
+                <input type="number" name='PC' placeholder="CP" value="<%= address.PC %>">
+                <input type="text" name='apartment' placeholder="Departamento" value="<%= address.apartment %>">
+                <i id='apartment' class="fas fa-check-circle derecha"></i>
+                <i id='PC' class="fas fa-check-circle medio"></i>
+                <i id='number' class="fas fa-check-circle izquierda"></i>
+            </div>
+
+            <div class='uno'>
+                <input type="text" name='province' placeholder="Provincia" value="<%= address.province %>"><i id='province'
+                    class="fas fa-check-circle derecha"></i>
+            </div>
+            <div class='uno'>
+                <input type="text" name='municipality' placeholder="Localidad" value="<%= address.municipality %>"><i id='municipality'
+                    class="fas fa-check-circle derecha"></i>
+            </div>
+            <div class='uno'>
+                <textarea name="description" cols="30" rows="2" placeholder="Descripcion adicional"><%= address.description %></textarea>
+                <i id='description' class="fas fa-check-circle derecha"></i>
+            </div>
+
+            <input type="integer" value='<%= user.id %>' name='id' hidden>
+            <div class="buttons">
+                <button type="submit">Agregar</button>
+            </div>
+
+            <input type="hidden" value="<%= address.id %>" name="idAddress">
+        </form>
+
+    </div>
+    <%-include('../partials/footer.ejs') %>
+
+</body>
+
+</html>
