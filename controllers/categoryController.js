@@ -61,7 +61,7 @@ const categoryController = {
         let category = Category.findByPk(req.params.id,{
             include: [ 
                 {association: 'products',
-                 limit: 10,
+                 limit: 14,
                 order:[
                     ['price','ASC']
                 ]}
