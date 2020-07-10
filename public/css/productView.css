@@ -85,6 +85,13 @@ div.related {
     border-width: 1px 1px 1px 0.5px;
     background-color: white;
 }
+a.regresar{
+    width: 100%;
+    color:#55C24B
+}
+a.regresar:hover{
+    color:#92C24B
+}
 div.related h2{
     width: 100%;
     margin: 0 auto;

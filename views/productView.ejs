@@ -12,6 +12,7 @@
 <body class="product">
     <%-include('./partials/header.ejs') %>
     <div class="principal">
+        <a class="regresar" href="/category/<%=product.idCategory%>" > Regresar</a>
         <div class="imageProduct">
             <img src="/images/products/<%= product.image %>" alt="foto producto"> <!-- agregar slider con js -->
         </div>
