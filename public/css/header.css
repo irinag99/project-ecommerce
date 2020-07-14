@@ -133,10 +133,12 @@ li input.buscador{
 }
 
 /* MediaQuery Mobile */
-@media(max-width:505px){
+@media(max-width:610px){
     header div.logo{
         order:-1;
     }
+    li input.buscador {
+        width: 45vw;}
     header div.titles-2{
         order:1; 
         width:100%;

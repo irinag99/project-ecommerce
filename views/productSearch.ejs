@@ -11,10 +11,10 @@
 <body>
     <%-include('./partials/header.ejs') %>
     <div class="category-container">
-        <h1> Resultado de busqueda </h1>
+        <h1 style="width: 100%; text-align: center; color:#55C24B;"> Resultado de busqueda </h1>
             
     
-            <div class="imagenesProductos">
+            <div class="imagenesProductos" style="margin: auto;">
                 <% if (buscado.length == 0) { %>
                  <h3>Ese producto no se encuentra</h3>
                 <% }else{ %>
