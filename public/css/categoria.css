@@ -146,13 +146,34 @@ div.botones-categoria {
         height: 123px;
     }
 }
-
- @media(max-width:600px) {
+@media(max-width:928px) {
+    div.filters h2, div.filterContent nav.category{
+        padding: 15px 0px;
+    }
+    div.filters h2{
+        font-size: 28px;
+    }
+    div.filterContent nav.category{
+        font-size: 20px;
+    }
+}
+ @media(max-width:702px) {
     div.filters {
         width: 70%;
         margin: 0 auto;
     }
     div.imagenesProductos {
         width: 100%;
+    }
+    div.filters h2, div.filterContent nav.category{
+        padding: 15px 30px;
+    }
+    div.filters h2{
+        font-size: 34px;
+        text-align: center;
+    }
+    div.filterContent nav.category{
+        font-size: 27px;
+        text-align: center;
     }
 } 
