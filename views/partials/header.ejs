@@ -38,6 +38,9 @@
                     <ul>
                         <li><a class="boton-menu" href="/"> Home </a></li>
                         <li><a class="boton-menu" href="/user/login"> Ingresar </a></li>
+                        <% if (typeof(user)!='undefined') { %>
+                        <li><a class="boton-menu " href="/user/profile"> Perfil </a></li>
+                        <% } %> 
                     </ul>
 
                 </nav>
