@@ -47,6 +47,7 @@ div.login-register-container {
     width: 100%;
     flex-wrap: wrap;
     margin:auto;
+    min-height: 80vh;
 }
 div.login-register-container button{
     color: white;
