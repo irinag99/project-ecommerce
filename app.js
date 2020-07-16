@@ -54,4 +54,4 @@ app.use((req,res,next)=> {
 
 // EMPEZAR SERVER
 
-app.listen(3031,()=>{console.log("Server running port 3030")});
+app.listen(3030,()=>{console.log("Server running port 3030")});
