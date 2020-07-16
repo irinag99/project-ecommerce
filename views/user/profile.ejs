@@ -89,7 +89,13 @@
 
         <div class="contenedor-parcial-profile compras">
             <h2>Compras</h2>
-
+            <% if (user.cart.length == 0) { %>
+                <p>No tiene compras realizadas...</p>
+                <% }else{ %>
+                <% user.cart.forEach(product => { %>
+                    <p><a href="/product/<%=product.idProduct%> "><%=product.productName  %></a></p>
+                 <% }) %>
+                 <%}%>   
         </div>
 
     </div>

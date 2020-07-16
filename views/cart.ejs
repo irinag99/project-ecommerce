@@ -14,7 +14,9 @@
         <div class="vistas-de-productos">
             <% let subtotal=0 %>
             <% if (typeof(cartProducts) !='undefined'){%>
-                
+                <% if (cartProducts.length == 0) { %>
+                 <h3 class="noProducts" >No posee productos en el carrito</h3>
+                <% } %>
             <% cartProducts.forEach(cartProduct => { %>
             <div class="vista-de-producto">
                 <div class="producto-elegido">
@@ -50,24 +52,31 @@
             <%}%>
  
         </div>
-            <div class="informacion-de-productos-precios">
-                <div class="partesuperior">
-                <article>      
-                    <p>Subtotal : $<%= subtotal %> </p>
-                    <br>
-                    
-                    <p>Envio : $200
-                    </p><br>
-                    <p>Total : $<%= subtotal + 200 %>
+        <% if (typeof(cartProducts) !='undefined'  ){%>
+            <% if (cartProducts.length != 0) { %>
+                <div class="informacion-de-productos-precios">
+                    <div class="partesuperior">
+                    <article>      
+                        <p>Subtotal : $<%= subtotal %> </p>
+                        <br>
                         
-                    </p>
-                    <br>
-               
-            </div>
-            <div class="comprarboton">   
-                  <button class="comprar">Comprar</button>
-            </article></div>
-            </div>
+                        <p>Envio : $200
+                        </p><br>
+                        <p>Total : $<%= subtotal + 200 %>
+                            
+                        </p>
+                        <br>
+                   
+                </div>
+                <div class="comprarboton"> 
+                    <form action="/cart/toBuy" method="POST">  
+                      <button class="comprar">Comprar</button>
+                    </form>
+                </article></div>
+                </div>
+            <% } %>
+       
+            <% } %> 
     </div>
     </section>
     <%-include('./partials/footer.ejs') %>

@@ -71,7 +71,8 @@ const userController = {
                 email: req.session.user.email
             },
             include: [
-                { association: 'addresses' }
+                { association: 'addresses' },
+                { association: 'cart' }
                 // { 
                 //     association:'orders',
                 //     include:[{association: 'cart'}]

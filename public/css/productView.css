@@ -146,6 +146,12 @@ div.botonesAdmin{
     display: flex;
 
 }
+div.otherProduct p{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: Ellipsis;
+    width: 290px;
+}
 div.botonesAdmin button{
 
         color: white;

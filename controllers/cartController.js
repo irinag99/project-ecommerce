@@ -36,6 +36,19 @@ const controller = {
         .then(products =>{
             return res.redirect('/cart')
         })
+    },
+    toBuy: (req,res)=> {
+        db.Cart.update({
+            state: 1
+        },{
+            where: {
+                state:0,
+                idUser:req.session.user.id
+            }
+        })
+        .then(function(comprado){
+            return res.redirect("/")
+        })
     }
 }
 

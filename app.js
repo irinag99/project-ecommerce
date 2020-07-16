@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const authMiddleware = require('./middlewares/authMiddleware');
 const guestMiddleware = require('./middlewares/guestMiddleware');
 const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
+const contadorMiddleware = require('./middlewares/contadorMiddleware');
 const methodOverride = require("method-override");
 
 //SETEAR METODO OVERRIDE
@@ -28,7 +29,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
-
+app.use(contadorMiddleware)
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);

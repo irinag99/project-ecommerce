@@ -22,7 +22,7 @@
             <p><%= product.description %> </p>
             <p> $ <%= product.price %> </p>
 
-
+            <% if (typeof(user)!='undefined' ) { %>
             <div class="action">
 
                 <!-- AGREGAR AL CARRITO  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
@@ -40,14 +40,18 @@
                 </form>
 
             </div>
-            <div class="botonesAdmin">
-                <button class="showEdit" type="button">Editar</button>
-                <div class="delete">
-                    <form action="/product/<%= product.id %>/delete?_method=DELETE" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
+            <% if (user.role==100) { %>
+                <div class="botonesAdmin">
+                    <button class="showEdit" type="button">Editar</button>
+                    <div class="delete">
+                        <form action="/product/<%= product.id %>/delete?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            <% } %>
+          
+            <% } %> 
 
         </div>
 

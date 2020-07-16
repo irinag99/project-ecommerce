@@ -11,7 +11,11 @@ a, a:hover{
     text-decoration: none;
     color: black;
 }
-
+h3.noProducts{
+    text-align:right;
+    color: #55C24B; 
+    width: 100%;
+}
 div.carrito-total{
     border-radius: 21px;
     display: flex;
@@ -46,7 +50,7 @@ img.producto-elegido-img{
 }
 .vista-de-producto{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     border: #E5E5E5 1px solid;
     border-radius: 20px;
@@ -139,7 +143,9 @@ img.producto-elegido-img{
         flex-wrap: wrap;
         flex-direction: column;
     }
-   
+   h3.noProducts{
+       text-align:center;
+   }
 }
 @media(max-width:600px){
     .vista-de-producto{

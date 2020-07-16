@@ -17,7 +17,11 @@ const productController = {
         let product = Product.findByPk(req.params.id);
                 
         let productRelated = Product.findAll({
-            limit:3
+            order: [
+                [Sequelize.literal('RAND()')]
+              ],
+        
+              limit: 3,
 
         });
         Promise.all([product, productRelated])
