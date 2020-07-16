@@ -68,6 +68,7 @@ img.producto-elegido-img{
 .informacion-de-productos-precios{
     width: 27%;
     margin-right: 1vw;
+    padding-bottom: 10px;
 }
 .partesuperior{
     border: black 1px outset;
@@ -81,7 +82,7 @@ img.producto-elegido-img{
     margin-top:3vh;
 }
 .contenedor-contador-de-producto{
-    margin-top:3vh;
+    margin-top:8vh;
 }
 .contenedor-contador-de-producto button{
     background-color: #004586;
