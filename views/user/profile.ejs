@@ -16,7 +16,7 @@
 
 
         <div class="contenedor-parcial-profile">
-            <h2> Datos personales </h2>
+            <h2 style="color:  #55C24B;"> Datos personales </h2>
             <div class="informacion">
 
                 <img id='avatar' src="/images/avatars/<%= user.avatar %>" alt="">
@@ -54,15 +54,16 @@
         </div>
 
         <div class="contenedor-parcial-profile">
-            <h2>Direcciones</h2>
+            <h2 style=" color:#55C24B">Direcciones</h2>
             <% if (user.addresses.length == 0) { %>
             <p>No tiene direcciones registradas...</p>
             <% }else{ %>
             <% user.addresses.forEach(address => { %>
             <div class="datosDirecciones">
-                    <p><%= address.street %> <%= address.number %> <%= address.apartment==undefined? '':address.apartment %>.<br> <%= address.municipality %>. <br>  <%= address.province %> <%= address.PC %> <br>
-                     <%= address.description==undefined? '':address.description %></p>
-                <div>
+                <div class="calle">
+                    <i class="fas fa-house-user">&nbsp<%= address.street %> <%= address.number %> &nbsp <%= address.apartment==undefined? '':address.apartment %> &nbsp <%= address.municipality %></i>
+                </div>
+                <div class="botonesAddres">
                     <form action="/user/address/edit/<%= address.id %> ">
                         <button class='edit-button' id="profileButtons" type="submit">Editar</button>
                     </form> 
@@ -88,7 +89,7 @@
 
 
         <div class="contenedor-parcial-profile compras">
-            <h2>Compras</h2>
+            <h2 style="color:  #55C24B;">Compras</h2>
             <% if (orders.length == 0) { %>
                 <p>No tiene compras realizadas...</p>
                 <% }else{ %>

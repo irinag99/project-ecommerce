@@ -55,7 +55,9 @@ div.Selected{
 div.filterContent{
     border-bottom: #E5E5E5 solid 1px;
 }
-
+div.filterContent nav.category a h4, div.filters h2,div.filterContent nav.category  p{
+    text-align: center;
+}
 
 div.imagenesProductos {
     width: 880px;

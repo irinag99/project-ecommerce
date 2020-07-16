@@ -229,3 +229,17 @@ i.izquierda{
     color:green;
     display: none;
 }
+div.datosDirecciones{
+    display: flex;
+}
+div.calle{
+    width: 60%;
+}
+div.botonesAddres{
+    width: 40%;
+    display: flex;
+    
+}
+div.botonesAddres form{
+    width: 15%;
+}
