@@ -89,11 +89,21 @@
 
         <div class="contenedor-parcial-profile compras">
             <h2>Compras</h2>
-            <% if (user.cart.length == 0) { %>
+            <% if (orders.length == 0) { %>
                 <p>No tiene compras realizadas...</p>
                 <% }else{ %>
-                <% user.cart.forEach(product => { %>
-                    <p><a href="/product/<%=product.idProduct%> "><%=product.productName  %></a></p>
+                <% orders.forEach(order => { %>
+                   <div id="infoProductos">
+                       
+                       <h3>Compra el día : <%= new Date(order.createdAt).toLocaleDateString() %> </h3><br>
+                       
+                       <% order.cart.forEach(cartProduct => { %>
+                        <div id="todoJunto">
+                        <p > Nombre del producto : <%= cartProduct.productName %> </p><br>
+                        <p > Cantidad de productos comprados : <%= cartProduct.quantity %> </p><br>
+                        </div>
+                       <% }) %>
+                   </div>
                  <% }) %>
                  <%}%>   
         </div>

@@ -13,10 +13,14 @@ header form, header form button {
 header div.logo:first-child{
     margin-right: auto;
 }
-
 header{
     background-color:#004586;
     opacity: 0.7;
+}
+#contador{
+ margin-left: 5px;
+ color:#55C24B;
+ font-weight: bold;
 }
 
 div.header-container ul {
@@ -34,6 +38,7 @@ div.header-container li {
     font-size: 15px;
     
 }
+
 .boton-menu {
     background-color:#004586;
     padding: 2px 4px;
@@ -43,6 +48,9 @@ div.header-container li {
     transition-duration: 0.4s;
     border-radius: 4px;
     color: white;
+    display: flex;
+    width: 100%;
+    cursor:pointer;
 }
 
 .boton-menu:hover{

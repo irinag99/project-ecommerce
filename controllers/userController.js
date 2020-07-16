@@ -66,27 +66,33 @@ const userController = {
 
     },
     profile: function (req, res) {
-        User.findOne({
+        let user = User.findOne({
             where: {
                 email: req.session.user.email
             },
             include: [
                 { association: 'addresses' },
-                { association: 'cart' }
-                // { 
-                //     association:'orders',
-                //     include:[{association: 'cart'}]
-                // }
+                
             ]
-        }).then(user =>{
-            // console.log(user)
-            // console.log(user.addresses)
-            // console.log(user.orders)
-            // console.log(user.orders.cart)
-            return res.render('user/profile', {user});
+        })
+        let orders = db.Order.findAll({
+            where: {
+                idUser: req.session.user.id
+            },
+            include: [{
+                    association: 'cart'
+                }]
+        
+        })
+        
+        Promise.all([user,orders])
+        .then(([user,orders])=>{
+           console.log (orders) 
+            return res.render("user/profile", {user:user, orders:orders}) 
         })
        
     },
+
     processProfile: (req, res) => {
 
         let update = {

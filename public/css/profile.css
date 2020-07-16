@@ -29,7 +29,20 @@ h2{
     display: none;
     
 }
+#todoJunto{
+border: solid 1px #004586;
+border-radius: 10px;
+margin-bottom: 10px;
+padding: 5px;
+}
 
+#infoProductos{
+    border: solid #004586 1px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 15px auto;
+    padding: 10px;
+}
 
 div.contenido{
     width: 100%; 

@@ -12,22 +12,22 @@ module.exports = (sequelize, dataTypes) => {
         total: {
             type: dataTypes.INTEGER,
             notNull: true
+        },
+        idUser :{
+            type:dataTypes.INTEGER,
+            notNull: true
         }
 
     }
 
-    const config = {
-        timestamps: false
-    }
-
-    const Order = sequelize.define(alias, cols, config);
+    const Order = sequelize.define(alias, cols);
     
     
     Order.associate = function(models){
-        // Order.hasMany(models.Cart, {
-        //     as: 'cart',
-        //     foreignKey: 'idOrder',
-        // });
+         Order.hasMany(models.Cart, {
+             as: 'cart',
+             foreignKey: 'idOrder',
+         });
 
         Order.belongsTo(models.User, {
             as: 'user',

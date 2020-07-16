@@ -24,7 +24,9 @@ module.exports = (sequelize, dataTypes) => {
 
             productName: dataTypes.STRING,
             
-            totalPrice: dataTypes.INTEGER
+            totalPrice: dataTypes.INTEGER,
+
+            idOrder: dataTypes.INTEGER,
 
             }
 
@@ -36,31 +38,18 @@ module.exports = (sequelize, dataTypes) => {
         const Cart = sequelize.define(alias, cols, config);
 
         Cart.associate = function (models) {
-            // Cart.belongsToMany(models.User, {
-            //     as: 'user',
-            //     through: 'userCart',
-            //     foreignKey: 'idUser',
-            //     otherKey: 'idCart',
-            //     timestamps: false
-            // });
+
             Cart.belongsTo(models.User, {
                 as: 'user',
                 foreignKey: 'idUser',
             });
 
 
-            // Cart.belongsTo(models.Order, {
-            //     as: 'order',
-            //     foreignKey: 'idOrder',
-            // });
+             Cart.belongsTo(models.Order, {
+                 as: 'order',
+                 foreignKey: 'idOrder',
+             });
 
-            // Cart.belongsToMany(models.Product, {
-            //     as: 'product',
-            //     through: 'productCart',
-            //     foreignKey: 'idProduct',
-            //     otherKey: 'idCart',
-            //     timestamps: false
-            // });
 
             Cart.belongsTo(models.Product, {
                 as: 'product',
