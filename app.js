@@ -46,6 +46,9 @@ app.use("/cart",authMiddleware,cartRouter);
 const categoryRouter = require('./routes/categoryRouter');
 app.use('/category', categoryRouter);
 
+const apiRouter = require('./routes/apiRoutes/apiRouter');
+app.use('/api', apiRouter );
+
 app.use((req,res,next)=> {
     res.status(404).render("error")
 })
