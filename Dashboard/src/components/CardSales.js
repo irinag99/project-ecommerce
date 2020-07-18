@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 
-class CardCategories extends Component{
+class CardSales extends Component{
 
 	 constructor(props){
 		super(props)
 		this.state={
-			productos:""
+			sales:""
 		}
 	}
 	apiCall(url, consecuencia){
@@ -14,11 +14,11 @@ class CardCategories extends Component{
 		.then(data =>  consecuencia(data))
 	}
 	componentDidMount(){
-		this.apiCall("http://localhost:3030/api/categories", this.numeroDeCategorias)
+		this.apiCall("http://localhost:3030/api/allsales", this.numeroDeVentas)
 	}
-	numeroDeCategorias= data => {
+	numeroDeVentas= data => {
 		this.setState({
-			categorias: data.meta.total
+			sales: data.meta.total
 		})
 	};
 	coponentDidUpdate(){
@@ -31,10 +31,10 @@ class CardCategories extends Component{
 				<div className="row no-gutters align-items-center">
 					<div className="col mr-2">
 						<div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-							Cantidad de categorias
+							Cantidad de Ventas
 						</div>
 						<div className="h5 mb-0 font-weight-bold text-gray-800">
-							{this.state.categorias}
+							{this.state.sales}
 						</div>
 					</div>
 					<div className="col-auto">
@@ -72,4 +72,4 @@ class CardCategories extends Component{
 	)
 }
  */
-export default CardCategories;
+export default CardSales;

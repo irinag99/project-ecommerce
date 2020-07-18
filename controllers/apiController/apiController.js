@@ -96,6 +96,21 @@ const controlller = {
            return res.json(resultado)
         })
     },
+    allSales:function(req, res){
+        db.Order.findAll()
+        .then(function(sales){
+            let resultado = {
+                meta: {
+                    status: 200,
+                    total: sales.length,
+                    url: '/api/allsales'
+                },
+                data:sales
+            };
+           return res.json(resultado)
+        })
+    }
+
 
 
 }

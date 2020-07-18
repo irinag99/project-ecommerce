@@ -7,6 +7,7 @@ router.get('/users',apiController.users)
 router.get('/categories',apiController.categories)
 router.get('/lastproduct',apiController.lastProduct)
 router.get('/latestsales',apiController.latestSales)
+router.get('/allsales',apiController.allSales)
 
 
 

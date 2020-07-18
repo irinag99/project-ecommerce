@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import CardProducts from './CardProducts';
-import CardCategories from './CardCategories';
+import CardSales from './CardSales';
 import CardUsers from './CardUsers';
 import LastProduct from './LastProduct';
 import Categories from './Categories';
@@ -37,7 +37,7 @@ class App extends Component {
 							<div className="row">
 								 <CardProducts  />
 								 <CardUsers  />
-								 <CardCategories  />
+								 <CardSales  />
 							</div>
 
 							{/* Row */}
