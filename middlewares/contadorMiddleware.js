@@ -9,7 +9,6 @@ function contadorMiddleware(req,res,next){
             }
         })
         .then(cart=>{
-            req.session.contador= cart
             res.locals.contador=cart
             return next()
         })

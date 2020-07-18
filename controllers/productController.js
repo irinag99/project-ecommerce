@@ -117,7 +117,7 @@ const productController = {
                     productName: product.name,
                     totalPrice: product.price * req.body.quantity
                 }
-                db.Cart.create(store)
+                return db.Cart.create(store)
             })
             .then(()=>{
                 return res.redirect('/cart')

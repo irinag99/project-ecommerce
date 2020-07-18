@@ -29,7 +29,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
-app.use(contadorMiddleware)
+app.use(contadorMiddleware);
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);

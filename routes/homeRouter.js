@@ -1,7 +1,9 @@
+const nodemailer = require("nodemailer");
 const express = require("express");
 const router = express.Router();
 const path = require("path");
 const homeController = require("../controllers/homeController");
+const bodyParser = require("body-parser")
 
 
 // GUARDAR ARCHIVOS CON MULTER 
@@ -34,4 +36,28 @@ router.post('/logout', function(req,res){
   res.clearCookie('user')
   res.redirect('/')
 })
+
+//Enviar email
+router.post('/sendEmail',function(req,res){
+  console.log(req.body)
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "enviofarmaciadigital@gmail.com",
+    pass: "papitaloca23"
+  }
+});
+
+let mailOptions = {
+  from: "enviofarmaciadigital@gmail.com",
+  to: "recibidofarmaciadigital@gmail.com",
+  subject: "Contacto nuevo generado",
+  text: "Email a contactar : " + req.body.emailSend,
+}
+
+transporter.sendMail(mailOptions, (err, data) => {
+  res.redirect("/")
+})
+})
 module.exports = router;
+
