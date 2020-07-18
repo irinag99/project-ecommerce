@@ -8,6 +8,7 @@ const guestMiddleware = require('./middlewares/guestMiddleware');
 const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
 const contadorMiddleware = require('./middlewares/contadorMiddleware');
 const methodOverride = require("method-override");
+const cors =  require("cors")
 
 //SETEAR METODO OVERRIDE
 app.use(methodOverride("_method"));
@@ -29,7 +30,12 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
+<<<<<<< HEAD
 app.use(contadorMiddleware);
+=======
+app.use(contadorMiddleware)
+app.use(cors())
+>>>>>>> ed2f2ef2bd07613f3ce4fdef7b52b19084121e24
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);
@@ -45,6 +51,9 @@ app.use("/cart",authMiddleware,cartRouter);
 
 const categoryRouter = require('./routes/categoryRouter');
 app.use('/category', categoryRouter);
+
+const apiRouter = require('./routes/apiRoutes/apiRouter');
+app.use('/api', apiRouter );
 
 app.use((req,res,next)=> {
     res.status(404).render("error")
