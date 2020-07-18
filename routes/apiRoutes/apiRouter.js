@@ -10,7 +10,4 @@ router.get('/lastproduct',apiController.lastProduct);
 router.get('/latestsales',apiController.latestSales);
 router.post('/login', validator.loginDashboard, apiController.login);
 
-
-
-
 module.exports = router;
