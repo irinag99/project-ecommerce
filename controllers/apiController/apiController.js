@@ -54,7 +54,49 @@ const controlller = {
             };
            return res.json(resultado)
         })
-    }
+    },
+    lastProduct:function(req, res){
+        db.Product.findAll({
+            order: [
+                ['id', 'DESC']
+            ],
+            limit:1
+        })
+        .then(function(lastProduct){
+            let resultado = {
+                meta: {
+                    status: 200,
+                    total: "lastProduct",
+                    url: '/api/lastProduct'
+                },
+                data:lastProduct
+            };
+           return res.json(resultado)
+        })
+    },
+    latestSales:function(req, res){
+        db.Order.findAll({
+            include: [
+                {association: 'cart'}
+            ],
+            order: [
+                ['id', 'DESC']
+            ],
+            limit:3
+        })
+        .then(function(sales){
+            let resultado = {
+                meta: {
+                    status: 200,
+                    total: sales.length,
+                    url: '/api/latestsales'
+                },
+                data:sales
+            };
+           return res.json(resultado)
+        })
+    },
+
 
 }
 
