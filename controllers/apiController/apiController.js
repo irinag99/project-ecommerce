@@ -4,7 +4,7 @@ const Product = db.Product;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const {
-    validationResult
+    validationResult, body
 } = require("express-validator");
 
 
@@ -96,7 +96,14 @@ const controlller = {
            return res.json(resultado)
         })
     },
-
+    login: function(req, res){
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            return res.send(req.body.email + ' hola');
+        } else {
+            return res.send('no podés entrar');
+        }
+    }
 
 }
 
