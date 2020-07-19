@@ -32,6 +32,9 @@ app.use(cookieParser());
 app.use(cookieAuthMiddleware);
 app.use(contadorMiddleware);
 app.use(cors());
+/* app.use(function(req,res,next){
+    res.header("Content-type:application/json; charset=utf-8")
+}) */
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);

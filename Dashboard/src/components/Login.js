@@ -18,14 +18,15 @@ class Login extends React.Component {
     
 }
 
-export default Login; 
-/* import React, { useState } from 'react';
+export default Login;  
+/*  import React, { useState } from 'react';
+ import { json, urlencoded } from 'body-parser';
 
 class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            email:"gastonrberretta@gmail.com",
+            email:"gastonrb98@gmail.com",
             password:"123123123"
         }
       }
@@ -38,22 +39,27 @@ class Login extends React.Component {
     componentDidMount(){
         let obj = {}
         obj.email=this.state.email;
-        obj.password= this.state.password
+        obj.password= this.state.password 
+
+         
         fetch('http://localhost:3030/api/login', {
-            header:{
-                "content-Type": "application/json"
-            },
             method: 'POST',
-            body: {email: this.state.email,
-                password: this.state.password}})
-        .then(res => console.log(res))
+            body: {obj},
+            header:{
+                "Content-Type": "x-www-form-urlencoded"
+            } 
+        })
+            
+        .then(res => res.json())
+        .then(res => console.log(res)) 
+
     }
     render() {
         return (
             
             <React.Fragment>
                <form >
-                   {console.log(this.state)} 
+                 {  console.log(this.state) } 
                     <input type = "text"  placeholder = 'Email' onChange={(text)=> {this.handleEmail(text)}} /> 
                     <input type= "password" placeholder = 'Contraseña' onChange={(text)=> {this.handlePassword(text)}}/>
                     <button onMouseOver={()=> {this.login()}} >Login</button>
@@ -64,5 +70,5 @@ class Login extends React.Component {
     
 }
 
-export default Login;
- */
+export default Login; */
+ 

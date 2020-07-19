@@ -99,9 +99,9 @@ const controlller = {
     login: function(req, res){
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            return res.send(req.body.email + ' hola');
+            return res.json(req.body.email + ' hola');
         } else {
-            return res.send('no podés entrar');
+            return res.json('no podés entrar');
         }
     },
     allSales:function(req, res){
