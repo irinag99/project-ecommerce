@@ -30,12 +30,8 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
-<<<<<<< HEAD
 app.use(contadorMiddleware);
-=======
-app.use(contadorMiddleware)
 app.use(cors())
->>>>>>> ed2f2ef2bd07613f3ce4fdef7b52b19084121e24
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);
