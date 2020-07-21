@@ -35,9 +35,10 @@ a, a:hover{
 
 
 h3.noProducts{
-    text-align:right;
+    text-align:center;
     color: #55C24B; 
     width: 100%;
+    display: block;
 }
 div.carrito-total{
     border-radius: 21px;
@@ -55,7 +56,7 @@ div.carrito-total{
 .vistas-de-productos{
     display: flex;
     flex-wrap: wrap;
-    width: 68%;
+    width: 100%;
 }
 h2.shopping-title{
     width: 100%;
