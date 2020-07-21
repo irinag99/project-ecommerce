@@ -4,7 +4,7 @@ const Product = db.Product;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const {
-    validationResult
+    validationResult, body
 } = require("express-validator");
 
 
@@ -96,6 +96,29 @@ const controlller = {
            return res.json(resultado)
         })
     },
+    login: function(req, res){
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            return res.json(req.body.email + ' hola');
+        } else {
+            return res.json('no podés entrar');
+        }
+    },
+    allSales:function(req, res){
+        db.Order.findAll()
+        .then(function(sales){
+            let resultado = {
+                meta: {
+                    status: 200,
+                    total: sales.length,
+                    url: '/api/allsales'
+                },
+                data:sales
+            };
+           return res.json(resultado)
+        })
+    }
+
 
 
 }
