@@ -39,9 +39,6 @@ app.use(session({
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
 app.use(contadorMiddleware);
-<<<<<<< HEAD
-app.use(cors());
-=======
 app.use(cors({
     origin:'http://localhost:5050',
     credentials: true
@@ -50,7 +47,6 @@ app.use(cors({
 /* app.use(function(req,res,next){
     res.header("Content-type:application/json; charset=utf-8")
 }) */
->>>>>>> e4f745139d53d15f7edb7758403de2fdac1e3e4f
 // RUTAS !
 const homeRouter= require("./routes/homeRouter");
 app.use ("/", homeRouter);

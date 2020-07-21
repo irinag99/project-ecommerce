@@ -3,6 +3,7 @@ const sequelize = db.sequelize;
 const Product = db.Product;
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const jwt = require('jsonwebtoken')
 const {
     validationResult, body
 } = require("express-validator");
@@ -99,10 +100,25 @@ const controlller = {
     login: function(req, res){
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            console.log(req.body);
+           /*  console.log(req.body);
             req.session.dashboardUser = req.body.email;
             console.log(req.session.dashboardUser);
-            return res.json(req.body.email);
+            return res.json(req.body.email); */
+            const payload={
+                user: {
+                     email: req.body.email
+                    } 
+                }
+                jwt.sign(
+                    payload,
+                    "secret",{
+                        expiresIn:300000
+                    },
+                    (err, token)=>{
+                        if(err) throw err
+                        res.status(200).json({token})
+                    }
+                )
         } else {
             console.log('error');
             return res.json('no podés entrar');
@@ -123,7 +139,19 @@ const controlller = {
         })
     },
     session: function(req, res){
-        console.log(req.session);
+        const token = req.header("token")
+        if(!token) return res.send("no hay tokennn")
+
+        try{
+            const decoded = jwt.verify(token, "secret")
+            console.log(decoded)
+
+            user=decoded.user
+            res.send("entraste periito")
+        }catch(e){
+            res.send("token no funca bro")
+        }
+     /*    console.log(req.session);
         if(req.session.dashboardUser){
             return res.json({
                 meta: {
@@ -144,7 +172,7 @@ const controlller = {
                     msg: 'not found'
                 }
             })
-        }
+        } */
     }
 
 
