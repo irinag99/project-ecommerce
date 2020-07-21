@@ -93,6 +93,10 @@ div.login-register-container button:hover{
     background-color: #004586;
 }
 
+#recordarmeBoton {
+    padding-top: 65px;
+    margin-left: 24px;
+}
 
 /* MediaQuery tablet */
 @media (max-width:1150px){
@@ -106,6 +110,32 @@ div.login-register-container button:hover{
     div.login-register-container{
         padding: 0 25px;
     }
+    .box{ 
+        position: absolute;
+        width: 7%;
+    }
+    #recordarmeBoton{
+        padding-top:108px
+    }
+}
+@media(max-width:1110px)
+{
+    .box {
+        border: none;
+    }
+    .box input:checked~span {
+        transform: none;
+        background-color: #004586;
+    }
+}
+
+@media (max-width:550px){
+    div.register-form{
+        width: 100%;
+    }
+    #recordarmeBoton{
+        margin-bottom: 20px;
+    }
 }
 
 /* MediaQuery Mobile */
@@ -115,10 +145,10 @@ div.login-register-container button:hover{
         padding:0px;
     }
      div.register-form { 
-        width:80%;
+        width:100%;
         margin:15px auto;
     }
     div.register-form h2{ 
         font-size: 20px;
     }
-}
+    }
