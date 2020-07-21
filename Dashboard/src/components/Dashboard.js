@@ -58,9 +58,9 @@ const Dashboard = () => {
 		<div id="wrapper">
 			
 			{/* Sidebar */}
-			<Sidebar />
+			
 
-			<div id="content-wrapper" className="d-flex flex-column">
+			 <div id="content-wrapper" className="d-flex flex-column">
 				{/* Main content */}
 				<div id="content">
 					<Navbar />
@@ -69,7 +69,7 @@ const Dashboard = () => {
 					<div className="container-fluid">
 						{/* Page Heading */}
 						<div className="d-sm-flex align-items-center justify-content-between mb-4">
-							<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+							<h1 className="h3 mb-0 text-gray-800">Corona Dashboard</h1>
 						</div>
 
 						{/* Row */}
