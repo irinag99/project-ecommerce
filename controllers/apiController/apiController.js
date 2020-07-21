@@ -99,8 +99,12 @@ const controlller = {
     login: function(req, res){
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            return res.json(req.body.email + ' hola');
+            console.log(req.body);
+            req.session.dashboardUser = req.body.email;
+            console.log(req.session.dashboardUser);
+            return res.json(req.body.email);
         } else {
+            console.log('error');
             return res.json('no podés entrar');
         }
     },
@@ -117,6 +121,30 @@ const controlller = {
             };
            return res.json(resultado)
         })
+    },
+    session: function(req, res){
+        console.log(req.session);
+        if(req.session.dashboardUser){
+            return res.json({
+                meta: {
+                    status: 200,
+                    url: '/api/session',
+                    msg: 'ok'
+                },
+                data: {
+                    user: req.session.dashboardUser,
+                    role: 100
+                }
+            })
+        }else{
+            return res.json({
+                meta: {
+                    status: 404,
+                    url: '/api/session',
+                    msg: 'not found'
+                }
+            })
+        }
     }
 
 

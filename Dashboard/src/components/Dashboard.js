@@ -19,27 +19,17 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			user: null
+			user: 1
 		}
 	}
-	buscarUsuario = (email) => {
-		console.log('enviaste info');
-		console.log(email)
-		
-		let input = document.querySelectorAll('input')
-		console.log(input);
-			fetch('localhost:3030/api/login', {
-				method: 'POST',
-				body: {
-					email: input[0].value,
-					password: input[1].value
-				}
+	componentDidMount(){
+		let url = 'http://localhost:3030/api/session';
+		fetch(url)
+		.then((session) => {
+			this.setState({
+				user: 'session'
 			})
-			.then(function(u){
-				return this.setState({
-					user: u
-				})
-			})
+		})
 	}
 	render() {
 		if (this.state.user == null) {

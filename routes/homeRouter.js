@@ -24,10 +24,11 @@ var upload = multer({ storage: storage });
 
 router.get("/", homeController.vista);
 router.get("/prueba",function(req,res){
-  if (req.session.user == undefined){
+  console.log(req.session);
+    if (req.session.dashboardUser == undefined){
     res.send("no estas logeado")
   }else{
-    res.send("estas logeado "+ req.session.user.email)
+    res.send("estas logeado "+ req.session.dashboardUser)
   }
 })
 
