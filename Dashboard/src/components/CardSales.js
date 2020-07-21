@@ -17,6 +17,7 @@ class CardSales extends Component{
 		this.apiCall("http://localhost:3030/api/allsales", this.numeroDeVentas)
 	}
 	numeroDeVentas= data => {
+		console.log(data)
 		this.setState({
 			sales: data.meta.total
 		})

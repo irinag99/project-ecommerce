@@ -9,5 +9,6 @@ router.get('/categories',apiController.categories);
 router.get('/lastproduct',apiController.lastProduct);
 router.get('/latestsales',apiController.latestSales);
 router.post('/login', validator.loginDashboard, apiController.login);
-
+router.get('/session', apiController.session);
+router.get('/allsales',apiController.allSales)
 module.exports = router;

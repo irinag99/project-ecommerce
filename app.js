@@ -23,15 +23,27 @@ app.set("view engine","ejs");
 //CAPTURAR DATOS QUE RECIBAMOS POR POST, ALMACENARNOS EN FORMA DE OBJETO LITERAL Y PODER GUARDARLOS EN FORMATO JSON
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+const MemoryStore = session.MemoryStore;
 app.use(session({
     secret: 'proyecto',
-    resave: false,
-    saveUninitialized: true
+    resave: true,
+    saveUninitialized: true,
+    store: new MemoryStore(),
+    cookie: {
+        secure: false,
+        httpOnly: false,
+        domain: 'http://localhost:5050'
+    }
+
 }));
 app.use(cookieParser());
 app.use(cookieAuthMiddleware);
 app.use(contadorMiddleware);
-app.use(cors());
+app.use(cors({
+    origin:'http://localhost:5050',
+    credentials: true
+}))
+
 /* app.use(function(req,res,next){
     res.header("Content-type:application/json; charset=utf-8")
 }) */
