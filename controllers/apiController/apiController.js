@@ -102,7 +102,7 @@ const controlller = {
         if (errors.isEmpty()) {
             console.log(req.body);
             const payload = {
-                user: {
+                userReact: {
                     email: req.body.email
                 }
             }
@@ -149,7 +149,7 @@ const controlller = {
             const decoded = jwt.verify(token, "secret")
             console.log(decoded)
 
-            user = decoded.user
+            userReact = decoded.userReact
             return res.json({
                 meta: {
                     status: 200,

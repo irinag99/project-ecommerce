@@ -28,12 +28,12 @@ app.use(session({
     secret: 'proyecto',
     resave: true,
     saveUninitialized: true,
-    store: new MemoryStore(),
+    /* tore: new MemoryStore(),
     cookie: {
         secure: false,
         httpOnly: false,
         domain: 'http://localhost:5050'
-    }
+    } */
 
 }));
 app.use(cookieParser());

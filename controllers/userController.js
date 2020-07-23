@@ -22,7 +22,9 @@ const userController = {
                 .then(function (usuario) {
                     let u = usuario;
                     delete u.password;
+                    console.log("me registre")
                     req.session.user = u;
+                    console.log(req.session.user)
                     if (req.body.remember != undefined) {
                         res.cookie('user', u.email, { maxAge: 1000 * 60 * 60 });
                     }
