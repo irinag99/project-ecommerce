@@ -1,4 +1,4 @@
-window.addEventListener("load",function(){
+/* window.addEventListener("load",function(){
     let uno = document.querySelector("button.uno")
     let dos = document.querySelector("button.dos")
     let primeraTanda = document.querySelector("div.primera-tanda")
@@ -17,4 +17,4 @@ window.addEventListener("load",function(){
     
     )
 
-})
+}) */

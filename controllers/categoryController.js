@@ -9,65 +9,35 @@ const Op = Sequelize.Op;
 const categoryController = {
     "vista": (req, res) => {
 
-        let category = Category.findByPk(req.params.id, {
-            include: [
-                {
-                    association: 'products',
-                    limit: 14
-                }
-            ],
-        });
+        let page = req.query.page || 1;
+        page = parseInt(page);
 
-        let categorys = Category.findAll({
-            order: [
-                ['name', 'ASC']
-            ]
-        });
+        let order = req.query.order || 'max';
 
-        Promise.all([category, categorys])
-            .then(function ([category, categorys]) {
-                return res.render("categoria", { category: category, categorys: categorys })
-            })
-
-
-
-    },
-    "vistaMax": (req, res) => {
 
         let category = Category.findByPk(req.params.id, {
             include: [
                 {
                     association: 'products',
-                    limit: 14,
-                    order: [
+                    limit: 5,
+                    offset: 5*(page - 1),
+                    order: order == 'max' ? [
                         ['price', 'DESC']
+                    ] : [
+                        ['price', 'ASC']
                     ]
                 }
             ],
         });
-
-        let categorys = Category.findAll({
-            order: [
-                ['name', 'ASC']
-            ]
-        });
-
-        Promise.all([category, categorys])
-            .then(function ([category, categorys]) {
-                return res.render("categoria", { category: category, categorys: categorys })
-            })
-
-
-
-    },
-    "vistaMin": (req, res) => {
-
-        let category = Category.findByPk(req.params.id, {
+        let nextPage = Category.findByPk(req.params.id, {
             include: [
                 {
                     association: 'products',
-                    limit: 14,
-                    order: [
+                    limit: 5,
+                    offset: 5*(page),
+                    order: order == 'max' ? [
+                        ['price', 'DESC']
+                    ] : [
                         ['price', 'ASC']
                     ]
                 }
@@ -79,15 +49,19 @@ const categoryController = {
                 ['name', 'ASC']
             ]
         });
+console.log(page);
+    
 
-        Promise.all([category, categorys])
-            .then(function ([category, categorys]) {
-                return res.render("categoria", { category: category, categorys: categorys })
+        Promise.all([category, categorys,nextPage])
+            .then(function ([category, categorys,nextPage]) {
+                console.log(nextPage.products)
+                return res.render("categoria", { category: category, categorys: categorys, page : page, nextPage: nextPage})
             })
 
 
 
-    }
+    },
+
 
 }
 

@@ -1,0 +1,36 @@
+.total{
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+   
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color: #004586;    ;
+}
+
+.containerLogin{
+    border: 1px solid #dedede;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.containerLogin form{
+    margin: 10px 10px;
+}
+
+.containerLogin input{
+    margin: 5px;
+}
+
+.containerLogin button{
+    margin: 5px;
+}
+

@@ -19,14 +19,12 @@
                 <li>
                     <a class="boton-menu user" href="/user/profile">Bienvenido, <%= user.name %>! </a>
                 </li>
-
                 <li>
-                    <form action="/logout" method="POST" >
+                    <form action="/logout" method="POST">
                         <button type="submit" class="boton-menu cerrar-sesion">Cerrar sesion</button>
 
                     </form>
                 </li>
-
             </ul>
         </div>
         <% } %>
@@ -43,18 +41,26 @@
                         <li><a class="boton-menu" href="/user/login"> Ingresar </a></li>
                         <% if (typeof(user)!='undefined') { %>
                         <li><a class="boton-menu " href="/user/profile"> Perfil </a></li>
-                        <% } %> 
+                        <% } %>
                     </ul>
 
                 </nav>
 
+                <% if (typeof(user)!='undefined') { %>
 
-                <li><a class="boton-menu" href="/cart"><img src="/images/carrito.png" alt=""><% if (typeof(contador)!='undefined') { %> <% if (contador.length!=0) { %>
-                    <p id="contador"><%=contador.length%></p>
+
+                <li><a class="boton-menu" href="/cart"><img src="/images/carrito.png"
+                            alt=""><% if (typeof(contador)!='undefined') { %> <% if (contador.length!=0) { %>
+                        <p id="contador"><%=contador.length%></p>
+                        <% } %>
+
+                        <% } %> </a></li>
                 <% } %>
-                      <% } %> </a></li>
                 <li id='search'><a class="boton-menu lupa"><img src="/images/lupa.png" alt=""> </a></li>
-                <li><form method="post" action="/product/search" > <input type="text" class="buscador" placeholder="Buscador" name="search"></form></li>
+                <li>
+                    <form method="post" action="/product/search"> <input type="text" class="buscador"
+                            placeholder="Buscador" name="search"></form>
+                </li>
             </ul>
         </div>
 

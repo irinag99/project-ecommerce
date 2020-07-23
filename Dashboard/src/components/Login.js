@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import styles from './login.module.css';
 
 
 
-const Login = () =>{
+
+const Login = () => {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [token, setToken] = useState(null);
@@ -17,15 +19,15 @@ const Login = () =>{
                 password: password
             })
             .then((user) => {
-                if (user.data){
+                if (user.data) {
                     localStorage.setItem('user', user.data.token)
                     setToken(user.data.token)
-                }else{
+                } else {
                     setEmail('')
                     setPassword('')
                     setToken(null)
                 }
-                
+
             })
             .catch(err => {
                 console.error(err);
@@ -34,25 +36,28 @@ const Login = () =>{
     }
 
     return (
-        <React.Fragment>
+        <div> 
+            <h1> Login </h1>
+        <div className = {styles.total}>
+            
+            <div className={styles.containerLogin}>
 
-            {
-                    token && <Redirect to='/'/>
+           
+                {
+                    token && <Redirect to='/' />
                 }
-            <form onSubmit={(e) => { 
-                e.preventDefault();
-                signInHandler();
+                
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    signInHandler();
                 }} >
-                <input type="text" placeholder='Email' onChange={(e) => { setEmail(e.target.value) }} value={email}/>
-                <input type="password" placeholder='Contraseña' onChange={(e) => {setPassword(e.target.value)}} value={password}/>
-                <button type='submit' >Login</button>
-            </form>
-            <ul>
-                <li>{email}</li>
-                <li>{password}</li>
-                <li>{token}</li>
-            </ul>
-        </React.Fragment>
+                    <input type="text" placeholder='Email' onChange={(e) => { setEmail(e.target.value) }} value={email} /> <br/> 
+                    <input type="password" placeholder='Contraseña' onChange={(e) => { setPassword(e.target.value) }} value={password} /> <br/>
+                    <button type='submit' >Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
     )
 }
 
